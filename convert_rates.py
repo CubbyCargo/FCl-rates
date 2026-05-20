@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 from datetime import timezone
 
-wb = openpyxl.load_workbook("/mnt/user-data/uploads/Customer_Rate_Tariff_Template_Week_21_2026.xlsx", read_only=True, data_only=True)
+wb = openpyxl.load_workbook("Customer_Rate_Tariff_Template_Week_21_2026.xlsx", read_only=True, data_only=True)
 
 def clean(val):
     if val is None:
