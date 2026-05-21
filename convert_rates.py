@@ -30,7 +30,7 @@ import openpyxl
 # ---------------------------------------------------------------------------
 # Configuration — update these if filenames or sheet names change
 # ---------------------------------------------------------------------------
-EXCEL_PATTERN = "Customer Rate Tariff Template_*.xlsx"   # wildcards OK
+EXCEL_PATTERN = "Customer Rate Tariff Template_Week 21_2026.xlsx"   # wildcards OK
 DATA_START_ROW = 2       # first row of data (1-indexed); row 1 = headers
 INSURANCE_AMOUNT = 200   # fixed USD amount added for total_with_insurance
 
