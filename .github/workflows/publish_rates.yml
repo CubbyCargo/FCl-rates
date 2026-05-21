@@ -45,6 +45,7 @@ jobs:
           mkdir -p deploy
           cp rates.json deploy/rates.json
           cp quote.html deploy/quote.html
+          cp index.html deploy/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
