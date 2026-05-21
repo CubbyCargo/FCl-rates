@@ -30,7 +30,7 @@ import openpyxl
 # ---------------------------------------------------------------------------
 # Configuration — update these if filenames or sheet names change
 # ---------------------------------------------------------------------------
-EXCEL_PATTERN = "Customer Rate Tariff Template_Week 21_2026.xlsx"   # wildcards OK
+EXCEL_PATTERN = "Customer Rate Tariff Template_*.xlsx"   # wildcards OK
 DATA_START_ROW = 2       # first row of data (1-indexed); row 1 = headers
 INSURANCE_AMOUNT = 200   # fixed USD amount added for total_with_insurance
 
@@ -152,17 +152,15 @@ def group_by_destination_and_lane(all_rows, sheet_name):
         "TT": "TT",
         "GUYANA": "GUY",
         "GUY": "GUY",
+        "GY": "GUY",
         "SURINAME": "SUR",
         "SUR": "SUR",
         "COLOMBIA": "COL",
         "COL": "COL",
+        "TRINIDAD EXPORTS": "Trinidad Exports",
     }
-    name_upper = sheet_name.upper()
-    dest_code = None
-    for keyword, code in dest_keywords.items():
-        if keyword in name_upper:
-            dest_code = code
-            break
+    name_upper = sheet_name.strip().upper()
+    dest_code = dest_keywords.get(name_upper)
     if not dest_code:
         dest_code = sheet_name   # fallback: use raw sheet name
 
