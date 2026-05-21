@@ -40,9 +40,15 @@ jobs:
           git diff --staged --quiet || git commit -m "Update FCL rates - ${{ github.event.inputs.note || 'manual trigger' }} [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push
 
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p deploy
+          cp rates.json deploy/rates.json
+          cp quote.html deploy/quote.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          include_files: rates.json,quote.html
+          publish_dir: ./deploy
+          keep_files: false
