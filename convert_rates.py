@@ -28,10 +28,10 @@ from datetime import datetime, timezone
 import openpyxl
 
 # ---------------------------------------------------------------------------
-# Configuration — update these if filenames or sheet names change
+# Configuration - update these if filenames or sheet names change
 # ---------------------------------------------------------------------------
 EXCEL_PATTERN = "Customer Rate Tariff Template_*.xlsx"   # wildcards OK
-DATA_START_ROW = 2       # first row of data (1-indexed); row 1 = headers
+DATA_START_ROW = 10      # rows 1-9 are title/header blocks; row 10 = first data row
 INSURANCE_AMOUNT = 200   # fixed USD amount added for total_with_insurance
 
 # Column indexes (1-indexed, matching openpyxl default)
@@ -41,14 +41,16 @@ COL_SIZE           = 3   # C
 COL_OF_BUNKER      = 4   # D
 COL_THC            = 5   # E
 COL_LAC            = 6   # F
-COL_DREDGING       = 7   # G
-COL_TLS            = 8   # H  Terminal Lease Surcharge
+COL_ISPS           = 7   # G
+COL_CONTAINER_INSP = 8   # H  Container Inspection
 COL_GRI            = 9   # I
-COL_TOTAL          = 10  # J  Total (excl. insurance)
-COL_TRANSIT        = 11  # K
-COL_VALIDITY       = 12  # L
-COL_CARRIER        = 13  # M
-COL_COMMENT        = 14  # N  (optional)
+COL_TOTAL          = 10  # J  Total without Insurance
+COL_INSURANCE      = 11  # K
+COL_TOTAL_WITH_INS = 12  # L  Total with Insurance
+COL_TRANSIT        = 13  # M
+COL_VALIDITY       = 14  # N
+COL_CARRIER        = 15  # O
+COL_COMMENT        = 16  # P  (optional)
 # ---------------------------------------------------------------------------
 
 
@@ -62,7 +64,7 @@ def find_excel_file():
 
 
 def safe_float(value):
-    """Return float or None — handles empty cells, strings, and numbers."""
+    """Return float or None - handles empty cells, strings, and numbers."""
     if value is None:
         return None
     try:
@@ -96,8 +98,8 @@ def parse_sheet(ws):
         of_bunker = safe_float(row[COL_OF_BUNKER - 1])
         thc       = safe_float(row[COL_THC - 1])
         lac       = safe_float(row[COL_LAC - 1])
-        dredging  = safe_float(row[COL_DREDGING - 1])
-        tls       = safe_float(row[COL_TLS - 1])
+        isps      = safe_float(row[COL_ISPS - 1])
+        cont_insp = safe_float(row[COL_CONTAINER_INSP - 1])
         gri       = safe_float(row[COL_GRI - 1])
         total     = safe_float(row[COL_TOTAL - 1])
         transit   = safe_str(row[COL_TRANSIT - 1])
@@ -107,7 +109,7 @@ def parse_sheet(ws):
 
         # Normalise validity date to dd/mm/yyyy string
         if hasattr(total, 'strftime'):
-            total = None   # guard: if Excel puts a date in wrong column
+            total = None
         if validity and hasattr(row[COL_VALIDITY - 1], 'strftime'):
             validity = row[COL_VALIDITY - 1].strftime('%d/%m/%Y')
 
@@ -118,11 +120,11 @@ def parse_sheet(ws):
             "of_bunker":              of_bunker,
             "thc":                    thc,
             "lac":                    lac,
-            "dredging":               dredging,
-            "terminal_lease_surcharge": tls,
+            "isps":                   isps,
+            "container_inspection":   cont_insp,
             "gri":                    gri,
             "total":                  total,
-            "total_with_insurance":   round(total + INSURANCE_AMOUNT, 2) if total is not None else None,
+            "total_with_insurance":   safe_float(row[COL_TOTAL_WITH_INS - 1]),
             "insurance":              INSURANCE_AMOUNT,
             "transit_time":           transit,
             "validity":               validity,
@@ -140,10 +142,10 @@ def group_by_destination_and_lane(all_rows, sheet_name):
     Falls back to sheet_name as the lane key.
 
     Destination codes:
-      TT  — Trinidad
-      GUY — Guyana
-      SUR — Suriname
-      COL — Colombia
+      TT  - Trinidad
+      GUY - Guyana
+      SUR - Suriname
+      COL - Colombia
       (anything else stored under its own key)
     """
     dest_keywords = {
@@ -204,7 +206,7 @@ def convert(excel_path):
         json.dump(output, f, ensure_ascii=False, indent=2, default=str)
 
     size_kb = round(os.path.getsize("rates.json") / 1024, 1)
-    print(f"\nDone — {total_rows} rate rows → rates.json ({size_kb} KB)")
+    print(f"\nDone - {total_rows} rate rows → rates.json ({size_kb} KB)")
 
 
 if __name__ == "__main__":
