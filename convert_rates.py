@@ -74,7 +74,7 @@ def find_excel_file():
 
 
 def safe_float(value):
-    """Return float or None — handles empty cells, strings, and numbers."""
+    """Return float or None - handles empty cells, strings, and numbers."""
     if value is None:
         return None
     try:
