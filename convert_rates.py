@@ -1,25 +1,3 @@
-"""
-convert_rates.py
-Reads the Cubby Cargo FCL rate tariff Excel file and outputs rates.json
-for GitHub Pages / Respond.io knowledge source.
-
-Excel column mapping (per tariff template):
-  A  - POL
-  B  - POD
-  C  - Container Size
-  D  - OF/Bunker
-  E  - THC
-  F  - LAC
-  G  - Dredging
-  H  - Terminal Lease Surcharge
-  I  - GRI
-  J  - Total (without insurance)
-  K  - Transit Time
-  L  - Validity
-  M  - Carrier
-  N  - Comment (optional)
-"""
-
 import json
 import os
 import glob
@@ -80,38 +58,76 @@ def safe_str(value):
     return v if v else None
 
 
+def unmerge_and_fill(ws):
+    """
+    Build a dict of {(row, col): value} with merged cell values filled down/across.
+    This resolves merged cells so every logical cell has the correct value.
+    """
+    # Collect the top-left value for every merged range
+    merge_values = {}
+    for merge_range in ws.merged_cells.ranges:
+        top_left = ws.cell(merge_range.min_row, merge_range.min_col).value
+        for row in range(merge_range.min_row, merge_range.max_row + 1):
+            for col in range(merge_range.min_col, merge_range.max_col + 1):
+                merge_values[(row, col)] = top_left
+
+    # Build full cell map
+    cell_map = {}
+    for row in ws.iter_rows():
+        for cell in row:
+            if (cell.row, cell.column) in merge_values:
+                cell_map[(cell.row, cell.column)] = merge_values[(cell.row, cell.column)]
+            else:
+                cell_map[(cell.row, cell.column)] = cell.value
+    return cell_map
+
+
+def get_cell(cell_map, row, col):
+    """Get a value from the cell map by row and 1-indexed column."""
+    return cell_map.get((row, col))
+
+
 def parse_sheet(ws):
     """
-    Parse a single worksheet.
+    Parse a single worksheet, handling merged cells.
     Returns a list of dicts, one per data row.
-    Skips rows where POL or POD is empty.
-    Also returns the section heading (sheet name or first non-empty header row).
+    Skips rows where size is empty (merged POL/POD filled in, size is never merged).
     """
+    cell_map = unmerge_and_fill(ws)
     rows = []
-    for row in ws.iter_rows(min_row=DATA_START_ROW, values_only=True):
-        pol       = safe_str(row[COL_POL - 1])
-        pod       = safe_str(row[COL_POD - 1])
+
+    max_row = ws.max_row
+    for r in range(DATA_START_ROW, max_row + 1):
+        # Use size as the anchor - it's never merged, so empty = not a data row
+        size = safe_str(get_cell(cell_map, r, COL_SIZE))
+        if not size:
+            continue
+
+        pol       = safe_str(get_cell(cell_map, r, COL_POL))
+        pod       = safe_str(get_cell(cell_map, r, COL_POD))
+        of_bunker = safe_float(get_cell(cell_map, r, COL_OF_BUNKER))
+        thc       = safe_float(get_cell(cell_map, r, COL_THC))
+        lac       = safe_float(get_cell(cell_map, r, COL_LAC))
+        isps      = safe_float(get_cell(cell_map, r, COL_ISPS))
+        cont_insp = safe_float(get_cell(cell_map, r, COL_CONTAINER_INSP))
+        gri_raw   = get_cell(cell_map, r, COL_GRI)
+        gri       = safe_float(gri_raw) if safe_str(gri_raw) not in ('N/A', 'n/a', None) else None
+        total     = safe_float(get_cell(cell_map, r, COL_TOTAL))
+        total_ins = safe_float(get_cell(cell_map, r, COL_TOTAL_WITH_INS))
+        transit_raw = get_cell(cell_map, r, COL_TRANSIT)
+        transit   = safe_str(transit_raw)
+        validity_raw = get_cell(cell_map, r, COL_VALIDITY)
+        # Normalise validity date
+        if hasattr(validity_raw, 'strftime'):
+            validity = validity_raw.strftime('%d/%m/%Y')
+        else:
+            validity = safe_str(validity_raw)
+        carrier   = safe_str(get_cell(cell_map, r, COL_CARRIER))
+        comment_raw = get_cell(cell_map, r, COL_COMMENT)
+        comment   = safe_str(comment_raw)
+
         if not pol or not pod:
-            continue  # skip blank / subtotal rows
-
-        size      = safe_str(row[COL_SIZE - 1])
-        of_bunker = safe_float(row[COL_OF_BUNKER - 1])
-        thc       = safe_float(row[COL_THC - 1])
-        lac       = safe_float(row[COL_LAC - 1])
-        isps      = safe_float(row[COL_ISPS - 1])
-        cont_insp = safe_float(row[COL_CONTAINER_INSP - 1])
-        gri       = safe_float(row[COL_GRI - 1])
-        total     = safe_float(row[COL_TOTAL - 1])
-        transit   = safe_str(row[COL_TRANSIT - 1])
-        validity  = safe_str(row[COL_VALIDITY - 1])
-        carrier   = safe_str(row[COL_CARRIER - 1])
-        comment   = safe_str(row[COL_COMMENT - 1]) if len(row) >= COL_COMMENT else None
-
-        # Normalise validity date to dd/mm/yyyy string
-        if hasattr(total, 'strftime'):
-            total = None
-        if validity and hasattr(row[COL_VALIDITY - 1], 'strftime'):
-            validity = row[COL_VALIDITY - 1].strftime('%d/%m/%Y')
+            continue
 
         entry = {
             "pol":                    pol,
@@ -124,7 +140,7 @@ def parse_sheet(ws):
             "container_inspection":   cont_insp,
             "gri":                    gri,
             "total":                  total,
-            "total_with_insurance":   safe_float(row[COL_TOTAL_WITH_INS - 1]),
+            "total_with_insurance":   total_ins,
             "insurance":              INSURANCE_AMOUNT,
             "transit_time":           transit,
             "validity":               validity,
