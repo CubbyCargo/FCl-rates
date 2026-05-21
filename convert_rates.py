@@ -152,10 +152,10 @@ def group_by_destination_and_lane(all_rows, sheet_name):
     Falls back to sheet_name as the lane key.
 
     Destination codes:
-      TT  — Trinidad
-      GUY — Guyana
-      SUR — Suriname
-      COL — Colombia
+      TT  - Trinidad
+      GUY - Guyana
+      SUR - Suriname
+      COL - Colombia
       (anything else stored under its own key)
     """
     dest_keywords = {
