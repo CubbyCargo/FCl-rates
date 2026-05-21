@@ -174,9 +174,14 @@ def convert(excel_path):
     destinations = {}
     total_rows = 0
 
+    print(f"\nDEBUG sheet names found in workbook:")
+    for s in wb.sheetnames:
+        print(f"  repr: {repr(s)}")
+
     for sheet_name in wb.sheetnames:
         ws = wb[sheet_name]
         rows = parse_sheet(ws)
+        print(f"  Sheet '{sheet_name}' → {len(rows)} rows parsed")
         if not rows:
             print(f"  Skipped (no data): {sheet_name}")
             continue
