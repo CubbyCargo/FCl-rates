@@ -7,247 +7,51 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #f5f5f3;
-    color: #1a1a1a;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-  }
-
-  .container {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .page-header {
-    margin-bottom: 2rem;
-  }
-
-  .page-header h1 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-
-  .page-header p {
-    font-size: 13px;
-    color: #888;
-    margin-top: 4px;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid #e8e8e6;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .card h2 {
-    font-size: 14px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .form-group label {
-    font-size: 11px;
-    font-weight: 600;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  select, input[type="text"] {
-    width: 100%;
-    padding: 9px 11px;
-    font-size: 14px;
-    border: 1px solid #e0e0de;
-    border-radius: 8px;
-    background: #fff;
-    color: #1a1a1a;
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 28px;
-  }
-
-  input[type="text"] {
-    background-image: none;
-    padding-right: 11px;
-  }
-
-  select:focus, input:focus {
-    outline: none;
-    border-color: #1a1a1a;
-  }
-
-  .rate-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .rate-item {
-    border: 1px solid #e8e8e6;
-    border-radius: 10px;
-    padding: 1rem;
-    cursor: pointer;
-    transition: border-color 0.15s;
-  }
-
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a1a; min-height: 100vh; padding: 2rem 1rem; }
+  .container { max-width: 640px; margin: 0 auto; }
+  .page-header { margin-bottom: 2rem; }
+  .page-header h1 { font-size: 22px; font-weight: 600; }
+  .page-header p { font-size: 13px; color: #888; margin-top: 4px; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e8e8e6; padding: 1.5rem; margin-bottom: 1rem; }
+  .card h2 { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+  select, input[type="text"] { width: 100%; padding: 9px 11px; font-size: 14px; border: 1px solid #e0e0de; border-radius: 8px; background: #fff; color: #1a1a1a; appearance: none; -webkit-appearance: none; }
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 28px; }
+  select:focus, input:focus { outline: none; border-color: #1a1a1a; }
+  .rate-list { display: flex; flex-direction: column; gap: 10px; }
+  .rate-item { border: 1px solid #e8e8e6; border-radius: 10px; padding: 1rem; cursor: pointer; transition: border-color 0.15s; }
   .rate-item:hover { border-color: #bbb; }
-
-  .rate-item.active {
-    border: 2px solid #1a1a1a;
-  }
-
-  .rate-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .rate-carrier {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-
-  .rate-price {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-  }
-
-  .rate-price small {
-    font-size: 11px;
-    font-weight: 400;
-    color: #888;
-  }
-
-  .rate-meta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .meta-item {
-    font-size: 12px;
-    color: #888;
-  }
-
-  .meta-item strong {
-    color: #1a1a1a;
-    font-weight: 500;
-  }
-
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-weight: 500;
-    margin-left: 8px;
-  }
-
+  .rate-item.active { border: 2px solid #1a1a1a; }
+  .rate-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .rate-carrier { font-size: 15px; font-weight: 600; }
+  .rate-price { font-size: 18px; font-weight: 600; }
+  .rate-price small { font-size: 11px; font-weight: 400; color: #888; }
+  .rate-meta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .meta-item { font-size: 12px; color: #888; }
+  .meta-item strong { color: #1a1a1a; font-weight: 500; }
+  .badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 500; margin-left: 8px; }
   .badge-ok { background: #e8f5e9; color: #2e7d32; }
   .badge-limited { background: #fff8e1; color: #f57c00; }
   .badge-tight { background: #fce4ec; color: #c62828; }
-
-  .empty-state {
-    font-size: 14px;
-    color: #aaa;
-    text-align: center;
-    padding: 2rem 0;
-  }
-
-  .quote-preview {
-    border-top: 1px solid #e8e8e6;
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
-
-  .quote-preview h2 {
-    margin-bottom: 0.75rem;
-  }
-
-  .quote-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-
-  .quote-table tr td {
-    padding: 6px 0;
-    border-bottom: 1px solid #f0f0ee;
-  }
-
+  .empty-state { font-size: 14px; color: #aaa; text-align: center; padding: 2rem 0; }
+  .quote-preview { border-top: 1px solid #e8e8e6; padding-top: 1.25rem; margin-top: 1.25rem; }
+  .quote-preview h2 { margin-bottom: 0.75rem; }
+  .quote-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .quote-table td { padding: 6px 0; border-bottom: 1px solid #f0f0ee; }
   .quote-table tr:last-child td { border-bottom: none; }
-
-  .quote-table td:first-child { color: #888; width: 55%; }
+  .quote-table td:first-child { color: #888; width: 60%; }
   .quote-table td:last-child { font-weight: 500; color: #1a1a1a; text-align: right; }
-
-  .ins-note {
-    margin-top: 12px;
-    font-size: 12px;
-    color: #666;
-    background: #f9f9f7;
-    border-radius: 8px;
-    padding: 10px 12px;
-    border-left: 3px solid #e0e0de;
-  }
-
-  .btn-download {
-    margin-top: 1.25rem;
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 600;
-    background: #1a1a1a;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: opacity 0.15s;
-  }
-
+  .quote-table tr.total-row td { font-weight: 700; font-size: 14px; color: #1a1a1a; border-top: 1px solid #1a1a1a; padding-top: 8px; }
+  .quote-table tr.section-header td { font-size: 10px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 14px; padding-bottom: 4px; border-bottom: none; }
+  .ins-note { margin-top: 12px; font-size: 12px; color: #666; background: #f9f9f7; border-radius: 8px; padding: 10px 12px; border-left: 3px solid #e0e0de; }
+  .btn-download { margin-top: 1.25rem; width: 100%; padding: 12px; font-size: 14px; font-weight: 600; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: opacity 0.15s; }
   .btn-download:hover { opacity: 0.85; }
-  .btn-download:disabled { opacity: 0.4; cursor: not-allowed; }
-
-  #status {
-    font-size: 13px;
-    color: #888;
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  @media (max-width: 480px) {
-    .form-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 480px) { .form-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
-
 <div class="container">
   <div class="page-header">
     <h1>FCL Quote Generator</h1>
@@ -291,24 +95,20 @@
   <div id="rates-card" style="display:none;" class="card">
     <h2>Available rates</h2>
     <div id="rate-list" class="rate-list"></div>
-
     <div id="quote-preview" class="quote-preview" style="display:none;">
       <h2>Quote preview</h2>
       <table class="quote-table" id="quote-table"></table>
-      <div class="ins-note">
-        &#x1F6E1;&#xFE0F; Cargo insurance is available for an additional <strong>USD 200</strong>. Ask your Cubby representative to include it in your booking.
-      </div>
-      <button class="btn-download" id="btn-download" onclick="generatePDF()">Download PDF Quote</button>
+      <div class="ins-note">&#x1F6E1; Cargo insurance is available for an additional <strong>USD 200</strong>. Ask your Cubby representative to include it in your booking.</div>
+      <button class="btn-download" onclick="generatePDF()">Download PDF Quote</button>
     </div>
   </div>
-
-  <div id="status"></div>
 </div>
 
 <script>
 const { jsPDF } = window.jspdf;
 let ratesData = null;
 let selectedRate = null;
+let selectedPolName = null;
 
 const DEST_LABELS = {
   TT: 'Trinidad', GUY: 'Guyana', SUR: 'Suriname',
@@ -353,21 +153,24 @@ function updatePols() {
   const dest = document.getElementById('dest-select').value;
   const lane = document.getElementById('lane-select').value;
   const polSel = document.getElementById('pol-select');
-  polSel.innerHTML = '<option value="">All origins</option>';
+  polSel.innerHTML = '<option value="">Select origin port</option>';
   resetRates();
   if (!dest || !lane) return;
   const rows = ratesData.destinations[dest][lane];
-  const pols = [...new Set(rows.map(r => r.pol))];
-  pols.forEach(p => {
+  // Split each grouped POL string on '/' and collect unique individual ports
+  const individualPorts = [...new Set(
+    rows.flatMap(r => r.pol.split('/').map(p => p.trim()).filter(Boolean))
+  )].sort();
+  individualPorts.forEach(p => {
     const o = document.createElement('option');
-    o.value = p; o.textContent = p.length > 60 ? p.substring(0,60)+'…' : p;
+    o.value = p; o.textContent = p;
     polSel.appendChild(o);
   });
-  renderRates();
 }
 
 function resetRates() {
   selectedRate = null;
+  selectedPolName = null;
   document.getElementById('rates-card').style.display = 'none';
   document.getElementById('quote-preview').style.display = 'none';
   document.getElementById('rate-list').innerHTML = '';
@@ -380,7 +183,10 @@ function getFilteredRows() {
   const size = document.getElementById('size-select').value;
   if (!dest || !lane) return [];
   let rows = ratesData.destinations[dest][lane];
-  if (pol)  rows = rows.filter(r => r.pol === pol);
+  // Match any row whose grouped POL string contains the chosen individual port
+  if (pol) rows = rows.filter(r =>
+    r.pol.split('/').map(p => p.trim()).includes(pol)
+  );
   if (size) rows = rows.filter(r => r.size === size);
   return rows;
 }
@@ -394,26 +200,30 @@ function spaceBadge(comment) {
   return '';
 }
 
+function fmt(val) {
+  if (val === null || val === undefined || val === 0) return null;
+  return 'USD ' + Number(val).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
 function renderRates() {
   const rows = getFilteredRows();
   const listEl = document.getElementById('rate-list');
-  const card = document.getElementById('rates-card');
   resetRates();
   if (!rows.length) return;
-  card.style.display = 'block';
+  document.getElementById('rates-card').style.display = 'block';
   rows.forEach((rate, i) => {
     const div = document.createElement('div');
-    div.className = 'rate-item';
-    div.id = 'rate-' + i;
+    div.className = 'rate-item'; div.id = 'rate-' + i;
     div.onclick = () => selectRate(i);
+    const totalVal = rate.total !== null && rate.total !== undefined ? rate.total : rate.total_without_insurance;
     div.innerHTML = `
       <div class="rate-top">
         <div><span class="rate-carrier">${rate.carrier}</span>${spaceBadge(rate.comment)}</div>
-        <div class="rate-price">USD ${rate.total_without_insurance.toLocaleString()} <small>excl. ins.</small></div>
+        <div class="rate-price">USD ${Number(totalVal).toLocaleString()} <small>total</small></div>
       </div>
       <div class="rate-meta">
         <div class="meta-item">Size: <strong>${rate.size}</strong></div>
-        <div class="meta-item">O/F + Bunker: <strong>USD ${rate.of_bunker.toLocaleString()}</strong></div>
+        <div class="meta-item">O/F + Bunker: <strong>USD ${Number(rate.of_bunker).toLocaleString()}</strong></div>
         <div class="meta-item">Transit: <strong>${rate.transit_time} days</strong></div>
         <div class="meta-item">Valid to: <strong>${rate.validity}</strong></div>
         <div class="meta-item">POD: <strong>${rate.pod}</strong></div>
@@ -425,6 +235,7 @@ function renderRates() {
 function selectRate(i) {
   const rows = getFilteredRows();
   selectedRate = rows[i];
+  selectedPolName = document.getElementById('pol-select').value || rows[i].pol.split('/')[0].trim();
   document.querySelectorAll('.rate-item').forEach(el => el.classList.remove('active'));
   document.getElementById('rate-' + i).classList.add('active');
   buildPreview();
@@ -435,26 +246,34 @@ function buildPreview() {
   const today = new Date().toLocaleDateString('en-TT', {day:'numeric',month:'long',year:'numeric'});
   const customerName = document.getElementById('customer-name').value.trim() || '—';
   const quoteRef = document.getElementById('quote-ref').value.trim() || '—';
+  const totalVal = r.total !== null && r.total !== undefined ? r.total : r.total_without_insurance;
 
-  const rows = [
-    ['Date issued', today],
-    ['Quote reference', quoteRef],
-    ['Prepared for', customerName],
-    ['Origin (POL)', r.pol],
-    ['Destination (POD)', r.pod],
-    ['Container size', r.size],
-    ['Carrier', r.carrier],
-    ['Ocean freight + bunker', 'USD ' + r.of_bunker.toLocaleString()],
-    ['Total rate', 'USD ' + r.total_without_insurance.toLocaleString()],
-    ['Estimated transit time', r.transit_time + ' days'],
-    ['Rate valid to', r.validity],
-  ];
+  // Build charge rows — only show lines that have a value
+  const chargeLines = [
+    ['OF / Bunker', r.of_bunker],
+    ['THC', r.thc],
+    ['LAC', r.lac],
+    ['Dredging', r.dredging],
+    ['Terminal Lease Surcharge', r.terminal_lease_surcharge],
+    ['GRI', r.gri],
+  ].filter(([, v]) => v !== null && v !== undefined && v !== 0);
 
   const table = document.getElementById('quote-table');
-  table.innerHTML = rows.map(([label, val]) =>
-    `<tr><td>${label}</td><td>${val}</td></tr>`
-  ).join('');
-
+  let html = `
+    <tr><td>Date issued</td><td>${today}</td></tr>
+    <tr><td>Quote reference</td><td>${quoteRef}</td></tr>
+    <tr><td>Prepared for</td><td>${customerName}</td></tr>
+    <tr><td>Origin (POL)</td><td>${selectedPolName}</td></tr>
+    <tr><td>Destination (POD)</td><td>${r.pod}</td></tr>
+    <tr><td>Container size</td><td>${r.size}</td></tr>
+    <tr><td>Carrier</td><td>${r.carrier}</td></tr>
+    <tr><td>Estimated transit time</td><td>${r.transit_time} days</td></tr>
+    <tr><td>Rate valid to</td><td>${r.validity}</td></tr>
+    <tr class="section-header"><td colspan="2">Charges</td></tr>
+    ${chargeLines.map(([label, val]) => `<tr><td>${label}</td><td>${fmt(val)}</td></tr>`).join('')}
+    <tr class="total-row"><td>Total</td><td>USD ${Number(totalVal).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}</td></tr>
+  `;
+  table.innerHTML = html;
   document.getElementById('quote-preview').style.display = 'block';
   document.getElementById('quote-preview').scrollIntoView({behavior:'smooth', block:'nearest'});
 }
@@ -467,148 +286,133 @@ function generatePDF() {
   const today = new Date().toLocaleDateString('en-TT', {day:'numeric',month:'long',year:'numeric'});
   const customerName = document.getElementById('customer-name').value.trim() || '—';
   const quoteRef = document.getElementById('quote-ref').value.trim() || 'QT-' + Date.now();
+  const totalVal = r.total !== null && r.total !== undefined ? r.total : r.total_without_insurance;
 
   const W = 210;
   const margin = 20;
-  const col1 = margin;
-  const col2 = 130;
+  const col2 = 140;
 
-  // Header bar
+  // Header
   doc.setFillColor(26, 26, 26);
   doc.rect(0, 0, W, 28, 'F');
-
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(16);
   doc.text('CUBBY CARGO', margin, 12);
-
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(9);
   doc.text('FCL FREIGHT QUOTATION', margin, 20);
-
-  doc.setFontSize(9);
   doc.text('Date: ' + today, W - margin, 12, { align: 'right' });
   doc.text('Ref: ' + quoteRef, W - margin, 20, { align: 'right' });
 
-  // Reset text color
   doc.setTextColor(26, 26, 26);
-
   let y = 44;
 
   // Prepared for
   if (customerName !== '—') {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
-    doc.setTextColor(120, 120, 120);
+    doc.setTextColor(150, 150, 150);
     doc.text('PREPARED FOR', margin, y);
     y += 5;
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(13);
     doc.setTextColor(26, 26, 26);
     doc.text(customerName, margin, y);
-    y += 10;
+    y += 12;
   }
 
-  // Section title
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(10);
-  doc.setTextColor(26, 26, 26);
-  doc.text('SHIPMENT DETAILS', margin, y);
-  y += 2;
-  doc.setDrawColor(220, 220, 218);
-  doc.setLineWidth(0.3);
-  doc.line(margin, y, W - margin, y);
-  y += 6;
+  // Helper: section heading
+  function sectionHead(label) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(150, 150, 150);
+    doc.text(label, margin, y);
+    y += 2;
+    doc.setDrawColor(220, 220, 218);
+    doc.setLineWidth(0.3);
+    doc.line(margin, y, W - margin, y);
+    y += 6;
+  }
 
-  const tableRows = [
-    ['Origin (POL)', r.pol],
-    ['Destination (POD)', r.pod],
-    ['Container size', r.size],
-    ['Carrier', r.carrier],
-    ['Estimated transit time', r.transit_time + ' days'],
-  ];
-
-  doc.setFontSize(10);
-  tableRows.forEach(([label, val]) => {
+  // Helper: data row
+  function dataRow(label, value, bold) {
     doc.setFont('helvetica', 'normal');
-    doc.setTextColor(100, 100, 100);
-    doc.text(label, col1, y);
-    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10);
+    doc.setTextColor(110, 110, 110);
+    doc.text(label, margin, y);
+    doc.setFont('helvetica', bold ? 'bold' : 'normal');
     doc.setTextColor(26, 26, 26);
-    // Wrap long values
-    const lines = doc.splitTextToSize(val, W - col2 - margin);
-    doc.text(lines, col2, y);
-    y += Math.max(7, lines.length * 6);
-  });
+    const lines = doc.splitTextToSize(String(value), W - col2 - margin);
+    doc.text(lines, W - margin, y, { align: 'right' });
+    y += Math.max(7, lines.length * 5.5);
+  }
+
+  // Shipment details
+  sectionHead('SHIPMENT DETAILS');
+  dataRow('Origin (POL)', selectedPolName);
+  dataRow('Destination (POD)', r.pod);
+  dataRow('Container size', r.size);
+  dataRow('Carrier', r.carrier);
+  dataRow('Estimated transit time', r.transit_time + ' days');
 
   y += 4;
 
-  // Pricing section
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(10);
-  doc.setTextColor(26, 26, 26);
-  doc.text('PRICING', margin, y);
-  y += 2;
-  doc.setDrawColor(220, 220, 218);
-  doc.line(margin, y, W - margin, y);
-  y += 6;
+  // Charges
+  sectionHead('CHARGES');
 
-  const pricingRows = [
-    ['Ocean freight + bunker', 'USD ' + r.of_bunker.toLocaleString()],
-    ['Total rate (excl. insurance)', 'USD ' + r.total_without_insurance.toLocaleString()],
-    ['Optional cargo insurance', 'USD 200'],
-  ];
+  const chargeLines = [
+    ['OF / Bunker', r.of_bunker],
+    ['THC', r.thc],
+    ['LAC', r.lac],
+    ['Dredging', r.dredging],
+    ['Terminal Lease Surcharge', r.terminal_lease_surcharge],
+    ['GRI', r.gri],
+  ].filter(([, v]) => v !== null && v !== undefined && v !== 0);
 
-  doc.setFontSize(10);
-  pricingRows.forEach(([label, val], idx) => {
-    const isTotal = idx === 1;
-    const isOpt = idx === 2;
-    if (isTotal) {
-      doc.setFillColor(245, 245, 243);
-      doc.rect(margin - 2, y - 5, W - margin * 2 + 4, 8, 'F');
-    }
-    doc.setFont('helvetica', isTotal ? 'bold' : 'normal');
-    doc.setTextColor(isOpt ? 120 : 26, isOpt ? 120 : 26, isOpt ? 120 : 26);
-    doc.text(label + (isOpt ? ' *' : ''), col1, y);
-    doc.setFont('helvetica', isTotal ? 'bold' : 'normal');
-    doc.text(val, W - margin, y, { align: 'right' });
-    y += 8;
+  chargeLines.forEach(([label, val]) => {
+    dataRow(label, 'USD ' + Number(val).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}));
   });
 
+  // Total row — highlighted
   y += 2;
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8);
-  doc.setTextColor(150, 150, 150);
-  doc.text('* Optional cargo insurance of USD 200 is available upon request. Ask your Cubby representative to include it in your booking.', margin, y, { maxWidth: W - margin * 2 });
+  doc.setFillColor(245, 245, 243);
+  doc.rect(margin - 2, y - 5, W - margin * 2 + 4, 9, 'F');
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(26, 26, 26);
+  doc.text('Total', margin, y);
+  doc.text('USD ' + Number(totalVal).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}), W - margin, y, { align: 'right' });
+  y += 12;
 
-  y += 14;
-
-  // Validity
+  // Validity bar
   doc.setFillColor(26, 26, 26);
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(9);
   doc.roundedRect(margin, y - 5, W - margin * 2, 10, 2, 2, 'F');
   doc.text('Rate valid to: ' + r.validity, W / 2, y + 1, { align: 'center' });
+  y += 16;
 
-  y += 18;
-
-  // Footer notes
-  doc.setTextColor(150, 150, 150);
+  // Insurance note
   doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(100, 100, 100);
+  doc.text('Optional cargo insurance available for USD 200 — ask your Cubby representative to include it in your booking.', margin, y, { maxWidth: W - margin * 2 });
+  y += 12;
+
+  // Disclaimer
   doc.setFontSize(8);
+  doc.setTextColor(170, 170, 170);
   const notes = [
     'This quotation is subject to space and equipment availability at time of booking.',
     'Rates are subject to change without notice after the validity date.',
-    'Destination charges, customs, and local fees are not included unless stated.',
+    'Destination charges, customs, and local fees not included unless stated.',
     'All rates quoted in USD.',
   ];
-  notes.forEach(note => {
-    doc.text('• ' + note, margin, y);
-    y += 5;
-  });
+  notes.forEach(note => { doc.text('• ' + note, margin, y); y += 5; });
 
-  // Bottom bar
+  // Footer
   doc.setFillColor(26, 26, 26);
   doc.rect(0, 285, W, 12, 'F');
   doc.setTextColor(180, 180, 180);
@@ -616,7 +420,9 @@ function generatePDF() {
   doc.text("Cubby's got you.", margin, 292);
   doc.text('cubbycargo.com', W - margin, 292, { align: 'right' });
 
-  const filename = 'Cubby_Quote_' + r.pol.split('/')[0].trim().replace(/\s+/g,'-') + '_to_' + r.pod.split('/')[0].trim().replace(/\s+/g,'-') + '_' + r.size + '.pdf';
+  const filename = 'Cubby_Quote_' +
+    selectedPolName.replace(/\s+/g,'-') + '_to_' +
+    r.pod.split('/')[0].trim().replace(/\s+/g,'-') + '_' + r.size + '.pdf';
   doc.save(filename);
 }
 
