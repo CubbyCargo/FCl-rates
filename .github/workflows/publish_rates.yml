@@ -27,7 +27,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install openpyxl
+        run: pip install openpyxl pandas
 
       - name: Convert Excel to JSON
         run: python convert_rates.py
