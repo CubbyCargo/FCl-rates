@@ -34,9 +34,9 @@ if not _candidates:
     print("ERROR: No Excel file found. Expected 'Customer Rate Tariff Template_Week *.xlsx'", file=sys.stderr)
     sys.exit(1)
 EXCEL_PATH = _candidates[0]
-OUTPUT_PATH       = Path("index.html")
-OUTPUT_JSON_PATH  = Path("rates.json")
-OUTPUT_QUOTE_PATH = Path("quote.html")
+OUTPUT_PATH       = Path("docs/index.html")
+OUTPUT_JSON_PATH  = Path("docs/rates.json")
+OUTPUT_QUOTE_PATH = Path("docs/quote.html")
 
 # Sheets to process (skip Trinidad Exports, Print FE-TT)
 SHEETS_TO_PROCESS = ["TT", "GUY", "SUR", "COL"]
@@ -592,12 +592,14 @@ def build_quote(cards: list[dict]):
   :root {{
     --purple: #6b22d3; --purple-dark: #4e12a8; --purple-light: #f3eeff;
     --green: #8bea98; --green-dark: #2db84b; --green-bg: #f0fdf3;
+    --navy: #1a3a7c;
     --white: #ffffff; --bg: #f8f7fc; --border: #e4ddf5;
     --text: #1a1030; --muted: #7a6e8a; --shadow: 0 2px 16px rgba(107,34,211,0.10);
   }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-  body {{ font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }}
+  body {{ font-family: Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }}
 
+  /* ── Screen-only ── */
   @media screen {{
     header {{ background: var(--purple); color: white; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }}
     header h1 {{ font-size: 1.2rem; font-weight: 800; }}
@@ -624,19 +626,17 @@ def build_quote(cards: list[dict]):
     .quote-card {{ background: var(--white); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--shadow); padding: 28px; display: none; }}
   }}
 
+  /* ── Print ── */
   @media print {{
-    @page {{ size: A4; margin: 18mm 18mm 14mm 18mm; }}
+    @page {{ size: A4; margin: 14mm 16mm 14mm 16mm; }}
     header, .subtitle, .form-card, .results-card, .btn-pdf {{ display: none !important; }}
-    body {{ background: white; font-size: 12px; }}
+    body {{ background: white; font-size: 11px; color: #1a1a2e; }}
     .main {{ margin: 0; padding: 0; max-width: 100%; gap: 0; }}
     .quote-card {{ display: block !important; border: none; box-shadow: none; padding: 0; border-radius: 0; }}
-    .ins-push, .quote-notes, .quote-lane-banner, .total-box, .detail-block {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
-    .print-logo {{ display: block !important; }}
+    .pq-section-card, .pq-ins-note, .pq-total-with-row {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
   }}
 
-  .print-logo {{ display: none; margin-bottom: 16px; }}
-  .print-logo h2 {{ font-size: 1.1rem; font-weight: 800; color: var(--purple); }}
-  .print-logo p {{ font-size: 10px; color: var(--muted); margin-top: 2px; }}
+  /* ── Shared result list styles ── */
   .rate-meta {{ font-size: 11px; color: var(--muted); margin-top: 3px; }}
   .rate-carrier {{ font-weight: 700; color: var(--purple); }}
   .surcharge-list {{ font-size: 11px; }}
@@ -646,34 +646,45 @@ def build_quote(cards: list[dict]):
   .totals {{ text-align: right; }}
   .total-no {{ font-size: 13px; color: var(--muted); margin-bottom: 6px; }}
   .total-with {{ font-size: 18px; font-weight: 800; color: var(--green-dark); background: var(--green-bg); border: 1.5px solid var(--green); border-radius: 7px; padding: 6px 12px; display: inline-block; }}
-  .ins-note {{ font-size: 9px; color: var(--green-dark); display: block; margin-top: 2px; }}
+  .ins-note-badge {{ font-size: 9px; color: var(--green-dark); display: block; margin-top: 2px; }}
   .tag {{ background: var(--purple); color: white; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; }}
   .no-results {{ color: var(--muted); font-size: 13px; padding: 12px 0; }}
-  .quote-header {{ display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }}
-  .quote-title {{ font-size: 1.1rem; font-weight: 800; color: var(--purple); }}
-  .quote-meta {{ font-size: 11px; color: var(--muted); margin-top: 4px; }}
-  .quote-ref {{ font-size: 11px; color: var(--muted); text-align: right; }}
-  .quote-lane-banner {{ background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: white; border-radius: 8px; padding: 11px 16px; display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 800; margin-bottom: 16px; }}
-  .quote-lane-banner .dest {{ color: var(--green); }}
-  .quote-details {{ display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }}
-  .detail-block {{ background: var(--purple-light); border-radius: 8px; padding: 11px 13px; }}
-  .detail-block h4 {{ font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--purple); margin-bottom: 7px; }}
-  .detail-line {{ display: flex; justify-content: space-between; font-size: 11px; padding: 3px 0; border-bottom: 1px solid #e4ddf5; }}
-  .detail-line:last-child {{ border-bottom: none; }}
-  .detail-line .val {{ font-weight: 600; }}
-  .quote-totals {{ display: flex; gap: 12px; margin-bottom: 14px; }}
-  .total-box {{ flex: 1; border-radius: 9px; padding: 12px 16px; text-align: center; }}
-  .total-box.no-ins {{ background: #f5f3fa; border: 1.5px solid var(--border); }}
-  .total-box.with-ins {{ background: var(--green-bg); border: 2px solid var(--green); }}
-  .total-box .label {{ font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 5px; }}
-  .total-box.with-ins .label {{ color: var(--green-dark); }}
-  .total-box .amount {{ font-size: 20px; font-weight: 800; }}
-  .total-box.no-ins .amount {{ color: var(--muted); }}
-  .total-box.with-ins .amount {{ color: var(--green-dark); }}
-  .ins-push {{ background: linear-gradient(90deg, var(--green-bg), #e8fded); border: 1.5px solid var(--green); border-radius: 8px; padding: 10px 14px; font-size: 11px; color: var(--green-dark); margin-bottom: 14px; }}
-  .ins-push strong {{ font-size: 12px; }}
-  .quote-notes {{ font-size: 10px; color: var(--muted); line-height: 1.6; background: var(--purple-light); border-radius: 8px; padding: 10px 14px; }}
-  @media (max-width: 600px) {{ .form-grid {{ grid-template-columns: 1fr; }} .rate-row {{ grid-template-columns: 1fr; }} .quote-details {{ grid-template-columns: 1fr; }} .quote-totals {{ flex-direction: column; }} }}
+
+  /* ── Print quote layout ── */
+  .pq-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }}
+  .pq-logo-cubby {{ display: flex; align-items: center; gap: 8px; }}
+  .pq-logo-cubby .blob {{ width: 32px; height: 32px; background: var(--purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; }}
+  .pq-logo-cubby .blob-inner {{ width: 18px; height: 18px; background: var(--green); border-radius: 50% 50% 50% 20%; }}
+  .pq-logo-cubby .name-cubby {{ font-size: 14px; font-weight: 900; color: var(--purple); line-height: 1; }}
+  .pq-logo-cubby .name-cargo {{ font-size: 14px; font-weight: 900; color: var(--green-dark); line-height: 1; }}
+  .pq-logo-ramps {{ display: flex; align-items: center; gap: 5px; }}
+  .pq-logo-ramps .arrow {{ width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 16px solid #f5c400; }}
+  .pq-logo-ramps .ramps-text {{ font-size: 14px; font-weight: 900; color: var(--navy); letter-spacing: 1px; line-height: 1; }}
+  .pq-logo-ramps .logistics-text {{ font-size: 7px; letter-spacing: 3px; color: var(--navy); }}
+  .pq-divider-top {{ border-top: 3px solid var(--navy); border-bottom: 1px solid var(--navy); margin-bottom: 10px; }}
+  .pq-meta {{ display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 11px; }}
+  .pq-meta-left {{ display: flex; flex-direction: column; gap: 3px; }}
+  .pq-meta-right {{ display: flex; flex-direction: column; gap: 3px; text-align: right; }}
+  .pq-meta .lbl {{ font-weight: 700; color: #333; }}
+  .pq-meta .val {{ color: #555; }}
+  .pq-title {{ text-align: center; font-size: 11px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; letter-spacing: 0.3px; }}
+  .pq-section-card {{ border: 1px solid var(--border); border-radius: 7px; overflow: hidden; margin-bottom: 8px; }}
+  .pq-section-head {{ background: var(--purple); color: white; padding: 6px 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }}
+  .pq-section-body {{ padding: 10px 12px; background: white; }}
+  .pq-table {{ width: 100%; border-collapse: collapse; font-size: 11px; }}
+  .pq-table td {{ padding: 3px 0; vertical-align: top; }}
+  .pq-table .lbl {{ color: #666; width: 38%; }}
+  .pq-table .val {{ font-weight: 600; color: #1a1a2e; }}
+  .pq-table .val-right {{ font-weight: 600; color: #1a1a2e; text-align: right; }}
+  .pq-divider-row td {{ border-top: 1px solid var(--border); padding-top: 6px; }}
+  .pq-total-base-row td {{ font-weight: 600; color: #444; font-size: 11px; }}
+  .pq-total-with-row {{ background: var(--green-bg); }}
+  .pq-total-with-row td {{ padding: 6px 0; color: var(--green-dark); font-weight: 800; font-size: 13px; }}
+  .pq-ins-note {{ background: var(--green-bg); border: 1px solid var(--green); border-radius: 5px; padding: 7px 10px; font-size: 10px; color: var(--green-dark); margin-bottom: 8px; }}
+  .pq-disclaimer {{ font-size: 9px; color: #999; line-height: 1.6; border-top: 1px solid #eee; padding-top: 8px; margin-bottom: 10px; }}
+  .pq-footer {{ border-top: 3px solid var(--navy); padding-top: 6px; display: flex; justify-content: space-between; font-size: 9px; color: #666; }}
+
+  @media (max-width: 600px) {{ .form-grid {{ grid-template-columns: 1fr; }} .rate-row {{ grid-template-columns: 1fr; }} }}
 </style>
 </head>
 <body>
@@ -720,51 +731,78 @@ def build_quote(cards: list[dict]):
   </div>
 
   <div class="quote-card" id="quote-card">
-    <div class="print-logo">
-      <h2>🚢 Cubby Cargo — FCL Shipping Quote</h2>
-      <p>Ramps Logistics Ltd · ramps.co.tt · All rates in USD</p>
-    </div>
-    <div class="quote-header">
-      <div>
-        <div class="quote-title">FCL Shipping Quote</div>
-        <div class="quote-meta" id="q-customer"></div>
+
+    <!-- PRINT QUOTE LAYOUT -->
+    <div class="pq-header">
+      <div class="pq-logo-cubby">
+        <div class="blob"><div class="blob-inner"></div></div>
+        <div><div class="name-cubby">CUBBY</div><div class="name-cargo">CARGO</div></div>
       </div>
-      <div class="quote-ref" id="q-ref"></div>
-    </div>
-    <div class="quote-lane-banner">
-      <span id="q-origin"></span>
-      <span style="color:rgba(255,255,255,0.5)">→</span>
-      <span class="dest" id="q-dest"></span>
-    </div>
-    <div class="quote-details">
-      <div class="detail-block">
-        <h4>Shipment Info</h4>
-        <div id="q-shipment-lines"></div>
-      </div>
-      <div class="detail-block">
-        <h4>Surcharge Breakdown</h4>
-        <div id="q-surcharge-lines"></div>
+      <div class="pq-logo-ramps">
+        <div class="arrow"></div>
+        <div><div class="ramps-text">RAMPS</div><div class="logistics-text">LOGISTICS</div></div>
       </div>
     </div>
-    <div class="quote-totals">
-      <div class="total-box no-ins">
-        <div class="label">Base Rate (excl. insurance)</div>
-        <div class="amount" id="q-total-no"></div>
+    <div class="pq-divider-top"></div>
+    <div class="pq-meta">
+      <div class="pq-meta-left">
+        <div><span class="lbl">Date &nbsp;</span><span class="val" id="pq-date"></span></div>
+        <div><span class="lbl">Valid until &nbsp;</span><span class="val" id="pq-validity"></span></div>
       </div>
-      <div class="total-box with-ins">
-        <div class="label">🛡 Total with Insurance</div>
-        <div class="amount" id="q-total-with"></div>
+      <div class="pq-meta-right">
+        <div><span class="lbl">Quote Ref &nbsp;</span><span class="val" id="pq-ref"></span></div>
+        <div><span class="lbl">Prepared for &nbsp;</span><span class="val" id="pq-customer"></span></div>
       </div>
     </div>
-    <div class="ins-push">
-      🛡 <strong>Protect your cargo for just USD $200.</strong> Marine Insurance covers a C&amp;F value of up to USD $30,000. Ask your Cubby representative to include it in your booking.
+    <div class="pq-title">Commercial Proposal — FCL Freight</div>
+
+    <div class="pq-section-card">
+      <div class="pq-section-head">Shipment Info</div>
+      <div class="pq-section-body">
+        <table class="pq-table">
+          <tr>
+            <td class="lbl">POL</td><td class="val" id="pq-pol"></td>
+            <td class="lbl">Carrier</td><td class="val-right" id="pq-carrier"></td>
+          </tr>
+          <tr>
+            <td class="lbl">POD</td><td class="val" id="pq-pod"></td>
+            <td class="lbl">Transit</td><td class="val-right" id="pq-transit"></td>
+          </tr>
+          <tr>
+            <td class="lbl">Container</td><td class="val" id="pq-container"></td>
+            <td class="lbl">Valid to</td><td class="val-right" id="pq-valid-to"></td>
+          </tr>
+          <tr>
+            <td class="lbl">Commodity</td><td class="val" id="pq-commodity"></td>
+            <td class="lbl"></td><td></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class="quote-notes">
+
+    <div class="pq-section-card">
+      <div class="pq-section-head">Surcharge Breakdown</div>
+      <div class="pq-section-body">
+        <table class="pq-table" id="pq-surcharge-table"></table>
+      </div>
+    </div>
+
+    <div class="pq-ins-note">
+      Marine Insurance covers a C&amp;F value of up to USD $30,000 at an additional $200. Ask your Cubby representative to include it in your booking.
+    </div>
+    <div class="pq-disclaimer">
       Rates are subject to space and equipment validity. Cargo must be ingated on or before the validity date; updated rates may apply thereafter.
       Values greater than USD $30,000 and restricted commodities must be quoted on a case-by-case basis.
       Should client decline Marine Insurance, Ramps Logistics shall not be held liable for any claims, loss or damages arising from the execution of services.
     </div>
-    <button class="btn-pdf" onclick="window.print()">🖨 Print / Save as PDF</button>
+    <div class="pq-footer">
+      <span>Cubby Cargo — a division of Ramps Logistics Ltd</span>
+      <span>ramps.co.tt</span>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn-pdf" onclick="window.print()">🖨 Print / Save as PDF</button>
+    </div>
   </div>
 </div>
 
@@ -842,7 +880,7 @@ function doSearch() {{
       <div class="surcharge-list">${{lines}}</div>
       <div class="totals">
         <div class="total-no">$${{(r.total_no_ins||0).toLocaleString('en-US',{{minimumFractionDigits:2,maximumFractionDigits:2}})}}<br><small>excl. ins.</small></div>
-        <div class="total-with">$${{(r.total_with_ins||0).toLocaleString('en-US',{{minimumFractionDigits:2,maximumFractionDigits:2}})}}<span class="ins-note">🛡 insured</span></div>
+        <div class="total-with">$${{(r.total_with_ins||0).toLocaleString('en-US',{{minimumFractionDigits:2,maximumFractionDigits:2}})}}<span class="ins-note-badge">🛡 insured</span></div>
       </div></div>`;
   }}).join('');
   window._searchRates = rates;
@@ -863,23 +901,26 @@ function renderQuote(r) {{
   const customer = document.getElementById('customer').value || '—';
   const ref = document.getElementById('quoteref').value;
   const today = new Date().toLocaleDateString('en-GB', {{day:'2-digit',month:'short',year:'numeric'}});
-  document.getElementById('q-customer').textContent = `Prepared for: ${{customer}} · Date: ${{today}}`;
-  document.getElementById('q-ref').textContent = `Quote Ref: ${{ref}}`;
-  document.getElementById('q-origin').textContent = r._origin;
-  document.getElementById('q-dest').textContent = r._dest;
-  document.getElementById('q-shipment-lines').innerHTML = [
-    ['POL', r.pol], ['POD', r.pod], ['Container', r.container],
-    ['Commodity', r.commodity || 'FAK'],
-    ['Carrier', r.carrier + (r.agent ? ` / ${{r.agent}}` : '')],
-    ['Transit Time', r.transit || '—'],
-    ['Validity', r.validity || '—'],
-  ].map(([k,v]) => `<div class="detail-line"><span>${{k}}</span><span class="val">${{v}}</span></div>`).join('');
-  document.getElementById('q-surcharge-lines').innerHTML =
-    Object.entries(r.surcharges || {{}}).map(([k,v]) =>
-      `<div class="detail-line"><span>${{k}}</span><span class="val">$${{v.toFixed(2)}}</span></div>`
-    ).join('') || '<div style="color:var(--muted);font-size:11px;">No breakdown available</div>';
-  document.getElementById('q-total-no').textContent = fmt(r.total_no_ins);
-  document.getElementById('q-total-with').textContent = fmt(r.total_with_ins);
+
+  document.getElementById('pq-date').textContent = today;
+  document.getElementById('pq-validity').textContent = r.validity || '—';
+  document.getElementById('pq-ref').textContent = ref;
+  document.getElementById('pq-customer').textContent = customer;
+  document.getElementById('pq-pol').textContent = r.pol;
+  document.getElementById('pq-pod').textContent = r.pod;
+  document.getElementById('pq-container').textContent = r.container;
+  document.getElementById('pq-commodity').textContent = r.commodity || 'FAK';
+  document.getElementById('pq-carrier').textContent = r.carrier + (r.agent ? ` / ${{r.agent}}` : '');
+  document.getElementById('pq-transit').textContent = r.transit || '—';
+  document.getElementById('pq-valid-to').textContent = r.validity || '—';
+
+  const surchargeRows = Object.entries(r.surcharges || {{}}).map(([k,v]) =>
+    `<tr><td class="lbl">${{k}}</td><td class="val-right">$${{v.toFixed(2)}}</td></tr>`
+  ).join('');
+  const baseRow = `<tr class="pq-divider-row"><td class="lbl" style="font-weight:600;color:#444;">Base Rate (excl. insurance)</td><td class="val-right" style="font-weight:700;font-size:12px;">${{fmt(r.total_no_ins)}}</td></tr>`;
+  const totalRow = `<tr class="pq-total-with-row"><td class="lbl" style="color:#2db84b;font-weight:700;">Total with Insurance</td><td class="val-right" style="color:#2db84b;font-weight:800;font-size:14px;">${{fmt(r.total_with_ins)}}</td></tr>`;
+  document.getElementById('pq-surcharge-table').innerHTML = surchargeRows + baseRow + totalRow;
+
   const qc = document.getElementById('quote-card');
   qc.style.display = 'block';
   qc.scrollIntoView({{behavior:'smooth', block:'start'}});
