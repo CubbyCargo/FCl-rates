@@ -34,9 +34,9 @@ if not _candidates:
     print("ERROR: No Excel file found. Expected 'Customer Rate Tariff Template_Week *.xlsx'", file=sys.stderr)
     sys.exit(1)
 EXCEL_PATH = _candidates[0]
-OUTPUT_PATH       = Path("docs/index.html")
-OUTPUT_JSON_PATH  = Path("docs/rates.json")
-OUTPUT_QUOTE_PATH = Path("docs/quote.html")
+OUTPUT_PATH       = Path("index.html")
+OUTPUT_JSON_PATH  = Path("rates.json")
+OUTPUT_QUOTE_PATH = Path("quote.html")
 
 # Sheets to process (skip Trinidad Exports, Print FE-TT)
 SHEETS_TO_PROCESS = ["TT", "GUY", "SUR", "COL"]
