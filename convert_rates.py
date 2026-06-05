@@ -141,6 +141,7 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         "othc":                         "OTHC",
         "othc ":                        "OTHC",
         "origin lac":                   "LAC",
+        "destination lac":              "LAC",
         "destination terminal handling charge (dthc)": "DTHC",
         "dthc":                         "DTHC",
         "docs":                         "Docs",
