@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T18:37:01Z",
+  "generated_at": "2026-06-05T18:43:41Z",
   "source_file": "Customer Rate Tariff Template_Week 23_2026.xlsx",
   "destinations": {
     "TT": {
@@ -651,7 +651,8 @@
             "OTHC": 160.0,
             "Agency Admin": 97.87,
             "DTHC": 340.0,
-            "Docs": 60.0
+            "Docs": 60.0,
+            "LAC": 97.87
           },
           "total_without_insurance": 1365.7399999999998,
           "insurance": 200,
@@ -672,7 +673,8 @@
             "OTHC": 210.0,
             "Agency Admin": 97.87,
             "DTHC": 340.0,
-            "Docs": 60.0
+            "Docs": 60.0,
+            "LAC": 97.87
           },
           "total_without_insurance": 1725.7399999999998,
           "insurance": 200,
