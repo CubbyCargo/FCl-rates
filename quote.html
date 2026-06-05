@@ -68,11 +68,7 @@
 
   /* ── Print quote layout ── */
   .pq-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .pq-logo-cubby { display: flex; align-items: center; gap: 8px; }
-  .pq-logo-cubby .blob { width: 32px; height: 32px; background: var(--purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-  .pq-logo-cubby .blob-inner { width: 18px; height: 18px; background: var(--green); border-radius: 50% 50% 50% 20%; }
-  .pq-logo-cubby .name-cubby { font-size: 14px; font-weight: 900; color: var(--purple); line-height: 1; }
-  .pq-logo-cubby .name-cargo { font-size: 14px; font-weight: 900; color: var(--green-dark); line-height: 1; }
+  .pq-logo-cubby img { height: 40px; width: auto; }
   .pq-logo-ramps { display: flex; align-items: center; gap: 5px; }
   .pq-logo-ramps .arrow { width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 16px solid #f5c400; }
   .pq-logo-ramps .ramps-text { font-size: 14px; font-weight: 900; color: var(--navy); letter-spacing: 1px; line-height: 1; }
@@ -137,6 +133,10 @@
         <label>Container Size</label>
         <select id="sel-size" disabled><option value="">Select size</option></select>
       </div>
+      <div class="field">
+        <label>Origin Port (POL)</label>
+        <select id="sel-pol" disabled><option value="">Select port</option></select>
+      </div>
     </div>
     <button class="btn-search" onclick="doSearch()">Search Rates</button>
   </div>
@@ -151,8 +151,7 @@
     <!-- PRINT QUOTE LAYOUT -->
     <div class="pq-header">
       <div class="pq-logo-cubby">
-        <div class="blob"><div class="blob-inner"></div></div>
-        <div><div class="name-cubby">CUBBY</div><div class="name-cargo">CARGO</div></div>
+        <img src="https://cubbycargo.github.io/FCl-rates/cubby_logo.png" alt="Cubby Cargo"/>
       </div>
       <div class="pq-logo-ramps">
         <div class="arrow"></div>
@@ -3388,11 +3387,14 @@ document.getElementById('sel-dest').addEventListener('change', function() {
 document.getElementById('sel-lane').addEventListener('change', function() {
   const lane = this.value;
   const sizeEl = document.getElementById('sel-size');
+  const polEl = document.getElementById('sel-pol');
   sizeEl.innerHTML = '<option value="">All sizes</option>';
-  sizeEl.disabled = true;
+  polEl.innerHTML = '<option value="">Select port</option>';
+  sizeEl.disabled = true; polEl.disabled = true;
   if (!lane) return;
   const laneData = LANES.find(l => l.lane === lane);
   if (!laneData) return;
+  // Sizes
   [...new Set(laneData.rates.map(r => r.container))].sort().forEach(s => {
     const opt = document.createElement('option');
     opt.value = s.startsWith('20') ? '20' : '40';
@@ -3400,14 +3402,28 @@ document.getElementById('sel-lane').addEventListener('change', function() {
     sizeEl.appendChild(opt);
   });
   sizeEl.disabled = false;
+  // Individual POLs — split grouped strings on / and ,
+  const ports = [...new Set(
+    laneData.rates.flatMap(r =>
+      r.pol.split(/[/,]/).map(p => p.trim()).filter(Boolean)
+    )
+  )].sort();
+  ports.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p; opt.textContent = p;
+    polEl.appendChild(opt);
+  });
+  polEl.disabled = false;
 });
 
 let selectedRate = null;
+let selectedPol = null;
 
 function doSearch() {
   const dest = document.getElementById('sel-dest').value;
   const lane = document.getElementById('sel-lane').value;
   const size = document.getElementById('sel-size').value;
+  const pol  = document.getElementById('sel-pol').value;
   let rates = [];
   LANES.forEach(l => {
     if (dest && l.dest !== dest) return;
@@ -3415,7 +3431,12 @@ function doSearch() {
     l.rates.forEach(r => {
       if (size === '20' && !r.container.startsWith('20')) return;
       if (size === '40' && !r.container.startsWith('40')) return;
-      rates.push({ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest });
+      // Filter by individual port if selected
+      if (pol) {
+        const ports = r.pol.split(/[/,]/).map(p => p.trim());
+        if (!ports.includes(pol)) return;
+      }
+      rates.push({ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest, _selectedPol: pol || r.pol.split(/[\/,]/)[0].trim() });
     });
   });
   const rc = document.getElementById('results-card');
@@ -3427,7 +3448,7 @@ function doSearch() {
     const lines = Object.entries(r.surcharges || {}).map(([k,v]) =>
       `<div class="surcharge-line"><span>${k}</span><span>$${v.toFixed(2)}</span></div>`).join('');
     return `<div class="rate-row" id="rr-${i}" onclick="selectRate(${i})">
-      <div><span class="tag">${r.container}</span><div style="font-weight:600;margin-top:4px;">${r.pol}</div><div class="rate-meta">→ ${r.pod}</div></div>
+      <div><span class="tag">${r.container}</span><div style="font-weight:600;margin-top:4px;">${r._selectedPol}</div><div class="rate-meta">→ ${r.pod}</div></div>
       <div><div class="rate-carrier">${r.carrier}</div>${r.agent ? `<div class="rate-meta">${r.agent}</div>` : ''}<div class="rate-meta" style="margin-top:4px;">⏱ ${r.transit}</div><div class="rate-meta">📅 ${r.validity}</div></div>
       <div class="surcharge-list">${lines}</div>
       <div class="totals">
@@ -3458,7 +3479,7 @@ function renderQuote(r) {
   document.getElementById('pq-validity').textContent = r.validity || '—';
   document.getElementById('pq-ref').textContent = ref;
   document.getElementById('pq-customer').textContent = customer;
-  document.getElementById('pq-pol').textContent = r.pol;
+  document.getElementById('pq-pol').textContent = r._selectedPol;
   document.getElementById('pq-pod').textContent = r.pod;
   document.getElementById('pq-container').textContent = r.container;
   document.getElementById('pq-commodity').textContent = r.commodity || 'FAK';
