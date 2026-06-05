@@ -809,14 +809,13 @@ const LANES = {lanes_js};
   const el = document.getElementById('quoteref');
   el.value = 'Loading...';
   el.disabled = true;
-  fetch('https://script.google.com/macros/s/AKfycbyL5XF7erLc_OPVoAHS4mGTENGSDXalSb_ok19K6fVX0Z7ed-RZlnfJ3tw_-HnScV_kxg/exec')
+  fetch('https://script.google.com/macros/s/AKfycbyL5XF7erLc_OPVoAHS4mGTENGSDXalSb_ok19K6fVX0Z7ed-RZlnfJ3tw_-HnScV_kxg/exec', {{redirect: 'follow'}})
     .then(r => r.json())
     .then(data => {{
       el.value = data.ref;
       el.disabled = false;
     }})
     .catch(() => {{
-      // Fallback if API unreachable
       const now = new Date();
       const yy = now.getFullYear();
       const mm = String(now.getMonth()+1).padStart(2,'0');
