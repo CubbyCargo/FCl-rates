@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T14:50:05Z",
+  "generated_at": "2026-06-05T18:23:45Z",
   "source_file": "Customer Rate Tariff Template_Week 23_2026.xlsx",
   "destinations": {
     "TT": {
@@ -565,7 +565,8 @@
             "Ocean Freight": 1600.0,
             "THC": 370.0,
             "LAC": 50.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2170.0,
           "insurance": 200,
@@ -584,7 +585,8 @@
             "Ocean Freight": 2000.0,
             "THC": 370.0,
             "LAC": 50.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2570.0,
           "insurance": 200,
@@ -604,7 +606,8 @@
             "THC": 289.0,
             "LAC": 84.38,
             "ISPS": 55.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 1428.38,
           "insurance": 200,
@@ -624,7 +627,8 @@
             "THC": 289.0,
             "LAC": 84.38,
             "ISPS": 55.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 1828.38,
           "insurance": 200,
@@ -843,7 +847,8 @@
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2538.0,
           "insurance": 200,
@@ -863,7 +868,8 @@
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2838.0,
           "insurance": 200,
@@ -1007,7 +1013,12 @@
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
-            "Ocean Freight": 450.0
+            "Ocean Freight": 450.0,
+            "Emergency Fuel Surcharge": 160.0,
+            "OTHC": 160.0,
+            "Agency Admin": 97.87,
+            "DTHC": 340.0,
+            "Docs": 60.0
           },
           "total_without_insurance": 1365.7399999999998,
           "insurance": 200,
@@ -1023,7 +1034,12 @@
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
-            "Ocean Freight": 600.0
+            "Ocean Freight": 600.0,
+            "Emergency Fuel Surcharge": 320.0,
+            "OTHC": 210.0,
+            "Agency Admin": 97.87,
+            "DTHC": 340.0,
+            "Docs": 60.0
           },
           "total_without_insurance": 1725.7399999999998,
           "insurance": 200,
@@ -1045,7 +1061,8 @@
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2088.0,
           "insurance": 200,
@@ -1065,7 +1082,8 @@
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 2888.0,
           "insurance": 200,
@@ -1085,7 +1103,8 @@
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
-            "Local Handling": 75.0
+            "Local Handling": 75.0,
+            "Docs": 75.0
           },
           "total_without_insurance": 3988.0,
           "insurance": 200,
@@ -1402,7 +1421,7 @@
           "validity": "30/06/2026",
           "surcharges": {
             "Ocean Freight": 2200.0,
-            "THC": 200.0,
+            "DTHC": 200.0,
             "LAC": 150.0,
             "ISPS": 35.0
           },
@@ -1421,7 +1440,7 @@
           "validity": "30/06/2026",
           "surcharges": {
             "Ocean Freight": 2600.0,
-            "THC": 200.0,
+            "DTHC": 200.0,
             "LAC": 100.0,
             "ISPS": 30.0
           },
@@ -1458,7 +1477,7 @@
           "validity": "30/06/2026",
           "surcharges": {
             "Ocean Freight": 2575.0,
-            "THC": 200.0,
+            "DTHC": 200.0,
             "LAC": 100.0,
             "ISPS": 30.0
           },
@@ -1889,7 +1908,7 @@
           "validity": "30/6/2026",
           "surcharges": {
             "Ocean Freight": 1500.0,
-            "THC": 175.0,
+            "DTHC": 175.0,
             "LAC": 150.0,
             "ISPS": 14.0
           },
@@ -1908,13 +1927,59 @@
           "validity": "30/6/2026",
           "surcharges": {
             "Ocean Freight": 1950.0,
-            "THC": 225.0,
+            "DTHC": 225.0,
             "LAC": 150.0,
             "ISPS": 14.0
           },
           "total_without_insurance": 2939.0,
           "insurance": 200,
           "total_with_insurance": 3139.0
+        }
+      ],
+      "TRINIDAD TO GUYANA SHIPPING TARIFF / GUYANA": [
+        {
+          "pol": "Port of Spain",
+          "pod": "Georgetown",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 350.0,
+            "Emergency Fuel Surcharge": 160.0,
+            "OTHC": 340.0,
+            "LAC": 97.87,
+            "DTHC": 160.0,
+            "Docs": 50.0,
+            "Agency Admin": 62.7
+          },
+          "total_without_insurance": 1220.57,
+          "insurance": 200,
+          "total_with_insurance": 1420.57
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Georgetown",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 500.0,
+            "Emergency Fuel Surcharge": 320.0,
+            "OTHC": 340.0,
+            "LAC": 97.87,
+            "DTHC": 210.0,
+            "Docs": 50.0,
+            "Agency Admin": 62.7
+          },
+          "total_without_insurance": 1580.57,
+          "insurance": 200,
+          "total_with_insurance": 1780.57
         }
       ],
       "TURKEY / GUYANA": [
@@ -2143,7 +2208,7 @@
           "validity": "30/06/2026",
           "surcharges": {
             "Ocean Freight": 4000.0,
-            "THC": 245.0,
+            "DTHC": 245.0,
             "LAC": 165.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 75.0
@@ -2163,7 +2228,7 @@
           "validity": "30/06/2026",
           "surcharges": {
             "Ocean Freight": 4200.0,
-            "THC": 245.0,
+            "DTHC": 245.0,
             "LAC": 165.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 150.0
@@ -2183,7 +2248,7 @@
           "validity": "31/03/2026",
           "surcharges": {
             "Ocean Freight": 5450.0,
-            "THC": 100.0,
+            "DTHC": 100.0,
             "LAC": 165.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 75.0
@@ -2203,7 +2268,7 @@
           "validity": "31/03/2026",
           "surcharges": {
             "Ocean Freight": 5850.0,
-            "THC": 100.0,
+            "DTHC": 100.0,
             "LAC": 165.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 150.0
@@ -2685,6 +2750,56 @@
           "total_with_insurance": 9210.0
         }
       ],
+      "TRINIDAD TO SURINAME SHIPPING TARIFF / SURINAME": [
+        {
+          "pol": "Port of Spain",
+          "pod": "Paramaribo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 350.0,
+            "Emergency Fuel Surcharge": 160.0,
+            "OTHC": 340.0,
+            "LAC": 97.87,
+            "DTHC": 150.0,
+            "Docs": 50.0,
+            "Terminal Lease": 165.0,
+            "Dredging Fee": 175.0,
+            "Agency Admin": 66.0
+          },
+          "total_without_insurance": 1553.87,
+          "insurance": 200,
+          "total_with_insurance": 1753.87
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Paramaribo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 500.0,
+            "Emergency Fuel Surcharge": 320.0,
+            "OTHC": 340.0,
+            "LAC": 97.87,
+            "DTHC": 200.0,
+            "Docs": 50.0,
+            "Terminal Lease": 165.0,
+            "Dredging Fee": 175.0,
+            "Agency Admin": 66.0
+          },
+          "total_without_insurance": 1913.87,
+          "insurance": 200,
+          "total_with_insurance": 2113.87
+        }
+      ],
       "TURKEY / SURINAME": [
         {
           "pol": "Gemlik/ Gebze",
@@ -3105,6 +3220,174 @@
           "total_without_insurance": 3575.0,
           "insurance": 200,
           "total_with_insurance": 3775.0
+        }
+      ]
+    },
+    "BRB": {
+      "TRINIDAD TO BARBADOS SHIPPING TARIFF / BARBADOS": [
+        {
+          "pol": "Port of Spain",
+          "pod": "Bridgetown",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "CMA CGM",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 1000.0,
+            "Emergency Fuel Surcharge": 130.0,
+            "OTHC": 355.0,
+            "LAC": 76.5,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 1611.5,
+          "insurance": 200,
+          "total_with_insurance": 1811.5
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Bridgetown",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "CMA CGM",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 2000.0,
+            "Emergency Fuel Surcharge": 260.0,
+            "OTHC": 355.0,
+            "LAC": 76.5,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 2741.5,
+          "insurance": 200,
+          "total_with_insurance": 2941.5
+        }
+      ]
+    },
+    "DR": {
+      "TRINIDAD TO DOMINICAN REPUBLIC SHIPPING TARIFF / DOMINICAN REPUBLIC": [
+        {
+          "pol": "Point Lisas",
+          "pod": "Caucedo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "agent": "",
+          "transit_time": "10 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 750.0,
+            "OTHC": 259.0,
+            "LAC": 67.5,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1136.5,
+          "insurance": 200,
+          "total_with_insurance": 1336.5
+        },
+        {
+          "pol": "Point Lisas",
+          "pod": "Caucedo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "agent": "",
+          "transit_time": "10 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 825.0,
+            "OTHC": 259.0,
+            "LAC": 67.5,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1211.5,
+          "insurance": 200,
+          "total_with_insurance": 1411.5
+        }
+      ]
+    },
+    "JAM": {
+      "TRINIDAD TO JAMAICA SHIPPING TARIFF / JAMAICA": [
+        {
+          "pol": "Port of Spain",
+          "pod": "Kingston",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "COSCO",
+          "agent": "",
+          "transit_time": "16 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 900.0,
+            "OTHC": 259.0,
+            "LAC": 84.38,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 1293.38,
+          "insurance": 200,
+          "total_with_insurance": 1493.38
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Kingston",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "COSCO",
+          "agent": "",
+          "transit_time": "16 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 850.0,
+            "OTHC": 259.0,
+            "LAC": 84.38,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 1243.38,
+          "insurance": 200,
+          "total_with_insurance": 1443.38
+        },
+        {
+          "pol": "Point Lisas",
+          "pod": "Kingston",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "CMA CGM",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 750.0,
+            "Emergency Fuel Surcharge": 130.0,
+            "OTHC": 355.0,
+            "LAC": 76.5,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 1361.5,
+          "insurance": 200,
+          "total_with_insurance": 1561.5
+        },
+        {
+          "pol": "Point Lisas",
+          "pod": "Kingston",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "CMA CGM",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 1200.0,
+            "Emergency Fuel Surcharge": 260.0,
+            "OTHC": 355.0,
+            "LAC": 76.5,
+            "Docs": 50.0
+          },
+          "total_without_insurance": 1941.5,
+          "insurance": 200,
+          "total_with_insurance": 2141.5
         }
       ]
     }

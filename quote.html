@@ -122,7 +122,7 @@
         <label>Destination</label>
         <select id="sel-dest">
           <option value="">Select destination</option>
-          <option value="Colombia">Colombia</option><option value="Guyana">Guyana</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
+          <option value="Barbados">Barbados</option><option value="Colombia">Colombia</option><option value="Dominican Republic">Dominican Republic</option><option value="Guyana">Guyana</option><option value="Jamaica">Jamaica</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
         </select>
       </div>
       <div class="field">
@@ -770,7 +770,8 @@ const LANES = [
           "Ocean Freight": 1600.0,
           "THC": 370.0,
           "LAC": 50.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2170.0,
         "total_with_ins": 2370.0
@@ -788,7 +789,8 @@ const LANES = [
           "Ocean Freight": 2000.0,
           "THC": 370.0,
           "LAC": 50.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2570.0,
         "total_with_ins": 2770.0
@@ -807,7 +809,8 @@ const LANES = [
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 55.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 1428.38,
         "total_with_ins": 1628.38
@@ -826,7 +829,8 @@ const LANES = [
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 55.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 1828.38,
         "total_with_ins": 2028.38
@@ -1060,7 +1064,8 @@ const LANES = [
           "THC": 340.0,
           "LAC": 80.0,
           "ISPS": 18.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2538.0,
         "total_with_ins": 2738.0
@@ -1079,7 +1084,8 @@ const LANES = [
           "THC": 340.0,
           "LAC": 80.0,
           "ISPS": 18.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2838.0,
         "total_with_ins": 3038.0
@@ -1236,7 +1242,12 @@ const LANES = [
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
-          "Ocean Freight": 450.0
+          "Ocean Freight": 450.0,
+          "Emergency Fuel Surcharge": 160.0,
+          "OTHC": 160.0,
+          "Agency Admin": 97.87,
+          "DTHC": 340.0,
+          "Docs": 60.0
         },
         "total_no_ins": 1365.7399999999998,
         "total_with_ins": 1565.7399999999998
@@ -1251,7 +1262,12 @@ const LANES = [
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
-          "Ocean Freight": 600.0
+          "Ocean Freight": 600.0,
+          "Emergency Fuel Surcharge": 320.0,
+          "OTHC": 210.0,
+          "Agency Admin": 97.87,
+          "DTHC": 340.0,
+          "Docs": 60.0
         },
         "total_no_ins": 1725.7399999999998,
         "total_with_ins": 1925.7399999999998
@@ -1277,7 +1293,8 @@ const LANES = [
           "THC": 340.0,
           "LAC": 80.0,
           "ISPS": 18.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2088.0,
         "total_with_ins": 3088.0
@@ -1296,7 +1313,8 @@ const LANES = [
           "THC": 340.0,
           "LAC": 80.0,
           "ISPS": 18.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 2888.0,
         "total_with_ins": 3088.0
@@ -1315,7 +1333,8 @@ const LANES = [
           "THC": 340.0,
           "LAC": 80.0,
           "ISPS": 18.0,
-          "Local Handling": 75.0
+          "Local Handling": 75.0,
+          "Docs": 75.0
         },
         "total_no_ins": 3988.0,
         "total_with_ins": 4188.0
@@ -1630,7 +1649,7 @@ const LANES = [
         "validity": "30/06/2026",
         "surcharges": {
           "Ocean Freight": 2200.0,
-          "THC": 200.0,
+          "DTHC": 200.0,
           "LAC": 150.0,
           "ISPS": 35.0
         },
@@ -1648,7 +1667,7 @@ const LANES = [
         "validity": "30/06/2026",
         "surcharges": {
           "Ocean Freight": 2600.0,
-          "THC": 200.0,
+          "DTHC": 200.0,
           "LAC": 100.0,
           "ISPS": 30.0
         },
@@ -1683,7 +1702,7 @@ const LANES = [
         "validity": "30/06/2026",
         "surcharges": {
           "Ocean Freight": 2575.0,
-          "THC": 200.0,
+          "DTHC": 200.0,
           "LAC": 100.0,
           "ISPS": 30.0
         },
@@ -2123,7 +2142,7 @@ const LANES = [
         "validity": "30/6/2026",
         "surcharges": {
           "Ocean Freight": 1500.0,
-          "THC": 175.0,
+          "DTHC": 175.0,
           "LAC": 150.0,
           "ISPS": 14.0
         },
@@ -2141,12 +2160,61 @@ const LANES = [
         "validity": "30/6/2026",
         "surcharges": {
           "Ocean Freight": 1950.0,
-          "THC": 225.0,
+          "DTHC": 225.0,
           "LAC": 150.0,
           "ISPS": 14.0
         },
         "total_no_ins": 2939.0,
         "total_with_ins": 3139.0
+      }
+    ]
+  },
+  {
+    "lane": "Trinidad To Guyana Shipping Tariff \u2192 Guyana",
+    "origin": "Trinidad To Guyana Shipping Tariff",
+    "dest": "Guyana",
+    "rates": [
+      {
+        "pol": "Port of Spain",
+        "pod": "Georgetown",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "ONE",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 350.0,
+          "Emergency Fuel Surcharge": 160.0,
+          "OTHC": 340.0,
+          "LAC": 97.87,
+          "DTHC": 160.0,
+          "Docs": 50.0,
+          "Agency Admin": 62.7
+        },
+        "total_no_ins": 1220.57,
+        "total_with_ins": 1420.57
+      },
+      {
+        "pol": "Port of Spain",
+        "pod": "Georgetown",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "ONE",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 500.0,
+          "Emergency Fuel Surcharge": 320.0,
+          "OTHC": 340.0,
+          "LAC": 97.87,
+          "DTHC": 210.0,
+          "Docs": 50.0,
+          "Agency Admin": 62.7
+        },
+        "total_no_ins": 1580.57,
+        "total_with_ins": 1780.57
       }
     ]
   },
@@ -2378,7 +2446,7 @@ const LANES = [
         "validity": "30/06/2026",
         "surcharges": {
           "Ocean Freight": 4000.0,
-          "THC": 245.0,
+          "DTHC": 245.0,
           "LAC": 165.0,
           "Dredging Fee": 175.0,
           "Terminal Lease": 75.0
@@ -2397,7 +2465,7 @@ const LANES = [
         "validity": "30/06/2026",
         "surcharges": {
           "Ocean Freight": 4200.0,
-          "THC": 245.0,
+          "DTHC": 245.0,
           "LAC": 165.0,
           "Dredging Fee": 175.0,
           "Terminal Lease": 150.0
@@ -2416,7 +2484,7 @@ const LANES = [
         "validity": "31/03/2026",
         "surcharges": {
           "Ocean Freight": 5450.0,
-          "THC": 100.0,
+          "DTHC": 100.0,
           "LAC": 165.0,
           "Dredging Fee": 175.0,
           "Terminal Lease": 75.0
@@ -2435,7 +2503,7 @@ const LANES = [
         "validity": "31/03/2026",
         "surcharges": {
           "Ocean Freight": 5850.0,
-          "THC": 100.0,
+          "DTHC": 100.0,
           "LAC": 165.0,
           "Dredging Fee": 175.0,
           "Terminal Lease": 150.0
@@ -2936,6 +3004,59 @@ const LANES = [
     ]
   },
   {
+    "lane": "Trinidad To Suriname Shipping Tariff \u2192 Suriname",
+    "origin": "Trinidad To Suriname Shipping Tariff",
+    "dest": "Suriname",
+    "rates": [
+      {
+        "pol": "Port of Spain",
+        "pod": "Paramaribo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "ONE",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 350.0,
+          "Emergency Fuel Surcharge": 160.0,
+          "OTHC": 340.0,
+          "LAC": 97.87,
+          "DTHC": 150.0,
+          "Docs": 50.0,
+          "Terminal Lease": 165.0,
+          "Dredging Fee": 175.0,
+          "Agency Admin": 66.0
+        },
+        "total_no_ins": 1553.87,
+        "total_with_ins": 1753.87
+      },
+      {
+        "pol": "Port of Spain",
+        "pod": "Paramaribo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "ONE",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 500.0,
+          "Emergency Fuel Surcharge": 320.0,
+          "OTHC": 340.0,
+          "LAC": 97.87,
+          "DTHC": 200.0,
+          "Docs": 50.0,
+          "Terminal Lease": 165.0,
+          "Dredging Fee": 175.0,
+          "Agency Admin": 66.0
+        },
+        "total_no_ins": 1913.87,
+        "total_with_ins": 2113.87
+      }
+    ]
+  },
+  {
     "lane": "Turkey \u2192 Suriname",
     "origin": "Turkey",
     "dest": "Suriname",
@@ -3352,6 +3473,175 @@ const LANES = [
         },
         "total_no_ins": 3575.0,
         "total_with_ins": 3775.0
+      }
+    ]
+  },
+  {
+    "lane": "Trinidad To Barbados Shipping Tariff \u2192 Barbados",
+    "origin": "Trinidad To Barbados Shipping Tariff",
+    "dest": "Barbados",
+    "rates": [
+      {
+        "pol": "Port of Spain",
+        "pod": "Bridgetown",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "CMA CGM",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 1000.0,
+          "Emergency Fuel Surcharge": 130.0,
+          "OTHC": 355.0,
+          "LAC": 76.5,
+          "Docs": 50.0
+        },
+        "total_no_ins": 1611.5,
+        "total_with_ins": 1811.5
+      },
+      {
+        "pol": "Port of Spain",
+        "pod": "Bridgetown",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "CMA CGM",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 2000.0,
+          "Emergency Fuel Surcharge": 260.0,
+          "OTHC": 355.0,
+          "LAC": 76.5,
+          "Docs": 50.0
+        },
+        "total_no_ins": 2741.5,
+        "total_with_ins": 2941.5
+      }
+    ]
+  },
+  {
+    "lane": "Trinidad To Dominican Republic Shipping Tariff \u2192 Dominican Republic",
+    "origin": "Trinidad To Dominican Republic Shipping Tariff",
+    "dest": "Dominican Republic",
+    "rates": [
+      {
+        "pol": "Point Lisas",
+        "pod": "Caucedo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "agent": "",
+        "transit": "10 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 750.0,
+          "OTHC": 259.0,
+          "LAC": 67.5,
+          "Docs": 60.0
+        },
+        "total_no_ins": 1136.5,
+        "total_with_ins": 1336.5
+      },
+      {
+        "pol": "Point Lisas",
+        "pod": "Caucedo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "agent": "",
+        "transit": "10 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 825.0,
+          "OTHC": 259.0,
+          "LAC": 67.5,
+          "Docs": 60.0
+        },
+        "total_no_ins": 1211.5,
+        "total_with_ins": 1411.5
+      }
+    ]
+  },
+  {
+    "lane": "Trinidad To Jamaica Shipping Tariff \u2192 Jamaica",
+    "origin": "Trinidad To Jamaica Shipping Tariff",
+    "dest": "Jamaica",
+    "rates": [
+      {
+        "pol": "Port of Spain",
+        "pod": "Kingston",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "COSCO",
+        "agent": "",
+        "transit": "16 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 900.0,
+          "OTHC": 259.0,
+          "LAC": 84.38,
+          "Docs": 50.0
+        },
+        "total_no_ins": 1293.38,
+        "total_with_ins": 1493.38
+      },
+      {
+        "pol": "Port of Spain",
+        "pod": "Kingston",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "COSCO",
+        "agent": "",
+        "transit": "16 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 850.0,
+          "OTHC": 259.0,
+          "LAC": 84.38,
+          "Docs": 50.0
+        },
+        "total_no_ins": 1243.38,
+        "total_with_ins": 1443.38
+      },
+      {
+        "pol": "Point Lisas",
+        "pod": "Kingston",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "CMA CGM",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 750.0,
+          "Emergency Fuel Surcharge": 130.0,
+          "OTHC": 355.0,
+          "LAC": 76.5,
+          "Docs": 50.0
+        },
+        "total_no_ins": 1361.5,
+        "total_with_ins": 1561.5
+      },
+      {
+        "pol": "Point Lisas",
+        "pod": "Kingston",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "CMA CGM",
+        "agent": "",
+        "transit": "1-2 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 1200.0,
+          "Emergency Fuel Surcharge": 260.0,
+          "OTHC": 355.0,
+          "LAC": 76.5,
+          "Docs": 50.0
+        },
+        "total_no_ins": 1941.5,
+        "total_with_ins": 2141.5
       }
     ]
   }
