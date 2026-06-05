@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-05T18:23:45Z",
+  "generated_at": "2026-06-05T18:37:01Z",
   "source_file": "Customer Rate Tariff Template_Week 23_2026.xlsx",
   "destinations": {
     "TT": {
@@ -635,6 +635,50 @@
           "total_with_insurance": 2028.38
         }
       ],
+      "GUYANA / TRINIDAD & TOBAGO": [
+        {
+          "pol": "Georgetown",
+          "pod": "Port of Spain",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 450.0,
+            "Emergency Fuel Surcharge": 160.0,
+            "OTHC": 160.0,
+            "Agency Admin": 97.87,
+            "DTHC": 340.0,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1365.7399999999998,
+          "insurance": 200,
+          "total_with_insurance": 1565.7399999999998
+        },
+        {
+          "pol": "Georgetown",
+          "pod": "Port of Spain",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "ONE",
+          "agent": "",
+          "transit_time": "1-2 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 600.0,
+            "Emergency Fuel Surcharge": 320.0,
+            "OTHC": 210.0,
+            "Agency Admin": 97.87,
+            "DTHC": 340.0,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1725.7399999999998,
+          "insurance": 200,
+          "total_with_insurance": 1925.7399999999998
+        }
+      ],
       "INDIA / TRINIDAD & TOBAGO": [
         {
           "pol": "Mundra (TILES)",
@@ -1000,50 +1044,6 @@
           "total_without_insurance": 7538.0,
           "insurance": 200,
           "total_with_insurance": 7738.0
-        }
-      ],
-      "TRINIDAD TO GUYANA SHIPPING TARIFF / TRINIDAD & TOBAGO": [
-        {
-          "pol": "Georgetown",
-          "pod": "Port of Spain",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "ONE",
-          "agent": "",
-          "transit_time": "1-2 days",
-          "validity": "30/06/2026",
-          "surcharges": {
-            "Ocean Freight": 450.0,
-            "Emergency Fuel Surcharge": 160.0,
-            "OTHC": 160.0,
-            "Agency Admin": 97.87,
-            "DTHC": 340.0,
-            "Docs": 60.0
-          },
-          "total_without_insurance": 1365.7399999999998,
-          "insurance": 200,
-          "total_with_insurance": 1565.7399999999998
-        },
-        {
-          "pol": "Georgetown",
-          "pod": "Port of Spain",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "ONE",
-          "agent": "",
-          "transit_time": "1-2 days",
-          "validity": "30/06/2026",
-          "surcharges": {
-            "Ocean Freight": 600.0,
-            "Emergency Fuel Surcharge": 320.0,
-            "OTHC": 210.0,
-            "Agency Admin": 97.87,
-            "DTHC": 340.0,
-            "Docs": 60.0
-          },
-          "total_without_insurance": 1725.7399999999998,
-          "insurance": 200,
-          "total_with_insurance": 1925.7399999999998
         }
       ],
       "TURKEY / TRINIDAD & TOBAGO": [
@@ -1936,7 +1936,7 @@
           "total_with_insurance": 3139.0
         }
       ],
-      "TRINIDAD TO GUYANA SHIPPING TARIFF / GUYANA": [
+      "TRINIDAD & TOBAGO / GUYANA": [
         {
           "pol": "Port of Spain",
           "pod": "Georgetown",
@@ -2750,7 +2750,7 @@
           "total_with_insurance": 9210.0
         }
       ],
-      "TRINIDAD TO SURINAME SHIPPING TARIFF / SURINAME": [
+      "TRINIDAD & TOBAGO / SURINAME": [
         {
           "pol": "Port of Spain",
           "pod": "Paramaribo",
@@ -3224,7 +3224,7 @@
       ]
     },
     "BRB": {
-      "TRINIDAD TO BARBADOS SHIPPING TARIFF / BARBADOS": [
+      "TRINIDAD & TOBAGO / BARBADOS": [
         {
           "pol": "Port of Spain",
           "pod": "Bridgetown",
@@ -3268,7 +3268,7 @@
       ]
     },
     "DR": {
-      "TRINIDAD TO DOMINICAN REPUBLIC SHIPPING TARIFF / DOMINICAN REPUBLIC": [
+      "TRINIDAD & TOBAGO / DOMINICAN REPUBLIC": [
         {
           "pol": "Point Lisas",
           "pod": "Caucedo",
@@ -3310,7 +3310,7 @@
       ]
     },
     "JAM": {
-      "TRINIDAD TO JAMAICA SHIPPING TARIFF / JAMAICA": [
+      "TRINIDAD & TOBAGO / JAMAICA": [
         {
           "pol": "Port of Spain",
           "pod": "Kingston",
