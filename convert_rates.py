@@ -38,15 +38,16 @@ OUTPUT_PATH       = Path("index.html")
 OUTPUT_JSON_PATH  = Path("rates.json")
 OUTPUT_QUOTE_PATH = Path("quote.html")
 
-# Sheets to process (skip Trinidad Exports, Print FE-TT)
-SHEETS_TO_PROCESS = ["TT", "GUY", "SUR", "COL"]
+# Sheets to process
+SHEETS_TO_PROCESS = ["TT", "GUY", "SUR", "COL", "Trinidad Exports"]
 
 # Map sheet name → destination base label (used if POD is ambiguous)
 SHEET_DEST_HINT = {
-    "TT":  "Trinidad & Tobago",
-    "GUY": "Guyana",
-    "SUR": "Suriname",
-    "COL": "Colombia",
+    "TT":               "Trinidad & Tobago",
+    "GUY":              "Guyana",
+    "SUR":              "Suriname",
+    "COL":              "Colombia",
+    "Trinidad Exports": "Trinidad & Tobago",
 }
 
 # ── Helpers ────────────────────────────────────────────────────────────────
@@ -86,12 +87,12 @@ def get_destination_label(pod):
         return "Guyana"
     if pod in sr:
         return "Suriname"
-    if pod in bw:
-        return "Bridgetown"
-    if pod in kn:
-        return "Kingston"
-    if pod in ca:
-        return "Caucedo"
+    if pod in bw or "Bridgetown" in pod:
+        return "Barbados"
+    if pod in kn or "Kingston" in pod:
+        return "Jamaica"
+    if pod in ca or "Caucedo" in pod:
+        return "Dominican Republic"
     if any(p in pod for p in co):
         return "Colombia"
     return pod
@@ -136,6 +137,18 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         "terminal lease surcharge":     "Terminal Lease",
         "port charges":                 "Port Charges",
         "handling fee":                 "Handling Fee",
+        "emergency fuel surcharge":     "Emergency Fuel Surcharge",
+        "othc":                         "OTHC",
+        "othc ":                        "OTHC",
+        "origin lac":                   "LAC",
+        "destination terminal handling charge (dthc)": "DTHC",
+        "dthc":                         "DTHC",
+        "docs":                         "Docs",
+        "agency admin (guyana)":        "Agency Admin",
+        "agency admin (suriname)":      "Agency Admin",
+        "terminal lease surcharge (suriname)": "Terminal Lease",
+        "dregding fee (suriname)":      "Dredging Fee",
+        "dreging fee (suriname)":       "Dredging Fee",
     }
 
     def parse_header_row(row) -> dict:
@@ -512,9 +525,12 @@ def build_json(cards: list[dict]):
         "Guyana":            "GUY",
         "Suriname":          "SUR",
         "Colombia":          "COL",
-        "Bridgetown":        "BDG",
-        "Kingston":          "KIN",
-        "Caucedo":           "CAU",
+        "Barbados":          "BRB",
+        "Jamaica":           "JAM",
+        "Dominican Republic": "DR",
+        "Bridgetown":        "BRB",
+        "Kingston":          "JAM",
+        "Caucedo":           "DR",
     }
 
     destinations = {}
