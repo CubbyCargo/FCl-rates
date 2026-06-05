@@ -46,6 +46,7 @@ jobs:
           cp rates.json deploy/rates.json
           cp quote.html deploy/quote.html
           cp index.html deploy/index.html
+          cp cubby_logo.png deploy/cubby_logo.png
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
