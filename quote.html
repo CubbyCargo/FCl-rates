@@ -210,10 +210,7 @@
       Values greater than USD $30,000 and restricted commodities must be quoted on a case-by-case basis.
       Should client decline Marine Insurance, Ramps Logistics shall not be held liable for any claims, loss or damages arising from the execution of services.
     </div>
-    <div class="pq-footer">
-      <span>Cubby Cargo — a division of Ramps Logistics Ltd</span>
-      <span>ramps.co.tt</span>
-    </div>
+    <div class="pq-footer"></div>
 
     <div style="margin-top:20px;">
       <button class="btn-pdf" onclick="window.print()">🖨 Print / Save as PDF</button>
@@ -3361,11 +3358,23 @@ const LANES = [
 ];
 
 (function() {
-  const now = new Date();
-  const yy = now.getFullYear();
-  const mm = String(now.getMonth()+1).padStart(2,'0');
-  const dd = String(now.getDate()).padStart(2,'0');
-  document.getElementById('quoteref').value = `QT-${yy}${mm}${dd}-${String(Math.floor(Math.random()*900)+100)}`;
+  const el = document.getElementById('quoteref');
+  el.value = 'Loading...';
+  el.disabled = true;
+  fetch('https://script.google.com/macros/s/AKfycbyL5XF7erLc_OPVoAHS4mGTENGSDXalSb_ok19K6fVX0Z7ed-RZlnfJ3tw_-HnScV_kxg/exec', {redirect: 'follow'})
+    .then(r => r.json())
+    .then(data => {
+      el.value = data.ref;
+      el.disabled = false;
+    })
+    .catch(() => {
+      const now = new Date();
+      const yy = now.getFullYear();
+      const mm = String(now.getMonth()+1).padStart(2,'0');
+      const dd = String(now.getDate()).padStart(2,'0');
+      el.value = `CUB-${yy}${mm}${dd}-000`;
+      el.disabled = false;
+    });
 })();
 
 document.getElementById('sel-dest').addEventListener('change', function() {
@@ -3449,7 +3458,7 @@ function doSearch() {
       `<div class="surcharge-line"><span>${k}</span><span>$${v.toFixed(2)}</span></div>`).join('');
     return `<div class="rate-row" id="rr-${i}" onclick="selectRate(${i})">
       <div><span class="tag">${r.container}</span><div style="font-weight:600;margin-top:4px;">${r._selectedPol}</div><div class="rate-meta">→ ${r.pod}</div></div>
-      <div><div class="rate-carrier">${r.carrier}</div>${r.agent ? `<div class="rate-meta">${r.agent}</div>` : ''}<div class="rate-meta" style="margin-top:4px;">⏱ ${r.transit}</div><div class="rate-meta">📅 ${r.validity}</div></div>
+      <div><div class="rate-carrier">${r.carrier}</div><div class="rate-meta" style="margin-top:4px;">⏱ ${r.transit}</div><div class="rate-meta">📅 ${r.validity}</div></div>
       <div class="surcharge-list">${lines}</div>
       <div class="totals">
         <div class="total-no">$${(r.total_no_ins||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}<br><small>excl. ins.</small></div>
@@ -3483,7 +3492,7 @@ function renderQuote(r) {
   document.getElementById('pq-pod').textContent = r.pod;
   document.getElementById('pq-container').textContent = r.container;
   document.getElementById('pq-commodity').textContent = r.commodity || 'FAK';
-  document.getElementById('pq-carrier').textContent = r.carrier + (r.agent ? ` / ${r.agent}` : '');
+  document.getElementById('pq-carrier').textContent = r.carrier;
   document.getElementById('pq-transit').textContent = r.transit || '—';
   document.getElementById('pq-valid-to').textContent = r.validity || '—';
 
