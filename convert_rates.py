@@ -286,6 +286,15 @@ def parse_sheet(sheet_name: str) -> list[dict]:
 
         dest_label = get_destination_label(current_pod)
 
+        # Fix misleading section headers — derive origin from POL when header is wrong
+        pol_lower = current_pol.lower()
+        if "georgetown" in pol_lower:
+            section_origin = "Guyana"
+        elif "port of spain" in pol_lower or "point lisas" in pol_lower:
+            section_origin = "Trinidad & Tobago"
+        elif "paramaribo" in pol_lower:
+            section_origin = "Suriname"
+
         rates.append({
             "sheet":         sheet_name,
             "origin":        section_origin,
