@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T14:28:52Z",
+  "generated_at": "2026-06-09T18:44:06Z",
   "source_file": "Customer Rate Tariff Template_Week 24_2026.xlsx",
   "destinations": {
     "TT": {
@@ -130,20 +130,20 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7900.0,
+            "Ocean Freight": 9600.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 8488.0,
+          "total_without_insurance": 10188.0,
           "insurance": 200,
-          "total_with_insurance": 8688.0
+          "total_with_insurance": 10388.0
         },
         {
           "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao (DT)",
@@ -151,62 +151,62 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 9300.0,
+            "Ocean Freight": 11050.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 9888.0,
+          "total_without_insurance": 11638.0,
           "insurance": 200,
-          "total_with_insurance": 10088.0
+          "total_with_insurance": 11838.0
         },
         {
-          "pol": "Gaoming",
+          "pol": "Gaoming (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6150.0,
+            "Ocean Freight": 9800.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6738.0,
+          "total_without_insurance": 10388.0,
           "insurance": 200,
-          "total_with_insurance": 6938.0
+          "total_with_insurance": 10588.0
         },
         {
-          "pol": "Gaoming",
+          "pol": "Gaoming (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6950.0,
+            "Ocean Freight": 11300.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7538.0,
+          "total_without_insurance": 11888.0,
           "insurance": 200,
-          "total_with_insurance": 7738.0
+          "total_with_insurance": 12088.0
         },
         {
           "pol": "Shanghai/Xiamen/Tianjin/Shenzhen/Ningbo/Qingdao/Hong Kong/Xingang/Yantian",
@@ -253,46 +253,46 @@
           "total_with_insurance": 7478.38
         },
         {
-          "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian",
+          "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6050.0,
+            "Ocean Freight": 9750.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6638.0,
+          "total_without_insurance": 10338.0,
           "insurance": 200,
-          "total_with_insurance": 6838.0
+          "total_with_insurance": 10538.0
         },
         {
-          "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian",
+          "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6800.0,
+            "Ocean Freight": 11150.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7388.0,
+          "total_without_insurance": 11738.0,
           "insurance": 200,
-          "total_with_insurance": 7588.0
+          "total_with_insurance": 11938.0
         },
         {
           "pol": "Dalian/Gaoming(Foshan)/Sanshui/Yunfu/Nansha/Huangpu/Guangzhou",
@@ -339,88 +339,88 @@
           "total_with_insurance": 7628.38
         },
         {
-          "pol": "Nansha/Guangzhou/Huangpu",
+          "pol": "Nansha/Guangzhou/Huangpu (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6200.0,
+            "Ocean Freight": 9750.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6788.0,
+          "total_without_insurance": 10338.0,
           "insurance": 200,
-          "total_with_insurance": 6988.0
+          "total_with_insurance": 10538.0
         },
         {
-          "pol": "Nansha/Guangzhou/Huangpu",
+          "pol": "Nansha/Guangzhou/Huangpu (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7100.0,
+            "Ocean Freight": 11350.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7688.0,
+          "total_without_insurance": 11938.0,
           "insurance": 200,
-          "total_with_insurance": 7888.0
+          "total_with_insurance": 12138.0
         },
         {
-          "pol": "Nanjing/Jiujiang (Jiangxi)",
+          "pol": "Nanjing/Jiujiang (Jiangxi) (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6250.0,
+            "Ocean Freight": 9850.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6838.0,
+          "total_without_insurance": 10438.0,
           "insurance": 200,
-          "total_with_insurance": 7038.0
+          "total_with_insurance": 10638.0
         },
         {
-          "pol": "Nanjing/Jiujiang (Jiangxi)",
+          "pol": "Nanjing/Jiujiang (Jiangxi) (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7100.0,
+            "Ocean Freight": 11500.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7688.0,
+          "total_without_insurance": 12088.0,
           "insurance": 200,
-          "total_with_insurance": 7888.0
+          "total_with_insurance": 12288.0
         },
         {
           "pol": "Shekou/Shanghai/Ningbo/Qingdao/Xiamen/Hong Kong/Yantian",
@@ -467,130 +467,130 @@
           "total_with_insurance": 7792.87
         },
         {
-          "pol": "Shantou",
+          "pol": "Shantou (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6300.0,
+            "Ocean Freight": 9900.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6888.0,
+          "total_without_insurance": 10488.0,
           "insurance": 200,
-          "total_with_insurance": 7088.0
+          "total_with_insurance": 10688.0
         },
         {
-          "pol": "Shantou",
+          "pol": "Shantou (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7350.0,
+            "Ocean Freight": 11600.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7938.0,
+          "total_without_insurance": 12188.0,
           "insurance": 200,
-          "total_with_insurance": 8138.0
+          "total_with_insurance": 12388.0
         },
         {
-          "pol": "Liangyungang",
+          "pol": "Liangyungang (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6150.0,
+            "Ocean Freight": 9700.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6738.0,
+          "total_without_insurance": 10288.0,
           "insurance": 200,
-          "total_with_insurance": 6938.0
+          "total_with_insurance": 10488.0
         },
         {
-          "pol": "Liangyungang",
+          "pol": "Liangyungang (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7000.0,
+            "Ocean Freight": 11200.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7588.0,
+          "total_without_insurance": 11788.0,
           "insurance": 200,
-          "total_with_insurance": 7788.0
+          "total_with_insurance": 11988.0
         },
         {
-          "pol": "Yichang",
+          "pol": "Yichang (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 6300.0,
+            "Ocean Freight": 9950.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 6888.0,
+          "total_without_insurance": 10538.0,
           "insurance": 200,
-          "total_with_insurance": 7088.0
+          "total_with_insurance": 10738.0
         },
         {
-          "pol": "Yichang",
+          "pol": "Yichang (DT)",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
+          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
-            "Ocean Freight": 7350.0,
+            "Ocean Freight": 11650.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 7938.0,
+          "total_without_insurance": 12238.0,
           "insurance": 200,
-          "total_with_insurance": 8138.0
+          "total_with_insurance": 12438.0
         }
       ],
       "COLOMBIA / TRINIDAD & TOBAGO": [
