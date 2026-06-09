@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-05T18:43:41Z",
-  "source_file": "Customer Rate Tariff Template_Week 23_2026.xlsx",
+  "generated_at": "2026-06-09T14:28:52Z",
+  "source_file": "Customer Rate Tariff Template_Week 24_2026.xlsx",
   "destinations": {
     "TT": {
       "BRAZIL / TRINIDAD & TOBAGO": [
@@ -123,6 +123,48 @@
           "total_without_insurance": 7388.0,
           "insurance": 200,
           "total_with_insurance": 7588.0
+        },
+        {
+          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao (DT)",
+          "pod": "Port of Spain/Point Lisas",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "agent": "",
+          "transit_time": "45-55",
+          "validity": "14/06/2026",
+          "surcharges": {
+            "Ocean Freight": 7900.0,
+            "THC": 340.0,
+            "LAC": 80.0,
+            "ISPS": 18.0,
+            "Local Handling": 75.0,
+            "Admin": 75.0
+          },
+          "total_without_insurance": 8488.0,
+          "insurance": 200,
+          "total_with_insurance": 8688.0
+        },
+        {
+          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao (DT)",
+          "pod": "Port of Spain/Point Lisas",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "agent": "",
+          "transit_time": "45-55",
+          "validity": "14/06/2026",
+          "surcharges": {
+            "Ocean Freight": 9300.0,
+            "THC": 340.0,
+            "LAC": 80.0,
+            "ISPS": 18.0,
+            "Local Handling": 75.0,
+            "Admin": 75.0
+          },
+          "total_without_insurance": 9888.0,
+          "insurance": 200,
+          "total_with_insurance": 10088.0
         },
         {
           "pol": "Gaoming",
@@ -516,7 +558,7 @@
           "carrier": "MSC",
           "agent": "Carson - 14 free days",
           "transit_time": "45-55",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/06/2026",
           "surcharges": {
             "Ocean Freight": 6300.0,
             "THC": 340.0,
@@ -537,7 +579,7 @@
           "carrier": "MSC",
           "agent": "Carson - 14 free days",
           "transit_time": "45-55",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/06/2026",
           "surcharges": {
             "Ocean Freight": 7350.0,
             "THC": 340.0,
@@ -692,16 +734,16 @@
           "transit_time": "65-70",
           "validity": "14/06/2026",
           "surcharges": {
-            "Ocean Freight": 3100.0,
+            "Ocean Freight": 4300.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 3688.0,
+          "total_without_insurance": 4888.0,
           "insurance": 200,
-          "total_with_insurance": 3888.0
+          "total_with_insurance": 5088.0
         },
         {
           "pol": "Mundra/ Nhava Sheva",
@@ -1374,7 +1416,7 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-60",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
             "Ocean Freight": 6300.0,
             "THC": 340.0,
@@ -1395,7 +1437,7 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-60",
-          "validity": "14/06/2026",
+          "validity": "21/06/2026",
           "surcharges": {
             "Ocean Freight": 6950.0,
             "THC": 340.0,
@@ -1497,17 +1539,17 @@
           "carrier": "MSC",
           "agent": "Hardy",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7700.0,
+            "Ocean Freight": 8950.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8225.0,
+          "total_without_insurance": 9475.0,
           "insurance": 200,
-          "total_with_insurance": 8425.0
+          "total_with_insurance": 9675.0
         },
         {
           "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang",
@@ -1517,17 +1559,17 @@
           "carrier": "MSC",
           "agent": "Hardy",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8450.0,
+            "Ocean Freight": 9900.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8975.0,
+          "total_without_insurance": 10425.0,
           "insurance": 200,
-          "total_with_insurance": 9175.0
+          "total_with_insurance": 10625.0
         },
         {
           "pol": "Foshan/Gaoming/Yunfu/Tianjin/Guangzhou",
@@ -1537,17 +1579,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7800.0,
+            "Ocean Freight": 9100.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8325.0,
+          "total_without_insurance": 9625.0,
           "insurance": 200,
-          "total_with_insurance": 8525.0
+          "total_with_insurance": 9825.0
         },
         {
           "pol": "Foshan/Gaoming/Yunfu/Tianjin/Guangzhou",
@@ -1557,17 +1599,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8650.0,
+            "Ocean Freight": 10150.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 9175.0,
+          "total_without_insurance": 10675.0,
           "insurance": 200,
-          "total_with_insurance": 9375.0
+          "total_with_insurance": 10875.0
         },
         {
           "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang/Tianjin",
@@ -1577,17 +1619,17 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7400.0,
+            "Ocean Freight": 8400.0,
             "THC": 150.0,
             "Port Charges": 150.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 7925.0,
+          "total_without_insurance": 8925.0,
           "insurance": 200,
-          "total_with_insurance": 8125.0
+          "total_with_insurance": 9125.0
         },
         {
           "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang/Tianjin",
@@ -1597,17 +1639,17 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7550.0,
+            "Ocean Freight": 8550.0,
             "THC": 150.0,
             "Port Charges": 150.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8075.0,
+          "total_without_insurance": 9075.0,
           "insurance": 200,
-          "total_with_insurance": 8275.0
+          "total_with_insurance": 9275.0
         },
         {
           "pol": "Yunfu/Gaoming",
@@ -1617,17 +1659,17 @@
           "carrier": "COSCO",
           "agent": "Wahsen/COSCO",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7500.0,
+            "Ocean Freight": 8550.0,
             "THC": 150.0,
             "Port Charges": 150.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8025.0,
+          "total_without_insurance": 9075.0,
           "insurance": 200,
-          "total_with_insurance": 8225.0
+          "total_with_insurance": 9275.0
         },
         {
           "pol": "Yunfu/Gaoming",
@@ -1637,17 +1679,17 @@
           "carrier": "COSCO",
           "agent": "Wahsen/COSCO",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7700.0,
+            "Ocean Freight": 8750.0,
             "THC": 150.0,
             "Port Charges": 150.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8225.0,
+          "total_without_insurance": 9275.0,
           "insurance": 200,
-          "total_with_insurance": 8425.0
+          "total_with_insurance": 9475.0
         }
       ],
       "COLOMBIA / GUYANA": [
@@ -1783,17 +1825,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7900.0,
+            "Ocean Freight": 9150.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8425.0,
+          "total_without_insurance": 9675.0,
           "insurance": 200,
-          "total_with_insurance": 8625.0
+          "total_with_insurance": 9875.0
         },
         {
           "pol": "Yokohama",
@@ -1803,17 +1845,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8650.0,
+            "Ocean Freight": 10100.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 9175.0,
+          "total_without_insurance": 10625.0,
           "insurance": 200,
-          "total_with_insurance": 9375.0
+          "total_with_insurance": 10825.0
         },
         {
           "pol": "Kobe",
@@ -1823,17 +1865,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8200.0,
+            "Ocean Freight": 9450.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8725.0,
+          "total_without_insurance": 9975.0,
           "insurance": 200,
-          "total_with_insurance": 8925.0
+          "total_with_insurance": 10175.0
         },
         {
           "pol": "Kobe",
@@ -1843,17 +1885,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 9200.0,
+            "Ocean Freight": 10350.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 9725.0,
+          "total_without_insurance": 10875.0,
           "insurance": 200,
-          "total_with_insurance": 9925.0
+          "total_with_insurance": 11075.0
         }
       ],
       "MALAYSIA / GUYANA": [
@@ -1865,17 +1907,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7900.0,
+            "Ocean Freight": 9100.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 8425.0,
+          "total_without_insurance": 9625.0,
           "insurance": 200,
-          "total_with_insurance": 8625.0
+          "total_with_insurance": 9825.0
         },
         {
           "pol": "Port Klang, Tanjung",
@@ -1885,17 +1927,17 @@
           "carrier": "MSC",
           "agent": "",
           "transit_time": "55-65",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8650.0,
+            "Ocean Freight": 10100.0,
             "THC": 85.0,
             "Port Charges": 215.0,
             "Admin": 75.0,
             "Handling Fee": 150.0
           },
-          "total_without_insurance": 9175.0,
+          "total_without_insurance": 10625.0,
           "insurance": 200,
-          "total_with_insurance": 9375.0
+          "total_with_insurance": 10825.0
         }
       ],
       "PANAMA / GUYANA": [
@@ -2350,18 +2392,18 @@
           "carrier": "COSCO",
           "agent": "Wahsen",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7550.0,
+            "Ocean Freight": 8750.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 215.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8225.0,
+          "total_without_insurance": 9425.0,
           "insurance": 200,
-          "total_with_insurance": 8425.0
+          "total_with_insurance": 9625.0
         },
         {
           "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian",
@@ -2371,18 +2413,18 @@
           "carrier": "COSCO",
           "agent": "Wahsen",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7650.0,
+            "Ocean Freight": 9750.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 215.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8400.0,
+          "total_without_insurance": 10500.0,
           "insurance": 200,
-          "total_with_insurance": 8600.0
+          "total_with_insurance": 10700.0
         }
       ],
       "COLOMBIA / SURINAME": [
@@ -2480,7 +2522,7 @@
           "carrier": "MAERSK",
           "agent": "",
           "transit_time": "75-85",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
             "Ocean Freight": 6000.0,
             "THC": 380.0,
@@ -2501,7 +2543,7 @@
           "carrier": "MAERSK",
           "agent": "",
           "transit_time": "75-85",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
             "Ocean Freight": 6500.0,
             "THC": 380.0,
@@ -2524,18 +2566,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7850.0,
+            "Ocean Freight": 8950.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8555.0,
+          "total_without_insurance": 9655.0,
           "insurance": 200,
-          "total_with_insurance": 8755.0
+          "total_with_insurance": 9855.0
         },
         {
           "pol": "Yokohama",
@@ -2545,18 +2587,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8350.0,
+            "Ocean Freight": 9950.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 9160.0,
+          "total_without_insurance": 10760.0,
           "insurance": 200,
-          "total_with_insurance": 9360.0
+          "total_with_insurance": 10960.0
         },
         {
           "pol": "Nagoya",
@@ -2589,18 +2631,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7600.0,
+            "Ocean Freight": 8950.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8305.0,
+          "total_without_insurance": 9655.0,
           "insurance": 200,
-          "total_with_insurance": 8505.0
+          "total_with_insurance": 9855.0
         },
         {
           "pol": "Busan",
@@ -2610,18 +2652,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 7800.0,
+            "Ocean Freight": 9950.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8610.0,
+          "total_without_insurance": 10760.0,
           "insurance": 200,
-          "total_with_insurance": 8810.0
+          "total_with_insurance": 10960.0
         }
       ],
       "MALAYSIA / SURINAME": [
@@ -2633,18 +2675,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8100.0,
+            "Ocean Freight": 8950.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8805.0,
+          "total_without_insurance": 9655.0,
           "insurance": 200,
-          "total_with_insurance": 9005.0
+          "total_with_insurance": 9855.0
         },
         {
           "pol": "Port Klang/ Pasir Gudang",
@@ -2654,18 +2696,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8200.0,
+            "Ocean Freight": 10200.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 9010.0,
+          "total_without_insurance": 11010.0,
           "insurance": 200,
-          "total_with_insurance": 9210.0
+          "total_with_insurance": 11210.0
         }
       ],
       "PANAMA / SURINAME": [
@@ -2717,18 +2759,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8100.0,
+            "Ocean Freight": 9100.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8805.0,
+          "total_without_insurance": 9805.0,
           "insurance": 200,
-          "total_with_insurance": 9005.0
+          "total_with_insurance": 10005.0
         },
         {
           "pol": "Bangkok",
@@ -2738,18 +2780,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8200.0,
+            "Ocean Freight": 10450.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 9010.0,
+          "total_without_insurance": 11260.0,
           "insurance": 200,
-          "total_with_insurance": 9210.0
+          "total_with_insurance": 11460.0
         }
       ],
       "TRINIDAD & TOBAGO / SURINAME": [
@@ -2975,18 +3017,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8100.0,
+            "Ocean Freight": 9100.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 8805.0,
+          "total_without_insurance": 9805.0,
           "insurance": 200,
-          "total_with_insurance": 9005.0
+          "total_with_insurance": 10005.0
         },
         {
           "pol": "Ho Chi Minh",
@@ -2996,18 +3038,18 @@
           "carrier": "COSCO",
           "agent": "",
           "transit_time": "65-75",
-          "validity": "2026-07-06 00:00:00",
+          "validity": "14/6/2026",
           "surcharges": {
-            "Ocean Freight": 8200.0,
+            "Ocean Freight": 10200.0,
             "THC": 160.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 150.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 9010.0,
+          "total_without_insurance": 11010.0,
           "insurance": 200,
-          "total_with_insurance": 9210.0
+          "total_with_insurance": 11210.0
         }
       ]
     },
