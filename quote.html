@@ -14,8 +14,6 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }
-
-  /* ── Screen-only ── */
   @media screen {
     header { background: var(--purple); color: white; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
     header h1 { font-size: 1.2rem; font-weight: 800; }
@@ -41,8 +39,6 @@
     .btn-pdf:hover { background: var(--purple-dark); }
     .quote-card { background: var(--white); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--shadow); padding: 28px; display: none; }
   }
-
-  /* ── Print ── */
   @media print {
     @page { size: A4; margin: 14mm 16mm 14mm 16mm; }
     header, .subtitle, .form-card, .results-card, .btn-pdf { display: none !important; }
@@ -51,8 +47,6 @@
     .quote-card { display: block !important; border: none; box-shadow: none; padding: 0; border-radius: 0; }
     .pq-section-card, .pq-ins-note, .pq-total-with-row { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
-
-  /* ── Shared result list styles ── */
   .rate-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
   .rate-carrier { font-weight: 700; color: var(--purple); }
   .surcharge-list { font-size: 11px; }
@@ -65,8 +59,6 @@
   .ins-note-badge { font-size: 9px; color: var(--green-dark); display: block; margin-top: 2px; }
   .tag { background: var(--purple); color: white; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
   .no-results { color: var(--muted); font-size: 13px; padding: 12px 0; }
-
-  /* ── Print quote layout ── */
   .pq-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .pq-logo-cubby img { height: 40px; width: auto; }
   .pq-logo-ramps { display: flex; align-items: center; gap: 5px; }
@@ -95,7 +87,6 @@
   .pq-ins-note { background: var(--green-bg); border: 1px solid var(--green); border-radius: 5px; padding: 7px 10px; font-size: 10px; color: var(--green-dark); margin-bottom: 8px; }
   .pq-disclaimer { font-size: 9px; color: #999; line-height: 1.6; border-top: 1px solid #eee; padding-top: 8px; margin-bottom: 10px; }
   .pq-footer { border-top: 3px solid var(--navy); padding-top: 6px; display: flex; justify-content: space-between; font-size: 9px; color: #666; }
-
   @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } .rate-row { grid-template-columns: 1fr; } }
 </style>
 </head>
@@ -147,8 +138,6 @@
   </div>
 
   <div class="quote-card" id="quote-card">
-
-    <!-- PRINT QUOTE LAYOUT -->
     <div class="pq-header">
       <div class="pq-logo-cubby">
         <img src="https://cubbycargo.github.io/FCl-rates/cubby_logo.png" alt="Cubby Cargo"/>
@@ -170,7 +159,6 @@
       </div>
     </div>
     <div class="pq-title">Commercial Proposal — FCL Freight</div>
-
     <div class="pq-section-card">
       <div class="pq-section-head">Shipment Info</div>
       <div class="pq-section-body">
@@ -194,14 +182,12 @@
         </table>
       </div>
     </div>
-
     <div class="pq-section-card">
       <div class="pq-section-head">Surcharge Breakdown</div>
       <div class="pq-section-body">
         <table class="pq-table" id="pq-surcharge-table"></table>
       </div>
     </div>
-
     <div class="pq-ins-note">
       Marine Insurance covers a C&amp;F value of up to USD $30,000 at an additional $200. Ask your Cubby representative to include it in your booking.
     </div>
@@ -211,7 +197,6 @@
       Should client decline Marine Insurance, Ramps Logistics shall not be held liable for any claims, loss or damages arising from the execution of services.
     </div>
     <div class="pq-footer"></div>
-
     <div style="margin-top:20px;">
       <button class="btn-pdf" onclick="window.print()">🖨 Print / Save as PDF</button>
     </div>
@@ -231,7 +216,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "DC- 14 free days",
         "transit": "35-37",
         "validity": "30/06/2026",
         "surcharges": {
@@ -249,7 +233,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "DC- 14 free days",
         "transit": "35-37",
         "validity": "30/06/2026",
         "surcharges": {
@@ -267,7 +250,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "ES - 14 free days",
         "transit": "23-28",
         "validity": "30/06/2026",
         "surcharges": {
@@ -285,7 +267,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "DC- 14 free days",
         "transit": "35-37",
         "validity": "30/06/2026",
         "surcharges": {
@@ -310,7 +291,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Carson - 14 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -330,7 +310,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Carson - 14 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -350,7 +329,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -370,7 +348,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -390,7 +367,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -410,7 +386,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -430,7 +405,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen - 17 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -451,7 +425,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen - 17 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -472,7 +445,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -492,7 +464,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -512,7 +483,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen - 17 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -533,7 +503,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen - 17 free days",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -554,7 +523,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -574,7 +542,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -594,7 +561,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -614,7 +580,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -634,7 +599,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "Wahsen - 14 Free",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -655,7 +619,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "Wahsen - 14 Free",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -676,7 +639,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -696,7 +658,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -716,7 +677,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -736,7 +696,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -756,7 +715,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -776,7 +734,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Peter - 14 free days",
         "transit": "45-55",
         "validity": "21/06/2026",
         "surcharges": {
@@ -803,7 +760,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "",
         "transit": "16-20",
         "validity": "30/06/2026",
         "surcharges": {
@@ -822,7 +778,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "",
         "transit": "16-20",
         "validity": "30/06/2026",
         "surcharges": {
@@ -841,7 +796,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "16-20",
         "validity": "30/06/2026",
         "surcharges": {
@@ -861,7 +815,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "16-20",
         "validity": "30/06/2026",
         "surcharges": {
@@ -888,7 +841,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -909,7 +861,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -937,7 +888,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "65-70",
         "validity": "14/06/2026",
         "surcharges": {
@@ -957,7 +907,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "65-70",
         "validity": "14/06/2026",
         "surcharges": {
@@ -977,7 +926,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "65-70",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1004,7 +952,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1024,7 +971,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1051,7 +997,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1071,7 +1016,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "45-55",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1098,7 +1042,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1118,7 +1061,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1145,7 +1087,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA",
-        "agent": "",
         "transit": "55-65",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1165,7 +1106,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA",
-        "agent": "",
         "transit": "55-65",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1192,7 +1132,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "Upcargo - 11 free days",
         "transit": "7",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1209,7 +1148,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "Upcargo - 11 free days",
         "transit": "7",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1233,7 +1171,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1253,7 +1190,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1280,7 +1216,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1300,7 +1235,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "14/06/2026",
         "surcharges": {
@@ -1327,7 +1261,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "BATI Logistics - 11 free days",
         "transit": "55-65",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1347,7 +1280,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "BATI Logistics - 11 free days",
         "transit": "55-65",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1367,7 +1299,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "BATI Logistics - 11 free days",
         "transit": "55-65",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1394,7 +1325,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "King Ocean",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "6 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1413,7 +1343,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "King Ocean",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "6 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1432,7 +1361,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "6 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1452,7 +1380,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "6 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1472,7 +1399,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "10 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1492,7 +1418,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "10 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1512,7 +1437,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "18 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1532,7 +1456,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "18 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1552,7 +1475,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "12 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1572,7 +1494,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "12 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1592,7 +1513,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "11 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1612,7 +1532,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "Ramps is the agent - 18 free days",
         "transit": "11 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1639,7 +1558,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "21/06/2026",
         "surcharges": {
@@ -1659,7 +1577,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-60",
         "validity": "21/06/2026",
         "surcharges": {
@@ -1686,7 +1603,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Fast shipping",
         "transit": "39-43",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1704,7 +1620,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Fast shipping",
         "transit": "39-43",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1722,7 +1637,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "DSV",
         "transit": "35",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1739,7 +1653,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Fast shipping",
         "transit": "39-43",
         "validity": "30/06/2026",
         "surcharges": {
@@ -1764,7 +1677,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Hardy",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1783,7 +1695,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "Hardy",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1802,7 +1713,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1821,7 +1731,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1840,7 +1749,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1859,7 +1767,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1878,7 +1785,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen/COSCO",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1897,7 +1803,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen/COSCO",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -1923,7 +1828,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -1942,7 +1846,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -1961,7 +1864,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -1980,7 +1882,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2006,7 +1907,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSK",
-        "agent": "",
         "transit": "65-75",
         "validity": "15/6/2026",
         "surcharges": {
@@ -2025,7 +1925,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSK",
-        "agent": "",
         "transit": "65-75",
         "validity": "15/6/2026",
         "surcharges": {
@@ -2051,7 +1950,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2070,7 +1968,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2089,7 +1986,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2108,7 +2004,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2134,7 +2029,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2153,7 +2047,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "55-65",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2179,14 +2072,14 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "15 to 16 days",
         "validity": "30/6/2026",
         "surcharges": {
           "Ocean Freight": 1500.0,
           "DTHC": 175.0,
           "LAC": 150.0,
-          "ISPS": 14.0
+          "ISPS": 14.0,
+          "Guyana Port Congestion": 300.0
         },
         "total_no_ins": 2139.0,
         "total_with_ins": 2339.0
@@ -2197,14 +2090,14 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "15 to 16 days",
         "validity": "30/6/2026",
         "surcharges": {
           "Ocean Freight": 1950.0,
           "DTHC": 225.0,
           "LAC": 150.0,
-          "ISPS": 14.0
+          "ISPS": 14.0,
+          "Guyana Port Congestion": 600.0
         },
         "total_no_ins": 2939.0,
         "total_with_ins": 3139.0
@@ -2222,7 +2115,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2243,7 +2135,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2271,7 +2162,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2290,7 +2180,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2316,7 +2205,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "12-15 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2336,7 +2224,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "12-15 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2356,7 +2243,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "14 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2376,7 +2262,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "14 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2396,7 +2281,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "22 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2416,7 +2300,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "22 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2436,7 +2319,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "15 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2456,7 +2338,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "15 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2483,7 +2364,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "DC",
         "transit": "35",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2502,7 +2382,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "Maersk",
-        "agent": "DC",
         "transit": "35",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2521,7 +2400,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "Hapag Lloyd",
-        "agent": "Wahsen",
         "transit": "28",
         "validity": "31/03/2026",
         "surcharges": {
@@ -2540,7 +2418,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "Hapag Lloyd",
-        "agent": "",
         "transit": "28",
         "validity": "31/03/2026",
         "surcharges": {
@@ -2559,7 +2436,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "DSV",
         "transit": "35",
         "validity": "30/06/2026",
         "surcharges": {
@@ -2584,7 +2460,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "becky",
         "transit": "65-75",
         "validity": "14/6/2025",
         "surcharges": {
@@ -2604,7 +2479,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "becky",
         "transit": "55-65",
         "validity": "14/6/2025",
         "surcharges": {
@@ -2624,7 +2498,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2644,7 +2517,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "Wahsen",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2671,7 +2543,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2691,7 +2562,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2711,7 +2581,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2731,7 +2600,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "30",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2758,7 +2626,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MAERSK",
-        "agent": "",
         "transit": "75-85",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2778,7 +2645,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MAERSK",
-        "agent": "",
         "transit": "75-85",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2805,7 +2671,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2825,7 +2690,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2845,7 +2709,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ZIM",
-        "agent": "",
         "transit": "70-80",
         "validity": "30/4/2025",
         "surcharges": {
@@ -2872,7 +2735,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2892,7 +2754,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2919,7 +2780,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2939,7 +2799,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -2966,7 +2825,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "15 to 16 days",
         "validity": "30/6/2026",
         "surcharges": {
@@ -2984,7 +2842,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "15 to 16 days",
         "validity": "30/6/2026",
         "surcharges": {
@@ -3009,7 +2866,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -3029,7 +2885,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -3056,7 +2911,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3079,7 +2933,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3109,7 +2962,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "75-85",
         "validity": "2026-07-04 00:00:00",
         "surcharges": {
@@ -3128,7 +2980,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSC",
-        "agent": "",
         "transit": "65-85",
         "validity": "2026-07-04 00:00:00",
         "surcharges": {
@@ -3154,7 +3005,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "12-18 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3173,7 +3023,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "12-18 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3192,7 +3041,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "16 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3211,7 +3059,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "17 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3230,7 +3077,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "17 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3249,7 +3095,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA-CGM",
-        "agent": "",
         "transit": "18 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3275,7 +3120,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -3295,7 +3139,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "65-75",
         "validity": "14/6/2026",
         "surcharges": {
@@ -3322,7 +3165,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "30-35",
         "validity": "14/11/2025",
         "surcharges": {
@@ -3342,7 +3184,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "ONE",
-        "agent": "",
         "transit": "30-35",
         "validity": "14/11/2025",
         "surcharges": {
@@ -3362,7 +3203,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "YML",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/11/2025",
         "surcharges": {
@@ -3382,7 +3222,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "YML",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/11/2025",
         "surcharges": {
@@ -3402,7 +3241,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "MSK",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/11/2025",
         "surcharges": {
@@ -3422,7 +3260,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "MSK",
-        "agent": "",
         "transit": "30-35",
         "validity": "30/11/2025",
         "surcharges": {
@@ -3442,7 +3279,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "YML",
-        "agent": "",
         "transit": "35-40",
         "validity": "14/11/2025",
         "surcharges": {
@@ -3462,7 +3298,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "YML",
-        "agent": "",
         "transit": "35-40",
         "validity": "14/11/2025",
         "surcharges": {
@@ -3482,7 +3317,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA",
-        "agent": "",
         "transit": "30-35",
         "validity": "2026-07-06 00:00:00",
         "surcharges": {
@@ -3502,7 +3336,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA",
-        "agent": "",
         "transit": "30-35",
         "validity": "2026-07-06 00:00:00",
         "surcharges": {
@@ -3529,7 +3362,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3548,7 +3380,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3564,49 +3395,6 @@ const LANES = [
     ]
   },
   {
-    "lane": "Trinidad & Tobago \u2192 Dominican Republic",
-    "origin": "Trinidad & Tobago",
-    "dest": "Dominican Republic",
-    "rates": [
-      {
-        "pol": "Point Lisas",
-        "pod": "Caucedo",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "Hapag Lloyd",
-        "agent": "",
-        "transit": "10 days",
-        "validity": "30/06/2026",
-        "surcharges": {
-          "Ocean Freight": 750.0,
-          "OTHC": 259.0,
-          "LAC": 67.5,
-          "Docs": 60.0
-        },
-        "total_no_ins": 1136.5,
-        "total_with_ins": 1336.5
-      },
-      {
-        "pol": "Point Lisas",
-        "pod": "Caucedo",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "Hapag Lloyd",
-        "agent": "",
-        "transit": "10 days",
-        "validity": "30/06/2026",
-        "surcharges": {
-          "Ocean Freight": 825.0,
-          "OTHC": 259.0,
-          "LAC": 67.5,
-          "Docs": 60.0
-        },
-        "total_no_ins": 1211.5,
-        "total_with_ins": 1411.5
-      }
-    ]
-  },
-  {
     "lane": "Trinidad & Tobago \u2192 Jamaica",
     "origin": "Trinidad & Tobago",
     "dest": "Jamaica",
@@ -3617,7 +3405,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "16 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3635,7 +3422,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "COSCO",
-        "agent": "",
         "transit": "16 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3653,7 +3439,6 @@ const LANES = [
         "container": "20ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3672,7 +3457,6 @@ const LANES = [
         "container": "40ft",
         "commodity": "FAK",
         "carrier": "CMA CGM",
-        "agent": "",
         "transit": "1-2 days",
         "validity": "30/06/2026",
         "surcharges": {
@@ -3686,6 +3470,47 @@ const LANES = [
         "total_with_ins": 2141.5
       }
     ]
+  },
+  {
+    "lane": "Trinidad & Tobago \u2192 Dominican Republic",
+    "origin": "Trinidad & Tobago",
+    "dest": "Dominican Republic",
+    "rates": [
+      {
+        "pol": "Point Lisas",
+        "pod": "Caucedo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "transit": "10 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 750.0,
+          "OTHC": 259.0,
+          "LAC": 67.5,
+          "Docs": 60.0
+        },
+        "total_no_ins": 1136.5,
+        "total_with_ins": 1336.5
+      },
+      {
+        "pol": "Point Lisas",
+        "pod": "Caucedo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "transit": "10 days",
+        "validity": "30/06/2026",
+        "surcharges": {
+          "Ocean Freight": 825.0,
+          "OTHC": 259.0,
+          "LAC": 67.5,
+          "Docs": 60.0
+        },
+        "total_no_ins": 1211.5,
+        "total_with_ins": 1411.5
+      }
+    ]
   }
 ];
 
@@ -3695,10 +3520,7 @@ const LANES = [
   el.disabled = true;
   fetch('https://script.google.com/macros/s/AKfycbyL5XF7erLc_OPVoAHS4mGTENGSDXalSb_ok19K6fVX0Z7ed-RZlnfJ3tw_-HnScV_kxg/exec', {redirect: 'follow'})
     .then(r => r.json())
-    .then(data => {
-      el.value = data.ref;
-      el.disabled = false;
-    })
+    .then(data => { el.value = data.ref; el.disabled = false; })
     .catch(() => {
       const now = new Date();
       const yy = now.getFullYear();
@@ -3735,7 +3557,6 @@ document.getElementById('sel-lane').addEventListener('change', function() {
   if (!lane) return;
   const laneData = LANES.find(l => l.lane === lane);
   if (!laneData) return;
-  // Sizes
   [...new Set(laneData.rates.map(r => r.container))].sort().forEach(s => {
     const opt = document.createElement('option');
     opt.value = s.startsWith('20') ? '20' : '40';
@@ -3743,10 +3564,9 @@ document.getElementById('sel-lane').addEventListener('change', function() {
     sizeEl.appendChild(opt);
   });
   sizeEl.disabled = false;
-  // Individual POLs — split grouped strings on / and ,
   const ports = [...new Set(
     laneData.rates.flatMap(r =>
-      r.pol.split(/[/,]/).map(p => p.trim()).filter(Boolean)
+      r.pol.split(/[\/,]/).map(p => p.trim()).filter(Boolean)
     )
   )].sort();
   ports.forEach(p => {
@@ -3758,7 +3578,6 @@ document.getElementById('sel-lane').addEventListener('change', function() {
 });
 
 let selectedRate = null;
-let selectedPol = null;
 
 function doSearch() {
   const dest = document.getElementById('sel-dest').value;
@@ -3772,29 +3591,37 @@ function doSearch() {
     l.rates.forEach(r => {
       if (size === '20' && !r.container.startsWith('20')) return;
       if (size === '40' && !r.container.startsWith('40')) return;
-      // Filter by individual port if selected
       if (pol) {
-        const ports = r.pol.split(/[/,]/).map(p => p.trim());
+        const ports = r.pol.split(/[\/,]/).map(p => p.trim());
         if (!ports.includes(pol)) return;
       }
-      rates.push({ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest, _selectedPol: pol || r.pol.split(/[\/,]/)[0].trim() });
+      rates.push({ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest,
+                    _selectedPol: pol || r.pol.split(/[\/,]/)[0].trim() });
     });
   });
   const rc = document.getElementById('results-card');
   const list = document.getElementById('results-list');
-  document.getElementById('results-count').textContent = `(${rates.length} result${rates.length !== 1 ? 's' : ''})`;
+  document.getElementById('results-count').textContent =
+    `(${rates.length} result${rates.length !== 1 ? 's' : ''})`;
   rc.style.display = 'block';
   if (!rates.length) { list.innerHTML = '<div class="no-results">No rates found.</div>'; return; }
   list.innerHTML = rates.map((r, i) => {
     const lines = Object.entries(r.surcharges || {}).map(([k,v]) =>
       `<div class="surcharge-line"><span>${k}</span><span>$${v.toFixed(2)}</span></div>`).join('');
     return `<div class="rate-row" id="rr-${i}" onclick="selectRate(${i})">
-      <div><span class="tag">${r.container}</span><div style="font-weight:600;margin-top:4px;">${r._selectedPol}</div><div class="rate-meta">→ ${r.pod}</div></div>
-      <div><div class="rate-carrier">${r.carrier}</div><div class="rate-meta" style="margin-top:4px;">⏱ ${r.transit}</div><div class="rate-meta">📅 ${r.validity}</div></div>
+      <div><span class="tag">${r.container}</span>
+           <div style="font-weight:600;margin-top:4px;">${r._selectedPol}</div>
+           <div class="rate-meta">→ ${r.pod}</div></div>
+      <div><div class="rate-carrier">${r.carrier}</div>
+           <div class="rate-meta" style="margin-top:4px;">⏱ ${r.transit}</div>
+           <div class="rate-meta">📅 ${r.validity}</div></div>
       <div class="surcharge-list">${lines}</div>
       <div class="totals">
-        <div class="total-no">$${(r.total_no_ins||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}<br><small>excl. ins.</small></div>
-        <div class="total-with">$${(r.total_with_ins||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}<span class="ins-note-badge">🛡 insured</span></div>
+        <div class="total-no">$${(r.total_no_ins||0).toLocaleString('en-US',
+          {minimumFractionDigits:2,maximumFractionDigits:2})}<br><small>excl. ins.</small></div>
+        <div class="total-with">$${(r.total_with_ins||0).toLocaleString('en-US',
+          {minimumFractionDigits:2,maximumFractionDigits:2})}
+          <span class="ins-note-badge">🛡 insured</span></div>
       </div></div>`;
   }).join('');
   window._searchRates = rates;
@@ -3809,13 +3636,16 @@ function selectRate(i) {
   renderQuote(selectedRate);
 }
 
-function fmt(v) { return v != null ? '$' + v.toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2}) : '—'; }
+function fmt(v) {
+  return v != null ? '$' + v.toLocaleString('en-US',
+    {minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+}
 
 function renderQuote(r) {
   const customer = document.getElementById('customer').value || '—';
   const ref = document.getElementById('quoteref').value;
-  const today = new Date().toLocaleDateString('en-GB', {day:'2-digit',month:'short',year:'numeric'});
-
+  const today = new Date().toLocaleDateString('en-GB',
+    {day:'2-digit',month:'short',year:'numeric'});
   document.getElementById('pq-date').textContent = today;
   document.getElementById('pq-validity').textContent = r.validity || '—';
   document.getElementById('pq-ref').textContent = ref;
@@ -3827,14 +3657,16 @@ function renderQuote(r) {
   document.getElementById('pq-carrier').textContent = r.carrier;
   document.getElementById('pq-transit').textContent = r.transit || '—';
   document.getElementById('pq-valid-to').textContent = r.validity || '—';
-
   const surchargeRows = Object.entries(r.surcharges || {}).map(([k,v]) =>
     `<tr><td class="lbl">${k}</td><td class="val-right">$${v.toFixed(2)}</td></tr>`
   ).join('');
-  const baseRow = `<tr class="pq-divider-row"><td class="lbl" style="font-weight:600;color:#444;">Base Rate (excl. insurance)</td><td class="val-right" style="font-weight:700;font-size:12px;">${fmt(r.total_no_ins)}</td></tr>`;
-  const totalRow = `<tr class="pq-total-with-row"><td class="lbl" style="color:#2db84b;font-weight:700;">Total with Insurance</td><td class="val-right" style="color:#2db84b;font-weight:800;font-size:14px;">${fmt(r.total_with_ins)}</td></tr>`;
+  const baseRow = `<tr class="pq-divider-row">
+    <td class="lbl" style="font-weight:600;color:#444;">Base Rate (excl. insurance)</td>
+    <td class="val-right" style="font-weight:700;font-size:12px;">${fmt(r.total_no_ins)}</td></tr>`;
+  const totalRow = `<tr class="pq-total-with-row">
+    <td class="lbl" style="color:#2db84b;font-weight:700;">Total with Insurance</td>
+    <td class="val-right" style="color:#2db84b;font-weight:800;font-size:14px;">${fmt(r.total_with_ins)}</td></tr>`;
   document.getElementById('pq-surcharge-table').innerHTML = surchargeRows + baseRow + totalRow;
-
   const qc = document.getElementById('quote-card');
   qc.style.display = 'block';
   qc.scrollIntoView({behavior:'smooth', block:'start'});
