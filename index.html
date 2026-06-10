@@ -44,7 +44,6 @@
   .pod-sub { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 2px; }
   .commodity-cell { color: var(--muted); font-size: 11px; }
   .carrier-cell { font-weight: 700; color: var(--purple); }
-  .agent-note { font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 2px; }
   .transit-cell, .validity-cell { white-space: nowrap; color: var(--muted); font-size: 11px; }
   .surcharge-cell { min-width: 200px; max-width: 300px; }
   .surcharge-grid { display: flex; flex-direction: column; gap: 3px; }
@@ -63,9 +62,174 @@
 </style>
 </head>
 <body>
+<div id="ai-rate-data" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:pre;">
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Point Lisas | SIZE: 20ft | CARRIER: King Ocean | TOTAL_EXCL_INS: USD 2310.50 | TOTAL_WITH_INS: USD 2510.50 | VALIDITY: 30/06/2026 | TRANSIT: 6 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Point Lisas | SIZE: 40ft | CARRIER: King Ocean | TOTAL_EXCL_INS: USD 3310.50 | TOTAL_WITH_INS: USD 3510.50 | VALIDITY: 30/06/2026 | TRANSIT: 6 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Point Lisas | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 2505.50 | TOTAL_WITH_INS: USD 2705.50 | VALIDITY: 30/06/2026 | TRANSIT: 6 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Point Lisas | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3555.50 | TOTAL_WITH_INS: USD 3755.50 | VALIDITY: 30/06/2026 | TRANSIT: 6 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Point Lisas | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 2595.50 | TOTAL_WITH_INS: USD 2795.50 | VALIDITY: 30/06/2026 | TRANSIT: 10 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Point Lisas | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3735.50 | TOTAL_WITH_INS: USD 3935.50 | VALIDITY: 30/06/2026 | TRANSIT: 10 days
+RATE | ORIGIN: USA | POL: Houston | POD: Point Lisas | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 2795.50 | TOTAL_WITH_INS: USD 2995.50 | VALIDITY: 30/06/2026 | TRANSIT: 18 days
+RATE | ORIGIN: USA | POL: Houston | POD: Point Lisas | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 4135.50 | TOTAL_WITH_INS: USD 4335.50 | VALIDITY: 30/06/2026 | TRANSIT: 18 days
+RATE | ORIGIN: USA | POL: New York | POD: Port of Spain | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 2595.50 | TOTAL_WITH_INS: USD 2795.50 | VALIDITY: 30/06/2026 | TRANSIT: 12 days
+RATE | ORIGIN: USA | POL: New York | POD: Port of Spain | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3735.50 | TOTAL_WITH_INS: USD 3935.50 | VALIDITY: 30/06/2026 | TRANSIT: 12 days
+RATE | ORIGIN: USA | POL: New York | POD: Point Lisas | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 2595.50 | TOTAL_WITH_INS: USD 2795.50 | VALIDITY: 30/06/2026 | TRANSIT: 11 days
+RATE | ORIGIN: USA | POL: New York | POD: Point Lisas | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3735.50 | TOTAL_WITH_INS: USD 3935.50 | VALIDITY: 30/06/2026 | TRANSIT: 11 days
+RATE | ORIGIN: Brazil | POL: Santos/Itajai/Paranagua/Rio De Janiero/Rio Grande | POD: Port of Spain | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 3788.00 | TOTAL_WITH_INS: USD 3988.00 | VALIDITY: 30/06/2026 | TRANSIT: 35-37
+RATE | ORIGIN: Brazil | POL: Santos/Itajai/Paranagua/Rio De Janiero/Rio Grande | POD: Port of Spain | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4338.00 | TOTAL_WITH_INS: USD 4538.00 | VALIDITY: 30/06/2026 | TRANSIT: 35-37
+RATE | ORIGIN: Brazil | POL: Santos/Imbituba (TILES) | POD: Port of Spain | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 3100.50 | TOTAL_WITH_INS: USD 3300.50 | VALIDITY: 30/06/2026 | TRANSIT: 23-28
+RATE | ORIGIN: Brazil | POL: Santos/Itajai/Paranagua/Rio Grande(Lumber) | POD: Port of Spain | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4308.00 | TOTAL_WITH_INS: USD 4508.00 | VALIDITY: 30/06/2026 | TRANSIT: 35-37
+RATE | ORIGIN: China | POL: Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6638.00 | TOTAL_WITH_INS: USD 6838.00 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7388.00 | TOTAL_WITH_INS: USD 7588.00 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10188.00 | TOTAL_WITH_INS: USD 10388.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 11638.00 | TOTAL_WITH_INS: USD 11838.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Gaoming (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10388.00 | TOTAL_WITH_INS: USD 10588.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Gaoming (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 11888.00 | TOTAL_WITH_INS: USD 12088.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shanghai/Xiamen/Tianjin/Shenzhen/Ningbo/Qingdao/Hong Kong/Xingang/Yantian | POD: Port of Spain | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 7078.38 | TOTAL_WITH_INS: USD 7278.38 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shanghai/Xiamen/Tianjin/Shenzhen/Ningbo/Qingdao/Hong Kong/Xingang/Yantian | POD: Port of Spain | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 7278.38 | TOTAL_WITH_INS: USD 7478.38 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10338.00 | TOTAL_WITH_INS: USD 10538.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 11738.00 | TOTAL_WITH_INS: USD 11938.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Dalian/Gaoming(Foshan)/Sanshui/Yunfu/Nansha/Huangpu/Guangzhou | POD: Port of Spain | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 7128.38 | TOTAL_WITH_INS: USD 7328.38 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Dalian/Gaoming(Foshan)/Sanshui/Yunfu/Nansha/Huangpu/Guangzhou | POD: Port of Spain | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 7428.38 | TOTAL_WITH_INS: USD 7628.38 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Nansha/Guangzhou/Huangpu (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10338.00 | TOTAL_WITH_INS: USD 10538.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Nansha/Guangzhou/Huangpu (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 11938.00 | TOTAL_WITH_INS: USD 12138.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Nanjing/Jiujiang (Jiangxi) (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10438.00 | TOTAL_WITH_INS: USD 10638.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Nanjing/Jiujiang (Jiangxi) (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 12088.00 | TOTAL_WITH_INS: USD 12288.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shekou/Shanghai/Ningbo/Qingdao/Xiamen/Hong Kong/Yantian | POD: Port of Spain | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 7492.87 | TOTAL_WITH_INS: USD 7692.87 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shekou/Shanghai/Ningbo/Qingdao/Xiamen/Hong Kong/Yantian | POD: Port of Spain | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 7592.87 | TOTAL_WITH_INS: USD 7792.87 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shantou (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10488.00 | TOTAL_WITH_INS: USD 10688.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Shantou (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 12188.00 | TOTAL_WITH_INS: USD 12388.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Liangyungang (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10288.00 | TOTAL_WITH_INS: USD 10488.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Liangyungang (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 11788.00 | TOTAL_WITH_INS: USD 11988.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Yichang (DT) | POD: Port of Spain/Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10538.00 | TOTAL_WITH_INS: USD 10738.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: China | POL: Yichang (DT) | POD: Port of Spain/Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 12238.00 | TOTAL_WITH_INS: USD 12438.00 | VALIDITY: 21/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: Korea | POL: Busan | POD: Port of Spain/ Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6638.00 | TOTAL_WITH_INS: USD 6838.00 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: Korea | POL: Busan | POD: Port of Spain/ Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7388.00 | TOTAL_WITH_INS: USD 7588.00 | VALIDITY: 14/06/2026 | TRANSIT: 45-55
+RATE | ORIGIN: Taiwan | POL: Keelung/ Kaoisung | POD: Port of Spain/ Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6638.00 | TOTAL_WITH_INS: USD 6838.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Taiwan | POL: Keelung/ Kaoisung | POD: Port of Spain/ Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7388.00 | TOTAL_WITH_INS: USD 7588.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Japan | POL: Yokohama, Osaka | POD: Port of Spain/ Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6638.00 | TOTAL_WITH_INS: USD 6838.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Japan | POL: Yokohama, Osaka | POD: Port of Spain/ Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7388.00 | TOTAL_WITH_INS: USD 7588.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Vietnam | POL: Ho Chi Minh | POD: Port of Spain/ Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6888.00 | TOTAL_WITH_INS: USD 7088.00 | VALIDITY: 21/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Vietnam | POL: Ho Chi Minh | POD: Port of Spain/ Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7538.00 | TOTAL_WITH_INS: USD 7738.00 | VALIDITY: 21/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: India | POL: Mundra (TILES) | POD: Port-of-Spain | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4888.00 | TOTAL_WITH_INS: USD 5088.00 | VALIDITY: 14/06/2026 | TRANSIT: 65-70
+RATE | ORIGIN: India | POL: Mundra/ Nhava Sheva | POD: Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4838.00 | TOTAL_WITH_INS: USD 5038.00 | VALIDITY: 14/06/2026 | TRANSIT: 65-70
+RATE | ORIGIN: India | POL: Mundra/ Nhava Sheva | POD: Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 5388.00 | TOTAL_WITH_INS: USD 5588.00 | VALIDITY: 14/06/2026 | TRANSIT: 65-70
+RATE | ORIGIN: Malaysia | POL: Port Klang, Pasir Gudang | POD: Port of Spain/ Point Lisas | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6738.00 | TOTAL_WITH_INS: USD 6938.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Malaysia | POL: Port Klang, Pasir Gudang | POD: Port of Spain/ Point Lisas | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7738.00 | TOTAL_WITH_INS: USD 7938.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Thailand | POL: Bangkok | POD: Port of Spain | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6938.00 | TOTAL_WITH_INS: USD 7138.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Thailand | POL: Bangkok | POD: Port of Spain | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 7538.00 | TOTAL_WITH_INS: USD 7738.00 | VALIDITY: 14/06/2026 | TRANSIT: 55-60
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Point Lisas | SIZE: 20ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 2015.00 | TOTAL_WITH_INS: USD 2215.00 | VALIDITY: 30/06/2026 | TRANSIT: 7
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Point Lisas | SIZE: 40ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 2315.00 | TOTAL_WITH_INS: USD 2515.00 | VALIDITY: 30/06/2026 | TRANSIT: 7
+RATE | ORIGIN: Turkey | POL: Gemlik (TILES) | POD: Port-of-Spain | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 2088.00 | TOTAL_WITH_INS: USD 3088.00 | VALIDITY: 30/06/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Turkey | POL: Gebze/ Gemilk / Aliaga/ Istanbul | POD: Port of Spain | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 2888.00 | TOTAL_WITH_INS: USD 3088.00 | VALIDITY: 30/06/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Turkey | POL: Gebze/ Gemilk / Aliaga/ Istanbul | POD: Port of Spain | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 3988.00 | TOTAL_WITH_INS: USD 4188.00 | VALIDITY: 30/06/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Point Lisas | SIZE: 20ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 2170.00 | TOTAL_WITH_INS: USD 2370.00 | VALIDITY: 30/06/2026 | TRANSIT: 16-20
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Point Lisas | SIZE: 40ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 2570.00 | TOTAL_WITH_INS: USD 2770.00 | VALIDITY: 30/06/2026 | TRANSIT: 16-20
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Port of Spain | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 1428.38 | TOTAL_WITH_INS: USD 1628.38 | VALIDITY: 30/06/2026 | TRANSIT: 16-20
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Port of Spain | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 1828.38 | TOTAL_WITH_INS: USD 2028.38 | VALIDITY: 30/06/2026 | TRANSIT: 16-20
+RATE | ORIGIN: Mexico | POL: Altamira | POD: Port-of-Spain/ Point Lisas | SIZE: 20ft | CARRIER: CMA | TOTAL_EXCL_INS: USD 2538.00 | TOTAL_WITH_INS: USD 2738.00 | VALIDITY: 30/06/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Mexico | POL: Altamira | POD: Port-of-Spain/ Point Lisas | SIZE: 40ft | CARRIER: CMA | TOTAL_EXCL_INS: USD 2838.00 | TOTAL_WITH_INS: USD 3038.00 | VALIDITY: 30/06/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Guyana | POL: Georgetown | POD: Port of Spain | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1365.74 | TOTAL_WITH_INS: USD 1565.74 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Guyana | POL: Georgetown | POD: Port of Spain | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1725.74 | TOTAL_WITH_INS: USD 1925.74 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Georgetown | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3104.00 | TOTAL_WITH_INS: USD 3304.00 | VALIDITY: 30/06/2026 | TRANSIT: 12-15 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Georgetown | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 4564.00 | TOTAL_WITH_INS: USD 4764.00 | VALIDITY: 30/06/2026 | TRANSIT: 12-15 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Georgetown | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3664.00 | TOTAL_WITH_INS: USD 3864.00 | VALIDITY: 30/06/2026 | TRANSIT: 14 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Georgetown | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5169.00 | TOTAL_WITH_INS: USD 5369.00 | VALIDITY: 30/06/2026 | TRANSIT: 14 days
+RATE | ORIGIN: USA | POL: Houston | POD: Georgetown | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3954.00 | TOTAL_WITH_INS: USD 4154.00 | VALIDITY: 30/06/2026 | TRANSIT: 22 days
+RATE | ORIGIN: USA | POL: Houston | POD: Georgetown | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5669.00 | TOTAL_WITH_INS: USD 5869.00 | VALIDITY: 30/06/2026 | TRANSIT: 22 days
+RATE | ORIGIN: USA | POL: New York | POD: Georgetown | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3664.00 | TOTAL_WITH_INS: USD 3864.00 | VALIDITY: 30/06/2026 | TRANSIT: 15 days
+RATE | ORIGIN: USA | POL: New York | POD: Georgetown | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5169.00 | TOTAL_WITH_INS: USD 5369.00 | VALIDITY: 30/06/2026 | TRANSIT: 15 days
+RATE | ORIGIN: Brazil | POL: Santos/Rio de Janiero/Salvador/Parangua | POD: Georgetown | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2585.00 | TOTAL_WITH_INS: USD 2785.00 | VALIDITY: 30/06/2026 | TRANSIT: 39-43
+RATE | ORIGIN: Brazil | POL: Santos/Rio de Janiero/Salvador/Parangua | POD: Georgetown | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2930.00 | TOTAL_WITH_INS: USD 3130.00 | VALIDITY: 30/06/2026 | TRANSIT: 39-43
+RATE | ORIGIN: Brazil | POL: Santos (TILES) | POD: Georgetown | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 2893.00 | TOTAL_WITH_INS: USD 3093.00 | VALIDITY: 30/06/2026 | TRANSIT: 35
+RATE | ORIGIN: Brazil | POL: Paranagua (Lumber) | POD: Georgetown | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2905.00 | TOTAL_WITH_INS: USD 3105.00 | VALIDITY: 30/06/2026 | TRANSIT: 39-43
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 9475.00 | TOTAL_WITH_INS: USD 9675.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10425.00 | TOTAL_WITH_INS: USD 10625.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Foshan/Gaoming/Yunfu/Tianjin/Guangzhou | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 9625.00 | TOTAL_WITH_INS: USD 9825.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Foshan/Gaoming/Yunfu/Tianjin/Guangzhou | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10675.00 | TOTAL_WITH_INS: USD 10875.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang/Tianjin | POD: Georgetown | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 8925.00 | TOTAL_WITH_INS: USD 9125.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian/Xingang/Tianjin | POD: Georgetown | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9075.00 | TOTAL_WITH_INS: USD 9275.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Yunfu/Gaoming | POD: Georgetown | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9075.00 | TOTAL_WITH_INS: USD 9275.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Yunfu/Gaoming | POD: Georgetown | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9275.00 | TOTAL_WITH_INS: USD 9475.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Japan | POL: Yokohama | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 9675.00 | TOTAL_WITH_INS: USD 9875.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Japan | POL: Yokohama | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10625.00 | TOTAL_WITH_INS: USD 10825.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Japan | POL: Kobe | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 9975.00 | TOTAL_WITH_INS: USD 10175.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Japan | POL: Kobe | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10875.00 | TOTAL_WITH_INS: USD 11075.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Malaysia | POL: Port Klang, Tanjung | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 9625.00 | TOTAL_WITH_INS: USD 9825.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: Malaysia | POL: Port Klang, Tanjung | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 10625.00 | TOTAL_WITH_INS: USD 10825.00 | VALIDITY: 14/6/2026 | TRANSIT: 55-65
+RATE | ORIGIN: India | POL: Mundra | POD: Georgetown | SIZE: 20ft | CARRIER: MSK | TOTAL_EXCL_INS: USD 4620.00 | TOTAL_WITH_INS: USD 4820.00 | VALIDITY: 15/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: India | POL: Mundra | POD: Georgetown | SIZE: 40ft | CARRIER: MSK | TOTAL_EXCL_INS: USD 5520.00 | TOTAL_WITH_INS: USD 5720.00 | VALIDITY: 15/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Georgetown | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 2139.00 | TOTAL_WITH_INS: USD 2339.00 | VALIDITY: 30/6/2026 | TRANSIT: 15 to 16 days
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Georgetown | SIZE: 40ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 2939.00 | TOTAL_WITH_INS: USD 3139.00 | VALIDITY: 30/6/2026 | TRANSIT: 15 to 16 days
+RATE | ORIGIN: Turkey | POL: Gemlik/Gebze | POD: Georgetown | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 3875.00 | TOTAL_WITH_INS: USD 4075.00 | VALIDITY: 30/6/2026 | TRANSIT: 30-35
+RATE | ORIGIN: Turkey | POL: Gemlik/Gebze | POD: Georgetown | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4925.00 | TOTAL_WITH_INS: USD 5125.00 | VALIDITY: 30/6/2026 | TRANSIT: 30-35
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Georgetown | SIZE: 20ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 3320.00 | TOTAL_WITH_INS: USD 3520.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Georgetown | SIZE: 40ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 3745.00 | TOTAL_WITH_INS: USD 3945.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Georgetown | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2190.00 | TOTAL_WITH_INS: USD 2390.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Georgetown | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2490.00 | TOTAL_WITH_INS: USD 2690.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Paramaribo | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3530.00 | TOTAL_WITH_INS: USD 3730.00 | VALIDITY: 30/06/2026 | TRANSIT: 12-18 days
+RATE | ORIGIN: USA | POL: Port Everglades | POD: Paramaribo | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5125.00 | TOTAL_WITH_INS: USD 5325.00 | VALIDITY: 30/06/2026 | TRANSIT: 12-18 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Paramaribo | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3875.00 | TOTAL_WITH_INS: USD 4075.00 | VALIDITY: 30/06/2026 | TRANSIT: 16 days
+RATE | ORIGIN: USA | POL: Savannah | POD: Paramaribo | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5820.00 | TOTAL_WITH_INS: USD 6020.00 | VALIDITY: 30/06/2026 | TRANSIT: 17 days
+RATE | ORIGIN: USA | POL: New York | POD: Paramaribo | SIZE: 20ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 3875.00 | TOTAL_WITH_INS: USD 4075.00 | VALIDITY: 30/06/2026 | TRANSIT: 17 days
+RATE | ORIGIN: USA | POL: New York | POD: Paramaribo | SIZE: 40ft | CARRIER: CMA-CGM | TOTAL_EXCL_INS: USD 5820.00 | TOTAL_WITH_INS: USD 6020.00 | VALIDITY: 30/06/2026 | TRANSIT: 18 days
+RATE | ORIGIN: Brazil | POL: Santos/Rio Grande/Rio De Janiero/Paranagua/Itapoa | POD: Paramaribo | SIZE: 20ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 4660.00 | TOTAL_WITH_INS: USD 4860.00 | VALIDITY: 30/06/2026 | TRANSIT: 35
+RATE | ORIGIN: Brazil | POL: Santos/Rio Grande/Rio De Janiero/Paranagua/Itapoa | POD: Paramaribo | SIZE: 40ft | CARRIER: Maersk | TOTAL_EXCL_INS: USD 4935.00 | TOTAL_WITH_INS: USD 5135.00 | VALIDITY: 30/06/2026 | TRANSIT: 35
+RATE | ORIGIN: Brazil | POL: Navegantes | POD: Paramaribo | SIZE: 20ft | CARRIER: Hapag Lloyd | TOTAL_EXCL_INS: USD 5965.00 | TOTAL_WITH_INS: USD 6165.00 | VALIDITY: 31/03/2026 | TRANSIT: 28
+RATE | ORIGIN: Brazil | POL: Navegantes | POD: Paramaribo | SIZE: 40ft | CARRIER: Hapag Lloyd | TOTAL_EXCL_INS: USD 6440.00 | TOTAL_WITH_INS: USD 6640.00 | VALIDITY: 31/03/2026 | TRANSIT: 28
+RATE | ORIGIN: Brazil | POL: Santos (Tiles) | POD: Paramaribo | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 3525.00 | TOTAL_WITH_INS: USD 3725.00 | VALIDITY: 30/06/2026 | TRANSIT: 35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Yantian | POD: Paramaribo | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 10725.00 | TOTAL_WITH_INS: USD 10975.00 | VALIDITY: 14/6/2025 | TRANSIT: 65-75
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Yantian | POD: Paramaribo | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 10850.00 | TOTAL_WITH_INS: USD 11100.00 | VALIDITY: 14/6/2025 | TRANSIT: 55-65
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9425.00 | TOTAL_WITH_INS: USD 9625.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 10500.00 | TOTAL_WITH_INS: USD 10700.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Korea | POL: Busan | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9655.00 | TOTAL_WITH_INS: USD 9855.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Korea | POL: Busan | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 10760.00 | TOTAL_WITH_INS: USD 10960.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Malaysia | POL: Port Klang/ Pasir Gudang | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9655.00 | TOTAL_WITH_INS: USD 9855.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Malaysia | POL: Port Klang/ Pasir Gudang | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 11010.00 | TOTAL_WITH_INS: USD 11210.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Vietnam | POL: Ho Chi Minh | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9805.00 | TOTAL_WITH_INS: USD 10005.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Vietnam | POL: Ho Chi Minh | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 11010.00 | TOTAL_WITH_INS: USD 11210.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Japan | POL: Yokohama | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9655.00 | TOTAL_WITH_INS: USD 9855.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Japan | POL: Yokohama | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 10760.00 | TOTAL_WITH_INS: USD 10960.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Japan | POL: Nagoya | POD: Paramaribo | SIZE: 40ft | CARRIER: ZIM | TOTAL_EXCL_INS: USD 7725.00 | TOTAL_WITH_INS: USD 7975.00 | VALIDITY: 30/4/2025 | TRANSIT: 70-80
+RATE | ORIGIN: India | POL: Mundra | POD: Paramaribo | SIZE: 20ft | CARRIER: MAERSK | TOTAL_EXCL_INS: USD 6855.00 | TOTAL_WITH_INS: USD 7055.00 | VALIDITY: 14/6/2026 | TRANSIT: 75-85
+RATE | ORIGIN: India | POL: Mundra | POD: Paramaribo | SIZE: 40ft | CARRIER: MAERSK | TOTAL_EXCL_INS: USD 7430.00 | TOTAL_WITH_INS: USD 7630.00 | VALIDITY: 14/6/2026 | TRANSIT: 75-85
+RATE | ORIGIN: Thailand | POL: Bangkok | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 9805.00 | TOTAL_WITH_INS: USD 10005.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Thailand | POL: Bangkok | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 11260.00 | TOTAL_WITH_INS: USD 11460.00 | VALIDITY: 14/6/2026 | TRANSIT: 65-75
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Paramaribo | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 1975.00 | TOTAL_WITH_INS: USD 2175.00 | VALIDITY: 30/6/2026 | TRANSIT: 15 to 16 days
+RATE | ORIGIN: Panama | POL: Manzanillo | POD: Paramaribo | SIZE: 40ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 2435.00 | TOTAL_WITH_INS: USD 2635.00 | VALIDITY: 30/6/2026 | TRANSIT: 15 to 16 days
+RATE | ORIGIN: Turkey | POL: Gemlik/ Gebze | POD: Paramaribo | SIZE: 20ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 4420.00 | TOTAL_WITH_INS: USD 4620.00 | VALIDITY: 2026-07-04 00:00:00 | TRANSIT: 75-85
+RATE | ORIGIN: Turkey | POL: Gemlik/ Gebze | POD: Paramaribo | SIZE: 40ft | CARRIER: MSC | TOTAL_EXCL_INS: USD 6005.00 | TOTAL_WITH_INS: USD 6205.00 | VALIDITY: 2026-07-04 00:00:00 | TRANSIT: 65-85
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2650.00 | TOTAL_WITH_INS: USD 2850.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Buenaventura | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2925.00 | TOTAL_WITH_INS: USD 3125.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Paramaribo | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2325.00 | TOTAL_WITH_INS: USD 2525.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: Colombia | POL: Cartagena | POD: Paramaribo | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 2650.00 | TOTAL_WITH_INS: USD 2850.00 | VALIDITY: 30/6/2026 | TRANSIT: 30
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Barranquilla | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 4560.00 | TOTAL_WITH_INS: USD 4760.00 | VALIDITY: 14/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Barranquilla | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 4860.00 | TOTAL_WITH_INS: USD 5060.00 | VALIDITY: 14/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 20ft | CARRIER: YML | TOTAL_EXCL_INS: USD 1675.00 | TOTAL_WITH_INS: USD 1875.00 | VALIDITY: 30/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 40ft | CARRIER: YML | TOTAL_EXCL_INS: USD 2075.00 | TOTAL_WITH_INS: USD 2275.00 | VALIDITY: 30/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 20ft | CARRIER: MSK | TOTAL_EXCL_INS: USD 1875.00 | TOTAL_WITH_INS: USD 2075.00 | VALIDITY: 30/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 40ft | CARRIER: MSK | TOTAL_EXCL_INS: USD 2075.00 | TOTAL_WITH_INS: USD 2275.00 | VALIDITY: 30/11/2025 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Cartagena | SIZE: 20ft | CARRIER: YML | TOTAL_EXCL_INS: USD 3175.00 | TOTAL_WITH_INS: USD 3375.00 | VALIDITY: 14/11/2025 | TRANSIT: 35-40
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Cartagena | SIZE: 40ft | CARRIER: YML | TOTAL_EXCL_INS: USD 3275.00 | TOTAL_WITH_INS: USD 3475.00 | VALIDITY: 14/11/2025 | TRANSIT: 35-40
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 20ft | CARRIER: CMA | TOTAL_EXCL_INS: USD 3375.00 | TOTAL_WITH_INS: USD 3575.00 | VALIDITY: 2026-07-06 00:00:00 | TRANSIT: 30-35
+RATE | ORIGIN: China | POL: Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao | POD: Buenaventura | SIZE: 40ft | CARRIER: CMA | TOTAL_EXCL_INS: USD 3575.00 | TOTAL_WITH_INS: USD 3775.00 | VALIDITY: 2026-07-06 00:00:00 | TRANSIT: 30-35
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Georgetown | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1220.57 | TOTAL_WITH_INS: USD 1420.57 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Georgetown | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1580.57 | TOTAL_WITH_INS: USD 1780.57 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Paramaribo | SIZE: 20ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1553.87 | TOTAL_WITH_INS: USD 1753.87 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Paramaribo | SIZE: 40ft | CARRIER: ONE | TOTAL_EXCL_INS: USD 1913.87 | TOTAL_WITH_INS: USD 2113.87 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Bridgetown | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 1611.50 | TOTAL_WITH_INS: USD 1811.50 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Bridgetown | SIZE: 40ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 2741.50 | TOTAL_WITH_INS: USD 2941.50 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Kingston | SIZE: 20ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 1293.38 | TOTAL_WITH_INS: USD 1493.38 | VALIDITY: 30/06/2026 | TRANSIT: 16 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Port of Spain | POD: Kingston | SIZE: 40ft | CARRIER: COSCO | TOTAL_EXCL_INS: USD 1243.38 | TOTAL_WITH_INS: USD 1443.38 | VALIDITY: 30/06/2026 | TRANSIT: 16 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Point Lisas | POD: Kingston | SIZE: 20ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 1361.50 | TOTAL_WITH_INS: USD 1561.50 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Point Lisas | POD: Kingston | SIZE: 40ft | CARRIER: CMA CGM | TOTAL_EXCL_INS: USD 1941.50 | TOTAL_WITH_INS: USD 2141.50 | VALIDITY: 30/06/2026 | TRANSIT: 1-2 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Point Lisas | POD: Caucedo | SIZE: 20ft | CARRIER: Hapag Lloyd | TOTAL_EXCL_INS: USD 1136.50 | TOTAL_WITH_INS: USD 1336.50 | VALIDITY: 30/06/2026 | TRANSIT: 10 days
+RATE | ORIGIN: Trinidad & Tobago | POL: Point Lisas | POD: Caucedo | SIZE: 40ft | CARRIER: Hapag Lloyd | TOTAL_EXCL_INS: USD 1211.50 | TOTAL_WITH_INS: USD 1411.50 | VALIDITY: 30/06/2026 | TRANSIT: 10 days
+</div>
+
 <header>
   <h1>🚢 Cubby Cargo — FCL Rate Tariff</h1>
-  <span class="generated">Generated: 09 Jun 2026 18:44 UTC</span>
+  <span class="generated">Generated: 10 Jun 2026 14:20 UTC</span>
 </header>
 <div class="subtitle">All-in rates (USD) · FCL only · Subject to space &amp; equipment availability</div>
 <div class="controls">
@@ -2184,7 +2348,7 @@
               <td class="carrier-cell">CMA CGM</td>
               <td class="transit-cell">15 to 16 days</td>
               <td class="validity-cell">30/6/2026</td>
-              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$1,500</span></div><div class="surcharge-item"><span class="surcharge-label">DTHC</span><span class="surcharge-val">$175</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$150</span></div><div class="surcharge-item"><span class="surcharge-label">ISPS</span><span class="surcharge-val">$14</span></div></div></td>
+              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$1,500</span></div><div class="surcharge-item"><span class="surcharge-label">DTHC</span><span class="surcharge-val">$175</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$150</span></div><div class="surcharge-item"><span class="surcharge-label">ISPS</span><span class="surcharge-val">$14</span></div><div class="surcharge-item"><span class="surcharge-label">Guyana Port Congestion</span><span class="surcharge-val">$300</span></div></div></td>
               <td class="total-cell">
                 <div class="rate-block">
                   <div class="rate-no-ins">$2,139<span class="rate-label">excl. insurance</span></div>
@@ -2199,7 +2363,7 @@
               <td class="carrier-cell">CMA CGM</td>
               <td class="transit-cell">15 to 16 days</td>
               <td class="validity-cell">30/6/2026</td>
-              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$1,950</span></div><div class="surcharge-item"><span class="surcharge-label">DTHC</span><span class="surcharge-val">$225</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$150</span></div><div class="surcharge-item"><span class="surcharge-label">ISPS</span><span class="surcharge-val">$14</span></div></div></td>
+              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$1,950</span></div><div class="surcharge-item"><span class="surcharge-label">DTHC</span><span class="surcharge-val">$225</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$150</span></div><div class="surcharge-item"><span class="surcharge-label">ISPS</span><span class="surcharge-val">$14</span></div><div class="surcharge-item"><span class="surcharge-label">Guyana Port Congestion</span><span class="surcharge-val">$600</span></div></div></td>
               <td class="total-cell">
                 <div class="rate-block">
                   <div class="rate-no-ins">$2,939<span class="rate-label">excl. insurance</span></div>
@@ -3735,69 +3899,6 @@
         </div>
       </div>
     </div>
-    <div class="card" data-dest="Dominican Republic" data-dest-slug="dominican-republic">
-      <div class="card-header">
-        <div class="lane-title">
-          <span class="origin-label">Trinidad & Tobago</span>
-          <span class="arrow">→</span>
-          <span class="dest-label">Dominican Republic</span>
-        </div>
-        <div class="card-meta">
-          <span class="meta-item">🚢 <span class="badge">Hapag Lloyd</span></span>
-          <span class="meta-item">⏱ 10 days</span>
-          <span class="meta-item">📅 30/06/2026</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Container</th>
-                <th>POL → POD</th>
-                <th>Commodity</th>
-                <th>Carrier</th>
-                <th>Transit</th>
-                <th>Validity</th>
-                <th>Surcharge Breakdown</th>
-                <th>Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td><span class="tag">20ft</span></td>
-              <td class="pol-cell">Point Lisas<div class="pod-sub">→ Caucedo</div></td>
-              <td class="commodity-cell">FAK</td>
-              <td class="carrier-cell">Hapag Lloyd</td>
-              <td class="transit-cell">10 days</td>
-              <td class="validity-cell">30/06/2026</td>
-              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$750</span></div><div class="surcharge-item"><span class="surcharge-label">OTHC</span><span class="surcharge-val">$259</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$67.5</span></div><div class="surcharge-item"><span class="surcharge-label">Docs</span><span class="surcharge-val">$60</span></div></div></td>
-              <td class="total-cell">
-                <div class="rate-block">
-                  <div class="rate-no-ins">$1,136.5<span class="rate-label">excl. insurance</span></div>
-                  <div class="rate-with-ins">$1,336.5<span class="rate-label ins-label">🛡 insured</span></div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><span class="tag">40ft</span></td>
-              <td class="pol-cell">Point Lisas<div class="pod-sub">→ Caucedo</div></td>
-              <td class="commodity-cell">FAK</td>
-              <td class="carrier-cell">Hapag Lloyd</td>
-              <td class="transit-cell">10 days</td>
-              <td class="validity-cell">30/06/2026</td>
-              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$825</span></div><div class="surcharge-item"><span class="surcharge-label">OTHC</span><span class="surcharge-val">$259</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$67.5</span></div><div class="surcharge-item"><span class="surcharge-label">Docs</span><span class="surcharge-val">$60</span></div></div></td>
-              <td class="total-cell">
-                <div class="rate-block">
-                  <div class="rate-no-ins">$1,211.5<span class="rate-label">excl. insurance</span></div>
-                  <div class="rate-with-ins">$1,411.5<span class="rate-label ins-label">🛡 insured</span></div>
-                </div>
-              </td>
-            </tr></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
     <div class="card" data-dest="Jamaica" data-dest-slug="jamaica">
       <div class="card-header">
         <div class="lane-title">
@@ -3884,6 +3985,69 @@
                 <div class="rate-block">
                   <div class="rate-no-ins">$1,941.5<span class="rate-label">excl. insurance</span></div>
                   <div class="rate-with-ins">$2,141.5<span class="rate-label ins-label">🛡 insured</span></div>
+                </div>
+              </td>
+            </tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-dest="Dominican Republic" data-dest-slug="dominican-republic">
+      <div class="card-header">
+        <div class="lane-title">
+          <span class="origin-label">Trinidad & Tobago</span>
+          <span class="arrow">→</span>
+          <span class="dest-label">Dominican Republic</span>
+        </div>
+        <div class="card-meta">
+          <span class="meta-item">🚢 <span class="badge">Hapag Lloyd</span></span>
+          <span class="meta-item">⏱ 10 days</span>
+          <span class="meta-item">📅 30/06/2026</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Container</th>
+                <th>POL → POD</th>
+                <th>Commodity</th>
+                <th>Carrier</th>
+                <th>Transit</th>
+                <th>Validity</th>
+                <th>Surcharge Breakdown</th>
+                <th>Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="tag">20ft</span></td>
+              <td class="pol-cell">Point Lisas<div class="pod-sub">→ Caucedo</div></td>
+              <td class="commodity-cell">FAK</td>
+              <td class="carrier-cell">Hapag Lloyd</td>
+              <td class="transit-cell">10 days</td>
+              <td class="validity-cell">30/06/2026</td>
+              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$750</span></div><div class="surcharge-item"><span class="surcharge-label">OTHC</span><span class="surcharge-val">$259</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$67.5</span></div><div class="surcharge-item"><span class="surcharge-label">Docs</span><span class="surcharge-val">$60</span></div></div></td>
+              <td class="total-cell">
+                <div class="rate-block">
+                  <div class="rate-no-ins">$1,136.5<span class="rate-label">excl. insurance</span></div>
+                  <div class="rate-with-ins">$1,336.5<span class="rate-label ins-label">🛡 insured</span></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="tag">40ft</span></td>
+              <td class="pol-cell">Point Lisas<div class="pod-sub">→ Caucedo</div></td>
+              <td class="commodity-cell">FAK</td>
+              <td class="carrier-cell">Hapag Lloyd</td>
+              <td class="transit-cell">10 days</td>
+              <td class="validity-cell">30/06/2026</td>
+              <td class="surcharge-cell"><div class="surcharge-grid"><div class="surcharge-item"><span class="surcharge-label">Ocean Freight</span><span class="surcharge-val">$825</span></div><div class="surcharge-item"><span class="surcharge-label">OTHC</span><span class="surcharge-val">$259</span></div><div class="surcharge-item"><span class="surcharge-label">LAC</span><span class="surcharge-val">$67.5</span></div><div class="surcharge-item"><span class="surcharge-label">Docs</span><span class="surcharge-val">$60</span></div></div></td>
+              <td class="total-cell">
+                <div class="rate-block">
+                  <div class="rate-no-ins">$1,211.5<span class="rate-label">excl. insurance</span></div>
+                  <div class="rate-with-ins">$1,411.5<span class="rate-label ins-label">🛡 insured</span></div>
                 </div>
               </td>
             </tr></tbody>

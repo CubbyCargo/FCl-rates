@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T18:44:06Z",
+  "generated_at": "2026-06-10T14:20:01Z",
   "source_file": "Customer Rate Tariff Template_Week 24_2026.xlsx",
   "destinations": {
     "TT": {
@@ -10,7 +10,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "DC- 14 free days",
           "transit_time": "35-37",
           "validity": "30/06/2026",
           "surcharges": {
@@ -29,7 +28,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "DC- 14 free days",
           "transit_time": "35-37",
           "validity": "30/06/2026",
           "surcharges": {
@@ -48,7 +46,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "ES - 14 free days",
           "transit_time": "23-28",
           "validity": "30/06/2026",
           "surcharges": {
@@ -67,7 +64,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "DC- 14 free days",
           "transit_time": "35-37",
           "validity": "30/06/2026",
           "surcharges": {
@@ -88,7 +84,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -109,7 +104,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Carson - 14 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -130,7 +124,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -151,7 +144,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -172,7 +164,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -193,7 +184,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -214,7 +204,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen - 17 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -236,7 +225,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen - 17 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -258,7 +246,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -279,7 +266,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -300,7 +286,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen - 17 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -322,7 +307,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen - 17 free days",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -344,7 +328,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -365,7 +348,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -386,7 +368,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -407,7 +388,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -428,7 +408,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "Wahsen - 14 Free",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -450,7 +429,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "Wahsen - 14 Free",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -472,7 +450,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -493,7 +470,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -514,7 +490,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -535,7 +510,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -556,7 +530,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -577,7 +550,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Peter - 14 free days",
           "transit_time": "45-55",
           "validity": "21/06/2026",
           "surcharges": {
@@ -600,7 +572,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "",
           "transit_time": "16-20",
           "validity": "30/06/2026",
           "surcharges": {
@@ -620,7 +591,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "",
           "transit_time": "16-20",
           "validity": "30/06/2026",
           "surcharges": {
@@ -640,7 +610,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "16-20",
           "validity": "30/06/2026",
           "surcharges": {
@@ -661,7 +630,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "16-20",
           "validity": "30/06/2026",
           "surcharges": {
@@ -684,7 +652,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -706,7 +673,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -730,7 +696,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "65-70",
           "validity": "14/06/2026",
           "surcharges": {
@@ -751,7 +716,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "65-70",
           "validity": "14/06/2026",
           "surcharges": {
@@ -772,7 +736,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "65-70",
           "validity": "14/06/2026",
           "surcharges": {
@@ -795,7 +758,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -816,7 +778,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -839,7 +800,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -860,7 +820,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "45-55",
           "validity": "14/06/2026",
           "surcharges": {
@@ -883,7 +842,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -904,7 +862,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -927,7 +884,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "30/06/2026",
           "surcharges": {
@@ -948,7 +904,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "30/06/2026",
           "surcharges": {
@@ -971,7 +926,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "Upcargo - 11 free days",
           "transit_time": "7",
           "validity": "30/06/2026",
           "surcharges": {
@@ -989,7 +943,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "Upcargo - 11 free days",
           "transit_time": "7",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1009,7 +962,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -1030,7 +982,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -1053,7 +1004,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -1074,7 +1024,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "14/06/2026",
           "surcharges": {
@@ -1097,7 +1046,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "BATI Logistics - 11 free days",
           "transit_time": "55-65",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1118,7 +1066,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "BATI Logistics - 11 free days",
           "transit_time": "55-65",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1139,7 +1086,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "BATI Logistics - 11 free days",
           "transit_time": "55-65",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1162,7 +1108,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "King Ocean",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "6 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1182,7 +1127,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "King Ocean",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "6 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1202,7 +1146,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "6 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1223,7 +1166,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "6 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1244,7 +1186,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "10 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1265,7 +1206,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "10 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1286,7 +1226,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "18 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1307,7 +1246,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "18 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1328,7 +1266,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "12 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1349,7 +1286,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "12 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1370,7 +1306,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "11 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1391,7 +1326,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "Ramps is the agent - 18 free days",
           "transit_time": "11 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1414,7 +1348,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "21/06/2026",
           "surcharges": {
@@ -1435,7 +1368,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-60",
           "validity": "21/06/2026",
           "surcharges": {
@@ -1460,7 +1392,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Fast shipping",
           "transit_time": "39-43",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1479,7 +1410,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Fast shipping",
           "transit_time": "39-43",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1498,7 +1428,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "DSV",
           "transit_time": "35",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1516,7 +1445,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Fast shipping",
           "transit_time": "39-43",
           "validity": "30/06/2026",
           "surcharges": {
@@ -1537,7 +1465,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Hardy",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1557,7 +1484,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "Hardy",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1577,7 +1503,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1597,7 +1522,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1617,7 +1541,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1637,7 +1560,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1657,7 +1579,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen/COSCO",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1677,7 +1598,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen/COSCO",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1699,7 +1619,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -1719,7 +1638,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -1739,7 +1657,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -1759,7 +1676,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -1781,7 +1697,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSK",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "15/6/2026",
           "surcharges": {
@@ -1801,7 +1716,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSK",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "15/6/2026",
           "surcharges": {
@@ -1823,7 +1737,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1843,7 +1756,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1863,7 +1775,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1883,7 +1794,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1905,7 +1815,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1925,7 +1834,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "55-65",
           "validity": "14/6/2026",
           "surcharges": {
@@ -1947,14 +1855,14 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "15 to 16 days",
           "validity": "30/6/2026",
           "surcharges": {
             "Ocean Freight": 1500.0,
             "DTHC": 175.0,
             "LAC": 150.0,
-            "ISPS": 14.0
+            "ISPS": 14.0,
+            "Guyana Port Congestion": 300.0
           },
           "total_without_insurance": 2139.0,
           "insurance": 200,
@@ -1966,14 +1874,14 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "15 to 16 days",
           "validity": "30/6/2026",
           "surcharges": {
             "Ocean Freight": 1950.0,
             "DTHC": 225.0,
             "LAC": 150.0,
-            "ISPS": 14.0
+            "ISPS": 14.0,
+            "Guyana Port Congestion": 600.0
           },
           "total_without_insurance": 2939.0,
           "insurance": 200,
@@ -1987,7 +1895,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2009,7 +1916,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2033,7 +1939,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2053,7 +1958,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2075,7 +1979,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "12-15 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2096,7 +1999,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "12-15 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2117,7 +2019,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "14 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2138,7 +2039,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "14 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2159,7 +2059,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "22 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2180,7 +2079,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "22 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2201,7 +2099,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "15 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2222,7 +2119,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "15 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2247,7 +2143,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "DC",
           "transit_time": "35",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2267,7 +2162,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "Maersk",
-          "agent": "DC",
           "transit_time": "35",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2287,7 +2181,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "Hapag Lloyd",
-          "agent": "Wahsen",
           "transit_time": "28",
           "validity": "31/03/2026",
           "surcharges": {
@@ -2307,7 +2200,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "Hapag Lloyd",
-          "agent": "",
           "transit_time": "28",
           "validity": "31/03/2026",
           "surcharges": {
@@ -2327,7 +2219,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "DSV",
           "transit_time": "35",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2348,7 +2239,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "becky",
           "transit_time": "65-75",
           "validity": "14/6/2025",
           "surcharges": {
@@ -2369,7 +2259,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "becky",
           "transit_time": "55-65",
           "validity": "14/6/2025",
           "surcharges": {
@@ -2390,7 +2279,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2411,7 +2299,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "Wahsen",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2434,7 +2321,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2455,7 +2341,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2476,7 +2361,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2497,7 +2381,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "30",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2520,7 +2403,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MAERSK",
-          "agent": "",
           "transit_time": "75-85",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2541,7 +2423,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MAERSK",
-          "agent": "",
           "transit_time": "75-85",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2564,7 +2445,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2585,7 +2465,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2606,7 +2485,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ZIM",
-          "agent": "",
           "transit_time": "70-80",
           "validity": "30/4/2025",
           "surcharges": {
@@ -2629,7 +2507,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2650,7 +2527,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2673,7 +2549,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2694,7 +2569,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2717,7 +2591,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "15 to 16 days",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2736,7 +2609,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "15 to 16 days",
           "validity": "30/6/2026",
           "surcharges": {
@@ -2757,7 +2629,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2778,7 +2649,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -2801,7 +2671,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2825,7 +2694,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2851,7 +2719,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "75-85",
           "validity": "2026-07-04 00:00:00",
           "surcharges": {
@@ -2871,7 +2738,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
-          "agent": "",
           "transit_time": "65-85",
           "validity": "2026-07-04 00:00:00",
           "surcharges": {
@@ -2893,7 +2759,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "12-18 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2913,7 +2778,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "12-18 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2933,7 +2797,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "16 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2953,7 +2816,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "17 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2973,7 +2835,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "17 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -2993,7 +2854,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA-CGM",
-          "agent": "",
           "transit_time": "18 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3015,7 +2875,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -3036,7 +2895,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "65-75",
           "validity": "14/6/2026",
           "surcharges": {
@@ -3061,7 +2919,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "14/11/2025",
           "surcharges": {
@@ -3082,7 +2939,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "ONE",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "14/11/2025",
           "surcharges": {
@@ -3103,7 +2959,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "YML",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/11/2025",
           "surcharges": {
@@ -3124,7 +2979,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "YML",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/11/2025",
           "surcharges": {
@@ -3145,7 +2999,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSK",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/11/2025",
           "surcharges": {
@@ -3166,7 +3019,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSK",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "30/11/2025",
           "surcharges": {
@@ -3187,7 +3039,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "YML",
-          "agent": "",
           "transit_time": "35-40",
           "validity": "14/11/2025",
           "surcharges": {
@@ -3208,7 +3059,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "YML",
-          "agent": "",
           "transit_time": "35-40",
           "validity": "14/11/2025",
           "surcharges": {
@@ -3229,7 +3079,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "2026-07-06 00:00:00",
           "surcharges": {
@@ -3250,7 +3099,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "agent": "",
           "transit_time": "30-35",
           "validity": "2026-07-06 00:00:00",
           "surcharges": {
@@ -3275,7 +3123,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3295,7 +3142,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3311,48 +3157,6 @@
         }
       ]
     },
-    "DR": {
-      "TRINIDAD & TOBAGO / DOMINICAN REPUBLIC": [
-        {
-          "pol": "Point Lisas",
-          "pod": "Caucedo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "Hapag Lloyd",
-          "agent": "",
-          "transit_time": "10 days",
-          "validity": "30/06/2026",
-          "surcharges": {
-            "Ocean Freight": 750.0,
-            "OTHC": 259.0,
-            "LAC": 67.5,
-            "Docs": 60.0
-          },
-          "total_without_insurance": 1136.5,
-          "insurance": 200,
-          "total_with_insurance": 1336.5
-        },
-        {
-          "pol": "Point Lisas",
-          "pod": "Caucedo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "Hapag Lloyd",
-          "agent": "",
-          "transit_time": "10 days",
-          "validity": "30/06/2026",
-          "surcharges": {
-            "Ocean Freight": 825.0,
-            "OTHC": 259.0,
-            "LAC": 67.5,
-            "Docs": 60.0
-          },
-          "total_without_insurance": 1211.5,
-          "insurance": 200,
-          "total_with_insurance": 1411.5
-        }
-      ]
-    },
     "JAM": {
       "TRINIDAD & TOBAGO / JAMAICA": [
         {
@@ -3361,7 +3165,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "16 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3380,7 +3183,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "COSCO",
-          "agent": "",
           "transit_time": "16 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3399,7 +3201,6 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3419,7 +3220,6 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
-          "agent": "",
           "transit_time": "1-2 days",
           "validity": "30/06/2026",
           "surcharges": {
@@ -3432,6 +3232,46 @@
           "total_without_insurance": 1941.5,
           "insurance": 200,
           "total_with_insurance": 2141.5
+        }
+      ]
+    },
+    "DR": {
+      "TRINIDAD & TOBAGO / DOMINICAN REPUBLIC": [
+        {
+          "pol": "Point Lisas",
+          "pod": "Caucedo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "transit_time": "10 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 750.0,
+            "OTHC": 259.0,
+            "LAC": 67.5,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1136.5,
+          "insurance": 200,
+          "total_with_insurance": 1336.5
+        },
+        {
+          "pol": "Point Lisas",
+          "pod": "Caucedo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "transit_time": "10 days",
+          "validity": "30/06/2026",
+          "surcharges": {
+            "Ocean Freight": 825.0,
+            "OTHC": 259.0,
+            "LAC": 67.5,
+            "Docs": 60.0
+          },
+          "total_without_insurance": 1211.5,
+          "insurance": 200,
+          "total_with_insurance": 1411.5
         }
       ]
     }
