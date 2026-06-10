@@ -155,6 +155,8 @@ def parse_sheet(sheet_name: str) -> list[dict]:
                 cm["carrier"] = j
             elif key == "agent":
                 cm["agent"] = j
+            elif key in ("comment", "comment ", "comments", "notes"):
+                cm["comment"] = j
             elif key in SURCHARGE_ALIASES:
                 label = SURCHARGE_ALIASES[key]
                 if "surcharges" not in cm:
@@ -242,6 +244,7 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         validity = clean_str(row_vals[col_map["validity"]]) if "validity" in col_map and col_map["validity"] < len(row_vals) else ""
         carrier  = clean_str(row_vals[col_map["carrier"]])  if "carrier"  in col_map and col_map["carrier"]  < len(row_vals) else ""
         agent    = clean_str(row_vals[col_map["agent"]])    if "agent"    in col_map and col_map["agent"]    < len(row_vals) else ""
+        comment  = clean_str(row_vals[col_map["comment"]])  if "comment"  in col_map and col_map["comment"]  < len(row_vals) else ""
 
         if hasattr(validity, "strftime"):
             validity = validity.strftime("%d/%m/%Y")
@@ -266,6 +269,7 @@ def parse_sheet(sheet_name: str) -> list[dict]:
             "commodity":      "",
             "carrier":        carrier,
             "agent":          agent,
+            "comment":        comment,
             "transit":        transit,
             "validity":       validity,
             "surcharges":     surcharges,
@@ -336,6 +340,7 @@ def build_ai_block(all_rates: list[dict]) -> str:
             f"TOTAL_EXCL_INS: USD {r['total_no_ins']:.2f} | "
             f"TOTAL_WITH_INS: USD {r['total_with_ins']:.2f} | "
             f"VALIDITY: {r['validity']} | TRANSIT: {r['transit']}"
+            + (f" | NOTE: {r['comment']}" if r.get('comment') else "")
         )
         lines.append(line)
 
@@ -392,6 +397,7 @@ def render_html(cards: list[dict], all_rates: list[dict]) -> str:
               <td class="transit-cell">{r["transit"]}</td>
               <td class="validity-cell">{r["validity"]}</td>
               <td class="surcharge-cell"><div class="surcharge-grid">{surcharge_breakdown}</div></td>
+              <td class="comment-col">{r.get("comment", "")}</td>
               <td class="total-cell">
                 <div class="rate-block">
                   <div class="rate-no-ins">{fmt_usd(r["total_no_ins"])}<span class="rate-label">excl. insurance</span></div>
@@ -432,6 +438,7 @@ def render_html(cards: list[dict], all_rates: list[dict]) -> str:
                 <th>Transit</th>
                 <th>Validity</th>
                 <th>Surcharge Breakdown</th>
+                <th>Notes</th>
                 <th>Rate</th>
               </tr>
             </thead>
@@ -500,6 +507,7 @@ def render_html(cards: list[dict], all_rates: list[dict]) -> str:
   .rate-with-ins {{ display: flex; flex-direction: column; font-size: 16px; font-weight: 800; color: var(--green-dark); background: var(--green-bg); border: 1.5px solid var(--green); border-radius: 6px; padding: 6px 10px; }}
   .rate-label {{ font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-top: 2px; }}
   .ins-label {{ color: var(--green-dark); }}
+  .comment-col {{ font-size: 11px; color: #b85c00; font-style: italic; max-width: 220px; }}
   .notes {{ background: var(--purple-light); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px 22px; margin: 0 32px 28px; font-size: 11px; color: var(--purple-dark); line-height: 1.7; }}
   .notes strong {{ display: block; margin-bottom: 6px; font-size: 12px; color: var(--purple); }}
   .hidden {{ display: none !important; }}
