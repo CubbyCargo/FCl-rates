@@ -1,21 +1,17 @@
 """
 build_html.py  —  FCl-rates repo (old Excel format)
 Reads the old-style Customer Rate Tariff Template Excel file and generates:
-  docs/index.html   — full tariff page (new card/table style)
-  docs/rates.json   — data feed consumed by quote.html
-  docs/quote.html   — quote generator (new style)
+  index.html   — full tariff page (card/table style)
+  rates.json   — data feed consumed by quote.html
+  quote.html   — quote generator
 
-Old Excel structure (per sheet, one section per trade lane):
-  - Sections separated by a bold "ORIGIN / DEST SHIPPING TARIFF" header row
-  - Next row: column headers  (POL, POD, OF/Bunker, THC, LAC/Local Charges, ISPS, ...)
-  - Data rows: col 1=POL (may be blank = carry-forward), col 2=POD (may be blank),
-               col 3=container size, cols 4..N=surcharge values,
-               penultimate cols = Total without Insurance, Insurance, Total with Insurance,
-               then Transit Time, Validity, Carrier, Agent
-  - Sections end at a "Notes" row
-  - Sheets: TT, GUY, SUR, COL  (Trinidad Exports and Print FE-TT are skipped)
-
-Column indices (0-based) are FIXED per section header row — we detect them dynamically.
+Changes in this version:
+  - Added hidden AI data block at top of index.html for respond.io knowledge
+    source indexing. Lists every rate as a flat plain-text line so the AI agent
+    retrieves all carriers for a given port in one chunk rather than stopping
+    at the first card boundary.
+  - Default rate shown to customers is now excl. insurance (total_no_ins).
+  - All carriers shown for multi-carrier lanes (no "lowest only" suppression).
 """
 
 import pandas as pd
@@ -26,22 +22,18 @@ from datetime import datetime, timezone
 from collections import defaultdict
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-# Match both "Customer Rate Tariff Template_Week 23_2026.xlsx" (spaces)
-# and "Customer_Rate_Tariff_Template_Week_23_2026.xlsx" (underscores)
 _candidates = list(Path(".").glob("Customer*Tariff*Template*Week*.xlsx")) + \
               list(Path(".").glob("Customer Rate Tariff Template_Week *.xlsx"))
 if not _candidates:
     print("ERROR: No Excel file found. Expected 'Customer Rate Tariff Template_Week *.xlsx'", file=sys.stderr)
     sys.exit(1)
-EXCEL_PATH = _candidates[0]
+EXCEL_PATH        = _candidates[0]
 OUTPUT_PATH       = Path("index.html")
 OUTPUT_JSON_PATH  = Path("rates.json")
 OUTPUT_QUOTE_PATH = Path("quote.html")
 
-# Sheets to process
 SHEETS_TO_PROCESS = ["TT", "GUY", "SUR", "COL", "Trinidad Exports"]
 
-# Map sheet name → destination base label (used if POD is ambiguous)
 SHEET_DEST_HINT = {
     "TT":               "Trinidad & Tobago",
     "GUY":              "Guyana",
@@ -52,7 +44,6 @@ SHEET_DEST_HINT = {
 
 # ── Helpers ────────────────────────────────────────────────────────────────
 def clean_val(v):
-    """Return float if numeric and > 0, else None."""
     try:
         f = float(v)
         return f if f > 0 else None
@@ -67,52 +58,38 @@ def fmt_usd(v):
     if v is None:
         return "-"
     s = f"${v:,.2f}"
-    # Strip trailing zeros after decimal
     if "." in s:
         s = s.rstrip("0").rstrip(".")
     return s
 
 def get_destination_label(pod):
     pod = clean_str(pod)
-    tt = {"Port of Spain", "Point Lisas", "Port-of-Spain", "Port of Spain/Point Lisas"}
-    gy = {"Georgetown"}
-    sr = {"Paramaribo"}
-    bw = {"Bridgetown"}
-    kn = {"Kingston"}
-    ca = {"Caucedo"}
-    co = {"Buenaventura", "Buenaventua", "Barranquilla", "Cartagena", "Buenaventura/Barranquilla"}
-    if pod in tt or "Port of Spain" in pod or "Point Lisas" in pod:
+    if "Port of Spain" in pod or "Point Lisas" in pod or "Port-of-Spain" in pod:
         return "Trinidad & Tobago"
-    if pod in gy:
+    if "Georgetown" in pod:
         return "Guyana"
-    if pod in sr:
+    if "Paramaribo" in pod:
         return "Suriname"
-    if pod in bw or "Bridgetown" in pod:
+    if "Bridgetown" in pod:
         return "Barbados"
-    if pod in kn or "Kingston" in pod:
+    if "Kingston" in pod:
         return "Jamaica"
-    if pod in ca or "Caucedo" in pod:
+    if "Caucedo" in pod:
         return "Dominican Republic"
-    if any(p in pod for p in co):
+    if any(p in pod for p in ["Buenaventura", "Barranquilla", "Cartagena"]):
         return "Colombia"
     return pod
 
 # ── Excel reader ───────────────────────────────────────────────────────────
 def parse_sheet(sheet_name: str) -> list[dict]:
-    """
-    Parse one sheet and return a list of rate-row dicts.
-    Each dict has keys: origin, pol, pod, container, surcharges,
-                        total_no_ins, total_with_ins, transit, validity, carrier, agent
-    """
     df = pd.read_excel(EXCEL_PATH, sheet_name=sheet_name, header=None)
 
     rates = []
-    section_origin = ""       # e.g. "USA"
-    col_map = {}              # column name → col index (rebuilt per section header)
+    section_origin = ""
+    col_map = {}
     current_pol = ""
     current_pod = ""
 
-    # Column name aliases — maps various header spellings → canonical key
     SURCHARGE_ALIASES = {
         "of/bunker":                    "Ocean Freight",
         "ocean freight":                "Ocean Freight",
@@ -128,7 +105,7 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         "other port charges":           "Other Port Charges",
         "local handling":               "Local Handling",
         "admin":                        "Admin",
-        "dthc":                         "THC",
+        "dthc":                         "DTHC",
         "doc fee":                      "DOC Fee",
         "eir (vat incl)":               "EIR",
         "dredging ":                    "Dredging Fee",
@@ -143,25 +120,26 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         "origin lac":                   "LAC",
         "destination lac":              "LAC",
         "destination terminal handling charge (dthc)": "DTHC",
-        "dthc":                         "DTHC",
         "docs":                         "Docs",
         "agency admin (guyana)":        "Agency Admin",
         "agency admin (suriname)":      "Agency Admin",
+        "agency admin":                 "Agency Admin",
         "terminal lease surcharge (suriname)": "Terminal Lease",
         "dregding fee (suriname)":      "Dredging Fee",
         "dreging fee (suriname)":       "Dredging Fee",
+        "peak season surcharge":        "Peak Season Surcharge",
+        "guyana port congestion":       "Guyana Port Congestion",
     }
 
     def parse_header_row(row) -> dict:
-        """Given a raw pandas row, build col_map."""
         cm = {}
         for j, v in enumerate(row):
             if pd.isna(v):
                 continue
             key = str(v).strip().lower()
-            if key in ("pol",):
+            if key == "pol":
                 cm["POL"] = j
-            elif key in ("pod",):
+            elif key == "pod":
                 cm["POD"] = j
             elif key in ("total without insurance", "total w/out insurance", "total w/out ins"):
                 cm["total_no_ins"] = j
@@ -173,9 +151,9 @@ def parse_sheet(sheet_name: str) -> list[dict]:
                 cm["transit"] = j
             elif key in ("validity ", "validity"):
                 cm["validity"] = j
-            elif key in ("carrier",):
+            elif key == "carrier":
                 cm["carrier"] = j
-            elif key in ("agent",):
+            elif key == "agent":
                 cm["agent"] = j
             elif key in SURCHARGE_ALIASES:
                 label = SURCHARGE_ALIASES[key]
@@ -185,20 +163,16 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         return cm
 
     def is_section_header(row) -> str:
-        """If this row is a 'ORIGIN / DEST SHIPPING TARIFF' line, return origin country."""
         non_null = [clean_str(v) for v in row if pd.notna(v) and clean_str(v)]
         if len(non_null) == 1:
             val = non_null[0].upper()
             if "SHIPPING TARIFF" in val or "TARIFF" in val:
-                # Extract origin country (everything before the first '/')
                 origin = val.split("/")[0].strip().title()
-                # Clean up "Usa" → "USA"
                 origin = origin.replace("Usa", "USA").replace("Uk", "UK")
                 return origin
         return ""
 
     def is_column_header(row) -> bool:
-        """Check if this row contains 'POL' in col 1."""
         for j, v in enumerate(row):
             if pd.notna(v) and clean_str(v).upper() == "POL":
                 return True
@@ -206,14 +180,11 @@ def parse_sheet(sheet_name: str) -> list[dict]:
 
     def is_notes_row(row) -> bool:
         non_null = [clean_str(v) for v in row if pd.notna(v) and clean_str(v)]
-        if non_null and non_null[0].startswith("Notes"):
-            return True
-        return False
+        return bool(non_null and non_null[0].startswith("Notes"))
 
     for i, row in df.iterrows():
         row_vals = list(row)
 
-        # Detect section header
         origin = is_section_header(row_vals)
         if origin:
             section_origin = origin
@@ -221,29 +192,24 @@ def parse_sheet(sheet_name: str) -> list[dict]:
             current_pod = ""
             continue
 
-        # Detect column header row
         if is_column_header(row_vals):
             col_map = parse_header_row(row_vals)
             current_pol = ""
             current_pod = ""
             continue
 
-        # Skip notes
         if is_notes_row(row_vals):
             continue
 
-        # Skip if we don't have a col_map yet
         if not col_map:
             continue
 
-        # Try to parse a data row
-        # POL — col 1 (index 1), carry forward if blank
-        pol_col = col_map.get("POL", 1)
-        pod_col = col_map.get("POD", 2)
-        size_col = 3   # always col index 3
+        pol_col  = col_map.get("POL", 1)
+        pod_col  = col_map.get("POD", 2)
+        size_col = 3
 
-        pol_val = clean_str(row_vals[pol_col]) if pol_col < len(row_vals) else ""
-        pod_val = clean_str(row_vals[pod_col]) if pod_col < len(row_vals) else ""
+        pol_val  = clean_str(row_vals[pol_col])  if pol_col  < len(row_vals) else ""
+        pod_val  = clean_str(row_vals[pod_col])  if pod_col  < len(row_vals) else ""
         size_val = clean_str(row_vals[size_col]) if size_col < len(row_vals) else ""
 
         if pol_val:
@@ -251,26 +217,22 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         if pod_val:
             current_pod = pod_val
 
-        # Must have a container size to be a data row
         if size_val not in ("20ft", "40ft", "20 ft", "40 ft"):
             continue
-        # Normalise
         size_val = "20ft" if "20" in size_val else "40ft"
 
         if not current_pol or not current_pod:
             continue
 
-        # Surcharges
         surcharges = {}
         for col_idx, label in col_map.get("surcharges", {}).items():
             v = clean_val(row_vals[col_idx]) if col_idx < len(row_vals) else None
             if v:
                 surcharges[label] = v
 
-        total_no_ins  = clean_val(row_vals[col_map["total_no_ins"]])  if "total_no_ins"  in col_map and col_map["total_no_ins"]  < len(row_vals) else None
+        total_no_ins   = clean_val(row_vals[col_map["total_no_ins"]])   if "total_no_ins"   in col_map and col_map["total_no_ins"]   < len(row_vals) else None
         total_with_ins = clean_val(row_vals[col_map["total_with_ins"]]) if "total_with_ins" in col_map and col_map["total_with_ins"] < len(row_vals) else None
 
-        # Derive missing totals
         if total_no_ins is None and surcharges:
             total_no_ins = round(sum(surcharges.values()), 2)
         if total_with_ins is None and total_no_ins is not None:
@@ -281,13 +243,11 @@ def parse_sheet(sheet_name: str) -> list[dict]:
         carrier  = clean_str(row_vals[col_map["carrier"]])  if "carrier"  in col_map and col_map["carrier"]  < len(row_vals) else ""
         agent    = clean_str(row_vals[col_map["agent"]])    if "agent"    in col_map and col_map["agent"]    < len(row_vals) else ""
 
-        # Format validity date nicely if it's a date object
         if hasattr(validity, "strftime"):
             validity = validity.strftime("%d/%m/%Y")
 
         dest_label = get_destination_label(current_pod)
 
-        # Fix misleading section headers — derive origin from POL when header is wrong
         pol_lower = current_pol.lower()
         if "georgetown" in pol_lower:
             section_origin = "Guyana"
@@ -297,19 +257,19 @@ def parse_sheet(sheet_name: str) -> list[dict]:
             section_origin = "Suriname"
 
         rates.append({
-            "sheet":         sheet_name,
-            "origin":        section_origin,
-            "pol":           current_pol,
-            "pod":           current_pod,
-            "dest_label":    dest_label,
-            "container":     size_val,
-            "commodity":     "",   # old format has no commodity column
-            "carrier":       carrier,
-            "agent":         agent,
-            "transit":       transit,
-            "validity":      validity,
-            "surcharges":    surcharges,
-            "total_no_ins":  total_no_ins,
+            "sheet":          sheet_name,
+            "origin":         section_origin,
+            "pol":            current_pol,
+            "pod":            current_pod,
+            "dest_label":     dest_label,
+            "container":      size_val,
+            "commodity":      "",
+            "carrier":        carrier,
+            "agent":          agent,
+            "transit":        transit,
+            "validity":       validity,
+            "surcharges":     surcharges,
+            "total_no_ins":   total_no_ins,
             "total_with_ins": total_with_ins,
         })
 
@@ -324,7 +284,8 @@ def build_cards(all_rates: list[dict]) -> list[dict]:
         lane_map[lane_key].append(r)
 
     def lane_sort_key(lane):
-        dest_order = ["Trinidad & Tobago", "Guyana", "Suriname", "Colombia", "Bridgetown", "Kingston", "Caucedo"]
+        dest_order = ["Trinidad & Tobago", "Guyana", "Suriname", "Colombia",
+                      "Barbados", "Jamaica", "Dominican Republic"]
         dest = lane.split(" → ", 1)[1] if " → " in lane else lane
         try:
             return (dest_order.index(dest), lane)
@@ -335,40 +296,93 @@ def build_cards(all_rates: list[dict]) -> list[dict]:
     for lane in sorted(lane_map.keys(), key=lane_sort_key):
         rows = lane_map[lane]
         origin, dest = lane.split(" → ", 1)
-        carriers  = sorted(set(r["carrier"] for r in rows if r["carrier"]))
+        carriers   = sorted(set(r["carrier"] for r in rows if r["carrier"]))
         validities = sorted(set(r["validity"] for r in rows if r["validity"]))
         transits   = sorted(set(r["transit"]  for r in rows if r["transit"]))
         cards.append({
-            "lane":      lane,
-            "origin":    origin,
-            "dest":      dest,
-            "carriers":  carriers,
+            "lane":       lane,
+            "origin":     origin,
+            "dest":       dest,
+            "carriers":   carriers,
             "validities": validities,
-            "transits":  transits,
-            "rate_rows": rows,
+            "transits":   transits,
+            "rate_rows":  rows,
         })
     return cards
 
 
+# ── AI data block ──────────────────────────────────────────────────────────
+def build_ai_block(all_rates: list[dict]) -> str:
+    """
+    Flat plain-text listing of every rate row, hidden from human visitors
+    but readable by respond.io's knowledge source crawler.
+
+    Each line is a complete rate record so the AI agent can find all carriers
+    for any given port without hitting card/chunk boundaries.
+
+    Format per line:
+    RATE | ORIGIN: <country> | POL: <ports> | POD: <pod> | SIZE: <20ft/40ft> |
+         CARRIER: <name> | TOTAL_EXCL_INS: <usd> | TOTAL_WITH_INS: <usd> |
+         VALIDITY: <date> | TRANSIT: <days>
+    """
+    lines = []
+    for r in all_rates:
+        # Skip rows with no total
+        if r["total_no_ins"] is None:
+            continue
+        line = (
+            f"RATE | ORIGIN: {r['origin']} | POL: {r['pol']} | POD: {r['pod']} | "
+            f"SIZE: {r['container']} | CARRIER: {r['carrier']} | "
+            f"TOTAL_EXCL_INS: USD {r['total_no_ins']:.2f} | "
+            f"TOTAL_WITH_INS: USD {r['total_with_ins']:.2f} | "
+            f"VALIDITY: {r['validity']} | TRANSIT: {r['transit']}"
+        )
+        lines.append(line)
+
+    block = "\n".join(lines)
+    # Invisible to human visitors; fully readable as plain text by crawlers
+    return (
+        '<div id="ai-rate-data" aria-hidden="true" '
+        'style="position:absolute;width:1px;height:1px;overflow:hidden;'
+        'clip:rect(0,0,0,0);white-space:pre;">\n'
+        + block
+        + "\n</div>\n"
+    )
+
+
 # ── HTML renderer ────────────────────────────────────────────────────────────
-def render_html(cards: list[dict]) -> str:
+def render_html(cards: list[dict], all_rates: list[dict]) -> str:
     generated = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
     dests = sorted(set(c["dest"] for c in cards))
-    dest_options = "".join(f'<button class="filter-btn" data-dest="{d}">{d}</button>' for d in dests)
+    dest_options = "".join(
+        f'<button class="filter-btn" data-dest="{d}">{d}</button>' for d in dests
+    )
 
     cards_html = ""
     for c in cards:
-        dest_slug = c["dest"].lower().replace(" ", "-").replace("&", "and").replace("(", "").replace(")", "")
+        dest_slug = (
+            c["dest"].lower()
+            .replace(" ", "-").replace("&", "and")
+            .replace("(", "").replace(")", "")
+        )
 
         table_rows = ""
         for r in c["rate_rows"]:
             surcharge_breakdown = "".join(
-                f'<div class="surcharge-item"><span class="surcharge-label">{k}</span>'
-                f'<span class="surcharge-val">{fmt_usd(v)}</span></div>'
+                f'<div class="surcharge-item">'
+                f'<span class="surcharge-label">{k}</span>'
+                f'<span class="surcharge-val">{fmt_usd(v)}</span>'
+                f'</div>'
                 for k, v in r["surcharges"].items()
             )
-            agent_note = f'<div class="agent-note">{r["agent"]}</div>' if r["agent"] else ""
             commodity_cell = r["commodity"] if r["commodity"] else "FAK"
+
+            # Comment field (shown to customers — space/availability notes)
+            comment = r.get("comment", "")
+            comment_cell = (
+                f'<div class="comment-cell">{comment}</div>' if comment else ""
+            )
+
             table_rows += f"""
             <tr>
               <td><span class="tag">{r["container"]}</span></td>
@@ -386,9 +400,11 @@ def render_html(cards: list[dict]) -> str:
               </td>
             </tr>"""
 
-        carriers_badges = " ".join(f'<span class="badge">{cr}</span>' for cr in c["carriers"])
-        transit_range   = " / ".join(sorted(set(c["transits"])))  or "—"
-        validity_range  = " / ".join(sorted(set(c["validities"]))) or "—"
+        carriers_badges = " ".join(
+            f'<span class="badge">{cr}</span>' for cr in c["carriers"]
+        )
+        transit_range  = " / ".join(sorted(set(c["transits"])))  or "—"
+        validity_range = " / ".join(sorted(set(c["validities"]))) or "—"
 
         cards_html += f"""
     <div class="card" data-dest="{c['dest']}" data-dest-slug="{dest_slug}">
@@ -424,6 +440,8 @@ def render_html(cards: list[dict]) -> str:
         </div>
       </div>
     </div>"""
+
+    ai_block = build_ai_block(all_rates)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -471,7 +489,6 @@ def render_html(cards: list[dict]) -> str:
   .pod-sub {{ font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 2px; }}
   .commodity-cell {{ color: var(--muted); font-size: 11px; }}
   .carrier-cell {{ font-weight: 700; color: var(--purple); }}
-  .agent-note {{ font-size: 10px; color: var(--muted); font-weight: 400; margin-top: 2px; }}
   .transit-cell, .validity-cell {{ white-space: nowrap; color: var(--muted); font-size: 11px; }}
   .surcharge-cell {{ min-width: 200px; max-width: 300px; }}
   .surcharge-grid {{ display: flex; flex-direction: column; gap: 3px; }}
@@ -490,6 +507,7 @@ def render_html(cards: list[dict]) -> str:
 </style>
 </head>
 <body>
+{ai_block}
 <header>
   <h1>🚢 Cubby Cargo — FCL Rate Tariff</h1>
   <span class="generated">Generated: {generated}</span>
@@ -531,16 +549,13 @@ def render_html(cards: list[dict]) -> str:
 def build_json(cards: list[dict]):
     generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     dest_key_map = {
-        "Trinidad & Tobago": "TT",
-        "Guyana":            "GUY",
-        "Suriname":          "SUR",
-        "Colombia":          "COL",
-        "Barbados":          "BRB",
-        "Jamaica":           "JAM",
+        "Trinidad & Tobago":  "TT",
+        "Guyana":             "GUY",
+        "Suriname":           "SUR",
+        "Colombia":           "COL",
+        "Barbados":           "BRB",
+        "Jamaica":            "JAM",
         "Dominican Republic": "DR",
-        "Bridgetown":        "BRB",
-        "Kingston":          "JAM",
-        "Caucedo":           "DR",
     }
 
     destinations = {}
@@ -553,18 +568,17 @@ def build_json(cards: list[dict]):
         rate_list = []
         for r in c["rate_rows"]:
             rate_list.append({
-                "pol":                    r["pol"],
-                "pod":                    r["pod"],
-                "size":                   r["container"],
-                "commodity":              r["commodity"] or "FAK",
-                "carrier":                r["carrier"],
-                "agent":                  r["agent"],
-                "transit_time":           r["transit"],
-                "validity":               r["validity"],
-                "surcharges":             r["surcharges"],
+                "pol":                     r["pol"],
+                "pod":                     r["pod"],
+                "size":                    r["container"],
+                "commodity":               r["commodity"] or "FAK",
+                "carrier":                 r["carrier"],
+                "transit_time":            r["transit"],
+                "validity":                r["validity"],
+                "surcharges":              r["surcharges"],
                 "total_without_insurance": r["total_no_ins"],
-                "insurance":              200,
-                "total_with_insurance":   r["total_with_ins"],
+                "insurance":               200,
+                "total_with_insurance":    r["total_with_ins"],
             })
 
         if lane_key not in destinations[dest_key]:
@@ -579,7 +593,7 @@ def build_json(cards: list[dict]):
     OUTPUT_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_JSON_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     total = sum(len(v) for d in destinations.values() for v in d.values())
-    print(f"✅ Written to {OUTPUT_JSON_PATH} ({len(destinations)} destinations, {total} rate rows)")
+    print(f"✅ Written {OUTPUT_JSON_PATH} ({len(destinations)} destinations, {total} rate rows)")
 
 
 # ── Quote HTML builder ────────────────────────────────────────────────────────
@@ -595,7 +609,6 @@ def build_quote(cards: list[dict]):
                 "container":      r["container"],
                 "commodity":      r["commodity"] or "FAK",
                 "carrier":        r["carrier"],
-                "agent":          r["agent"],
                 "transit":        r["transit"],
                 "validity":       r["validity"],
                 "surcharges":     r["surcharges"],
@@ -624,8 +637,6 @@ def build_quote(cards: list[dict]):
   }}
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   body {{ font-family: Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 13px; }}
-
-  /* ── Screen-only ── */
   @media screen {{
     header {{ background: var(--purple); color: white; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }}
     header h1 {{ font-size: 1.2rem; font-weight: 800; }}
@@ -651,8 +662,6 @@ def build_quote(cards: list[dict]):
     .btn-pdf:hover {{ background: var(--purple-dark); }}
     .quote-card {{ background: var(--white); border-radius: 12px; border: 1.5px solid var(--border); box-shadow: var(--shadow); padding: 28px; display: none; }}
   }}
-
-  /* ── Print ── */
   @media print {{
     @page {{ size: A4; margin: 14mm 16mm 14mm 16mm; }}
     header, .subtitle, .form-card, .results-card, .btn-pdf {{ display: none !important; }}
@@ -661,8 +670,6 @@ def build_quote(cards: list[dict]):
     .quote-card {{ display: block !important; border: none; box-shadow: none; padding: 0; border-radius: 0; }}
     .pq-section-card, .pq-ins-note, .pq-total-with-row {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
   }}
-
-  /* ── Shared result list styles ── */
   .rate-meta {{ font-size: 11px; color: var(--muted); margin-top: 3px; }}
   .rate-carrier {{ font-weight: 700; color: var(--purple); }}
   .surcharge-list {{ font-size: 11px; }}
@@ -675,8 +682,6 @@ def build_quote(cards: list[dict]):
   .ins-note-badge {{ font-size: 9px; color: var(--green-dark); display: block; margin-top: 2px; }}
   .tag {{ background: var(--purple); color: white; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; }}
   .no-results {{ color: var(--muted); font-size: 13px; padding: 12px 0; }}
-
-  /* ── Print quote layout ── */
   .pq-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }}
   .pq-logo-cubby img {{ height: 40px; width: auto; }}
   .pq-logo-ramps {{ display: flex; align-items: center; gap: 5px; }}
@@ -705,7 +710,6 @@ def build_quote(cards: list[dict]):
   .pq-ins-note {{ background: var(--green-bg); border: 1px solid var(--green); border-radius: 5px; padding: 7px 10px; font-size: 10px; color: var(--green-dark); margin-bottom: 8px; }}
   .pq-disclaimer {{ font-size: 9px; color: #999; line-height: 1.6; border-top: 1px solid #eee; padding-top: 8px; margin-bottom: 10px; }}
   .pq-footer {{ border-top: 3px solid var(--navy); padding-top: 6px; display: flex; justify-content: space-between; font-size: 9px; color: #666; }}
-
   @media (max-width: 600px) {{ .form-grid {{ grid-template-columns: 1fr; }} .rate-row {{ grid-template-columns: 1fr; }} }}
 </style>
 </head>
@@ -757,8 +761,6 @@ def build_quote(cards: list[dict]):
   </div>
 
   <div class="quote-card" id="quote-card">
-
-    <!-- PRINT QUOTE LAYOUT -->
     <div class="pq-header">
       <div class="pq-logo-cubby">
         <img src="https://cubbycargo.github.io/FCl-rates/cubby_logo.png" alt="Cubby Cargo"/>
@@ -780,7 +782,6 @@ def build_quote(cards: list[dict]):
       </div>
     </div>
     <div class="pq-title">Commercial Proposal — FCL Freight</div>
-
     <div class="pq-section-card">
       <div class="pq-section-head">Shipment Info</div>
       <div class="pq-section-body">
@@ -804,14 +805,12 @@ def build_quote(cards: list[dict]):
         </table>
       </div>
     </div>
-
     <div class="pq-section-card">
       <div class="pq-section-head">Surcharge Breakdown</div>
       <div class="pq-section-body">
         <table class="pq-table" id="pq-surcharge-table"></table>
       </div>
     </div>
-
     <div class="pq-ins-note">
       Marine Insurance covers a C&amp;F value of up to USD $30,000 at an additional $200. Ask your Cubby representative to include it in your booking.
     </div>
@@ -821,7 +820,6 @@ def build_quote(cards: list[dict]):
       Should client decline Marine Insurance, Ramps Logistics shall not be held liable for any claims, loss or damages arising from the execution of services.
     </div>
     <div class="pq-footer"></div>
-
     <div style="margin-top:20px;">
       <button class="btn-pdf" onclick="window.print()">🖨 Print / Save as PDF</button>
     </div>
@@ -837,10 +835,7 @@ const LANES = {lanes_js};
   el.disabled = true;
   fetch('https://script.google.com/macros/s/AKfycbyL5XF7erLc_OPVoAHS4mGTENGSDXalSb_ok19K6fVX0Z7ed-RZlnfJ3tw_-HnScV_kxg/exec', {{redirect: 'follow'}})
     .then(r => r.json())
-    .then(data => {{
-      el.value = data.ref;
-      el.disabled = false;
-    }})
+    .then(data => {{ el.value = data.ref; el.disabled = false; }})
     .catch(() => {{
       const now = new Date();
       const yy = now.getFullYear();
@@ -877,7 +872,6 @@ document.getElementById('sel-lane').addEventListener('change', function() {{
   if (!lane) return;
   const laneData = LANES.find(l => l.lane === lane);
   if (!laneData) return;
-  // Sizes
   [...new Set(laneData.rates.map(r => r.container))].sort().forEach(s => {{
     const opt = document.createElement('option');
     opt.value = s.startsWith('20') ? '20' : '40';
@@ -885,10 +879,9 @@ document.getElementById('sel-lane').addEventListener('change', function() {{
     sizeEl.appendChild(opt);
   }});
   sizeEl.disabled = false;
-  // Individual POLs — split grouped strings on / and ,
   const ports = [...new Set(
     laneData.rates.flatMap(r =>
-      r.pol.split(/[/,]/).map(p => p.trim()).filter(Boolean)
+      r.pol.split(/[\/,]/).map(p => p.trim()).filter(Boolean)
     )
   )].sort();
   ports.forEach(p => {{
@@ -900,7 +893,6 @@ document.getElementById('sel-lane').addEventListener('change', function() {{
 }});
 
 let selectedRate = null;
-let selectedPol = null;
 
 function doSearch() {{
   const dest = document.getElementById('sel-dest').value;
@@ -914,29 +906,37 @@ function doSearch() {{
     l.rates.forEach(r => {{
       if (size === '20' && !r.container.startsWith('20')) return;
       if (size === '40' && !r.container.startsWith('40')) return;
-      // Filter by individual port if selected
       if (pol) {{
-        const ports = r.pol.split(/[/,]/).map(p => p.trim());
+        const ports = r.pol.split(/[\/,]/).map(p => p.trim());
         if (!ports.includes(pol)) return;
       }}
-      rates.push({{ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest, _selectedPol: pol || r.pol.split(/[\/,]/)[0].trim() }});
+      rates.push({{ ...r, _lane: l.lane, _origin: l.origin, _dest: l.dest,
+                    _selectedPol: pol || r.pol.split(/[\/,]/)[0].trim() }});
     }});
   }});
   const rc = document.getElementById('results-card');
   const list = document.getElementById('results-list');
-  document.getElementById('results-count').textContent = `(${{rates.length}} result${{rates.length !== 1 ? 's' : ''}})`;
+  document.getElementById('results-count').textContent =
+    `(${{rates.length}} result${{rates.length !== 1 ? 's' : ''}})`;
   rc.style.display = 'block';
   if (!rates.length) {{ list.innerHTML = '<div class="no-results">No rates found.</div>'; return; }}
   list.innerHTML = rates.map((r, i) => {{
     const lines = Object.entries(r.surcharges || {{}}).map(([k,v]) =>
       `<div class="surcharge-line"><span>${{k}}</span><span>$${{v.toFixed(2)}}</span></div>`).join('');
     return `<div class="rate-row" id="rr-${{i}}" onclick="selectRate(${{i}})">
-      <div><span class="tag">${{r.container}}</span><div style="font-weight:600;margin-top:4px;">${{r._selectedPol}}</div><div class="rate-meta">→ ${{r.pod}}</div></div>
-      <div><div class="rate-carrier">${{r.carrier}}</div><div class="rate-meta" style="margin-top:4px;">⏱ ${{r.transit}}</div><div class="rate-meta">📅 ${{r.validity}}</div></div>
+      <div><span class="tag">${{r.container}}</span>
+           <div style="font-weight:600;margin-top:4px;">${{r._selectedPol}}</div>
+           <div class="rate-meta">→ ${{r.pod}}</div></div>
+      <div><div class="rate-carrier">${{r.carrier}}</div>
+           <div class="rate-meta" style="margin-top:4px;">⏱ ${{r.transit}}</div>
+           <div class="rate-meta">📅 ${{r.validity}}</div></div>
       <div class="surcharge-list">${{lines}}</div>
       <div class="totals">
-        <div class="total-no">$${{(r.total_no_ins||0).toLocaleString('en-US',{{minimumFractionDigits:2,maximumFractionDigits:2}})}}<br><small>excl. ins.</small></div>
-        <div class="total-with">$${{(r.total_with_ins||0).toLocaleString('en-US',{{minimumFractionDigits:2,maximumFractionDigits:2}})}}<span class="ins-note-badge">🛡 insured</span></div>
+        <div class="total-no">$${{(r.total_no_ins||0).toLocaleString('en-US',
+          {{minimumFractionDigits:2,maximumFractionDigits:2}})}}<br><small>excl. ins.</small></div>
+        <div class="total-with">$${{(r.total_with_ins||0).toLocaleString('en-US',
+          {{minimumFractionDigits:2,maximumFractionDigits:2}})}}
+          <span class="ins-note-badge">🛡 insured</span></div>
       </div></div>`;
   }}).join('');
   window._searchRates = rates;
@@ -951,13 +951,16 @@ function selectRate(i) {{
   renderQuote(selectedRate);
 }}
 
-function fmt(v) {{ return v != null ? '$' + v.toLocaleString('en-US', {{minimumFractionDigits:2,maximumFractionDigits:2}}) : '—'; }}
+function fmt(v) {{
+  return v != null ? '$' + v.toLocaleString('en-US',
+    {{minimumFractionDigits:2,maximumFractionDigits:2}}) : '—';
+}}
 
 function renderQuote(r) {{
   const customer = document.getElementById('customer').value || '—';
   const ref = document.getElementById('quoteref').value;
-  const today = new Date().toLocaleDateString('en-GB', {{day:'2-digit',month:'short',year:'numeric'}});
-
+  const today = new Date().toLocaleDateString('en-GB',
+    {{day:'2-digit',month:'short',year:'numeric'}});
   document.getElementById('pq-date').textContent = today;
   document.getElementById('pq-validity').textContent = r.validity || '—';
   document.getElementById('pq-ref').textContent = ref;
@@ -969,14 +972,16 @@ function renderQuote(r) {{
   document.getElementById('pq-carrier').textContent = r.carrier;
   document.getElementById('pq-transit').textContent = r.transit || '—';
   document.getElementById('pq-valid-to').textContent = r.validity || '—';
-
   const surchargeRows = Object.entries(r.surcharges || {{}}).map(([k,v]) =>
     `<tr><td class="lbl">${{k}}</td><td class="val-right">$${{v.toFixed(2)}}</td></tr>`
   ).join('');
-  const baseRow = `<tr class="pq-divider-row"><td class="lbl" style="font-weight:600;color:#444;">Base Rate (excl. insurance)</td><td class="val-right" style="font-weight:700;font-size:12px;">${{fmt(r.total_no_ins)}}</td></tr>`;
-  const totalRow = `<tr class="pq-total-with-row"><td class="lbl" style="color:#2db84b;font-weight:700;">Total with Insurance</td><td class="val-right" style="color:#2db84b;font-weight:800;font-size:14px;">${{fmt(r.total_with_ins)}}</td></tr>`;
+  const baseRow = `<tr class="pq-divider-row">
+    <td class="lbl" style="font-weight:600;color:#444;">Base Rate (excl. insurance)</td>
+    <td class="val-right" style="font-weight:700;font-size:12px;">${{fmt(r.total_no_ins)}}</td></tr>`;
+  const totalRow = `<tr class="pq-total-with-row">
+    <td class="lbl" style="color:#2db84b;font-weight:700;">Total with Insurance</td>
+    <td class="val-right" style="color:#2db84b;font-weight:800;font-size:14px;">${{fmt(r.total_with_ins)}}</td></tr>`;
   document.getElementById('pq-surcharge-table').innerHTML = surchargeRows + baseRow + totalRow;
-
   const qc = document.getElementById('quote-card');
   qc.style.display = 'block';
   qc.scrollIntoView({{behavior:'smooth', block:'start'}});
@@ -987,7 +992,7 @@ function renderQuote(r) {{
 
     OUTPUT_QUOTE_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_QUOTE_PATH.write_text(html, encoding="utf-8")
-    print(f"✅ Written to {OUTPUT_QUOTE_PATH}")
+    print(f"✅ Written {OUTPUT_QUOTE_PATH}")
 
 
 # ── Main ─────────────────────────────────────────────────────────────────────
@@ -1002,9 +1007,10 @@ def build():
     cards = build_cards(all_rates)
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    html = render_html(cards)
+    html = render_html(cards, all_rates)
     OUTPUT_PATH.write_text(html, encoding="utf-8")
-    print(f"✅ Written to {OUTPUT_PATH} ({len(cards)} trade lanes, {sum(len(c['rate_rows']) for c in cards)} rate rows)")
+    total_rows = sum(len(c["rate_rows"]) for c in cards)
+    print(f"✅ Written {OUTPUT_PATH} ({len(cards)} trade lanes, {total_rows} rate rows)")
 
     build_json(cards)
     build_quote(cards)
