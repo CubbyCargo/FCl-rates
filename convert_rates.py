@@ -1017,9 +1017,9 @@ def build():
       if sheet not in available_sheets:
             print(f"  WARNING: sheet '{sheet}' not found in workbook, skipping")
             continue
-        sheet_rates = parse_sheet(sheet)
-        print(f"  {sheet}: {len(sheet_rates)} rate rows")
-        all_rates.extend(sheet_rates)
+      sheet_rates = parse_sheet(sheet)
+      print(f"  {sheet}: {len(sheet_rates)} rate rows")
+      all_rates.extend(sheet_rates)
 
     cards = build_cards(all_rates)
 
