@@ -1006,8 +1006,17 @@ function renderQuote(r) {{
 # ── Main ─────────────────────────────────────────────────────────────────────
 def build():
     print(f"Reading {EXCEL_PATH}...")
+
+    import openpyxl
+    wb = openpyxl.load_workbook(EXCEL_PATH, read_only=True)
+    available_sheets = set(wb.sheetnames)
+    wb.close()
+    
     all_rates = []
     for sheet in SHEETS_TO_PROCESS:
+      if sheet not in available_sheets:
+            print(f"  WARNING: sheet '{sheet}' not found in workbook, skipping")
+            continue
         sheet_rates = parse_sheet(sheet)
         print(f"  {sheet}: {len(sheet_rates)} rate rows")
         all_rates.extend(sheet_rates)
