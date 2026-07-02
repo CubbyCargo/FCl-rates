@@ -340,7 +340,6 @@ def build_ai_block(all_rates: list[dict]) -> str:
             f"TOTAL_EXCL_INS: USD {r['total_no_ins']:.2f} | "
             f"TOTAL_WITH_INS: USD {r['total_with_ins']:.2f} | "
             f"VALIDITY: {r['validity']} | TRANSIT: {r['transit']}"
-            + (f" | NOTE: {r['comment']}" if r.get('comment') else "")
         )
         lines.append(line)
 
