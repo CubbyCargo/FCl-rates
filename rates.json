@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T16:07:41Z",
+  "generated_at": "2026-07-13T16:33:13Z",
   "source_file": "Customer Rate Tariff Template_Week 29_2026.xlsx",
   "destinations": {
     "TT": {
@@ -1626,46 +1626,6 @@
           "total_without_insurance": 2490.0,
           "insurance": 200,
           "total_with_insurance": 2690.0
-        }
-      ],
-      "INDIA / GUYANA": [
-        {
-          "pol": "Mundra",
-          "pod": "Georgetown",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "MSK",
-          "transit_time": "65-75",
-          "validity": "14/07/2026",
-          "surcharges": {
-            "Ocean Freight": 6450.0,
-            "THC": 380.0,
-            "Port Charges": 215.0,
-            "Admin": 75.0,
-            "Handling Fee": 150.0
-          },
-          "total_without_insurance": 7270.0,
-          "insurance": 200,
-          "total_with_insurance": 7470.0
-        },
-        {
-          "pol": "Mundra",
-          "pod": "Georgetown",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "MSK",
-          "transit_time": "65-75",
-          "validity": "14/07/2026",
-          "surcharges": {
-            "Ocean Freight": 7400.0,
-            "THC": 380.0,
-            "Port Charges": 215.0,
-            "Admin": 75.0,
-            "Handling Fee": 150.0
-          },
-          "total_without_insurance": 8220.0,
-          "insurance": 200,
-          "total_with_insurance": 8420.0
         }
       ],
       "JAPAN / GUYANA": [
