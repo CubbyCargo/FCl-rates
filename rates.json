@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T16:33:13Z",
+  "generated_at": "2026-07-14T18:22:06Z",
   "source_file": "Customer Rate Tariff Template_Week 29_2026.xlsx",
   "destinations": {
     "TT": {
@@ -615,14 +615,14 @@
           "transit_time": "2-4",
           "validity": "31/07/2026",
           "surcharges": {
-            "Ocean Freight": 1900.0,
+            "Ocean Freight": 1700.0,
             "THC": 340.0,
             "LAC": 97.87,
             "Port Charges": 55.0
           },
-          "total_without_insurance": 2392.87,
+          "total_without_insurance": 2192.87,
           "insurance": 200,
-          "total_with_insurance": 2592.87
+          "total_with_insurance": 2392.87
         },
         {
           "pol": "Caucedo",
@@ -633,14 +633,14 @@
           "transit_time": "2-4",
           "validity": "31/07/2026",
           "surcharges": {
-            "Ocean Freight": 2200.0,
+            "Ocean Freight": 2050.0,
             "THC": 340.0,
             "LAC": 97.87,
             "Port Charges": 55.0
           },
-          "total_without_insurance": 2692.87,
+          "total_without_insurance": 2542.87,
           "insurance": 200,
-          "total_with_insurance": 2892.87
+          "total_with_insurance": 2742.87
         }
       ],
       "GUYANA / TRINIDAD & TOBAGO": [
@@ -2036,44 +2036,6 @@
           "total_with_insurance": 5345.0
         },
         {
-          "pol": "Navegantes",
-          "pod": "Paramaribo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "Hapag Lloyd",
-          "transit_time": "28",
-          "validity": "31/03/2026",
-          "surcharges": {
-            "Ocean Freight": 5450.0,
-            "DTHC": 100.0,
-            "LAC": 165.0,
-            "Dredging Fee": 175.0,
-            "Terminal Lease": 75.0
-          },
-          "total_without_insurance": 5965.0,
-          "insurance": 200,
-          "total_with_insurance": 6165.0
-        },
-        {
-          "pol": "Navegantes",
-          "pod": "Paramaribo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "Hapag Lloyd",
-          "transit_time": "28",
-          "validity": "31/03/2026",
-          "surcharges": {
-            "Ocean Freight": 5850.0,
-            "DTHC": 100.0,
-            "LAC": 165.0,
-            "Dredging Fee": 175.0,
-            "Terminal Lease": 150.0
-          },
-          "total_without_insurance": 6440.0,
-          "insurance": 200,
-          "total_with_insurance": 6640.0
-        },
-        {
           "pol": "Santos (Tiles)",
           "pod": "Paramaribo",
           "size": "20ft",
@@ -2093,46 +2055,6 @@
         }
       ],
       "CHINA / SURINAME": [
-        {
-          "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Yantian",
-          "pod": "Paramaribo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "ONE",
-          "transit_time": "65-75",
-          "validity": "14/6/2025",
-          "surcharges": {
-            "Ocean Freight": 9950.0,
-            "THC": 200.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 275.0,
-            "Terminal Lease": 75.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 10725.0,
-          "insurance": 200,
-          "total_with_insurance": 10975.0
-        },
-        {
-          "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Yantian",
-          "pod": "Paramaribo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "ONE",
-          "transit_time": "55-65",
-          "validity": "14/6/2025",
-          "surcharges": {
-            "Ocean Freight": 10000.0,
-            "THC": 200.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 275.0,
-            "Terminal Lease": 150.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 10850.0,
-          "insurance": 200,
-          "total_with_insurance": 11100.0
-        },
         {
           "pol": "Shenzhen/ Shanghai/ Ningbo/ Qingdao/ Xiamen/ Hong Kong/ Chiwan/Yantian",
           "pod": "Paramaribo",
@@ -2256,48 +2178,6 @@
           "total_with_insurance": 2850.0
         }
       ],
-      "INDIA / SURINAME": [
-        {
-          "pol": "Mundra",
-          "pod": "Paramaribo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "MAERSK",
-          "transit_time": "75-85",
-          "validity": "30/6/2026",
-          "surcharges": {
-            "Ocean Freight": 6450.0,
-            "THC": 380.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 175.0,
-            "Terminal Lease": 75.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 7305.0,
-          "insurance": 200,
-          "total_with_insurance": 7505.0
-        },
-        {
-          "pol": "Mundra",
-          "pod": "Paramaribo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "MAERSK",
-          "transit_time": "75-85",
-          "validity": "30/6/2026",
-          "surcharges": {
-            "Ocean Freight": 7400.0,
-            "THC": 380.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 175.0,
-            "Terminal Lease": 150.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 8330.0,
-          "insurance": 200,
-          "total_with_insurance": 8530.0
-        }
-      ],
       "JAPAN / SURINAME": [
         {
           "pol": "Yokohama",
@@ -2338,26 +2218,6 @@
           "total_without_insurance": 12060.0,
           "insurance": 200,
           "total_with_insurance": 12260.0
-        },
-        {
-          "pol": "Nagoya",
-          "pod": "Paramaribo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "ZIM",
-          "transit_time": "70-80",
-          "validity": "30/4/2025",
-          "surcharges": {
-            "Ocean Freight": 6900.0,
-            "THC": 235.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 215.0,
-            "Terminal Lease": 150.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 7725.0,
-          "insurance": 200,
-          "total_with_insurance": 7975.0
         }
       ],
       "KOREA / SURINAME": [
@@ -2570,46 +2430,6 @@
           "total_without_insurance": 1963.87,
           "insurance": 200,
           "total_with_insurance": 2163.87
-        }
-      ],
-      "TURKEY / SURINAME": [
-        {
-          "pol": "Gemlik/ Gebze",
-          "pod": "Paramaribo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "MSC",
-          "transit_time": "75-85",
-          "validity": "2026-07-04 00:00:00",
-          "surcharges": {
-            "Ocean Freight": 3685.0,
-            "THC": 160.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 275.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 4420.0,
-          "insurance": 200,
-          "total_with_insurance": 4620.0
-        },
-        {
-          "pol": "Gemlik/ Gebze",
-          "pod": "Paramaribo",
-          "size": "40ft",
-          "commodity": "FAK",
-          "carrier": "MSC",
-          "transit_time": "65-85",
-          "validity": "2026-07-04 00:00:00",
-          "surcharges": {
-            "Ocean Freight": 5200.0,
-            "THC": 230.0,
-            "Dredging Fee": 175.0,
-            "Port Charges": 275.0,
-            "Local Handling": 50.0
-          },
-          "total_without_insurance": 6005.0,
-          "insurance": 200,
-          "total_with_insurance": 6205.0
         }
       ],
       "USA / SURINAME": [
