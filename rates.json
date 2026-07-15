@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T18:22:06Z",
+  "generated_at": "2026-07-15T15:24:14Z",
   "source_file": "Customer Rate Tariff Template_Week 29_2026.xlsx",
   "destinations": {
     "TT": {
@@ -2654,22 +2654,21 @@
           "total_with_insurance": 1481.5
         },
         {
-          "pol": "Point Lisas",
+          "pol": "Port of Spain",
           "pod": "Kingston",
           "size": "40ft",
           "commodity": "FAK",
-          "carrier": "CMA CGM",
-          "transit_time": "5 days",
-          "validity": "31/07/2026",
+          "carrier": "ZIM",
+          "transit_time": "7-9 days",
+          "validity": "17/07/2026",
           "surcharges": {
-            "Ocean Freight": 1400.0,
-            "OTHC": 355.0,
-            "LAC": 76.5,
-            "Docs": 50.0
+            "Ocean Freight": 650.0,
+            "OTHC": 150.0,
+            "LAC": 95.63
           },
-          "total_without_insurance": 1881.5,
+          "total_without_insurance": 895.63,
           "insurance": 200,
-          "total_with_insurance": 2081.5
+          "total_with_insurance": 1095.63
         }
       ]
     },
