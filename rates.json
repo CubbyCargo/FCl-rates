@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T18:16:58Z",
+  "generated_at": "2026-07-17T19:50:16Z",
   "source_file": "Customer Rate Tariff Template_Week 29_2026.xlsx",
   "destinations": {
     "TT": {
@@ -820,7 +820,7 @@
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "transit_time": "55-65",
+          "transit_time": "15-25",
           "validity": "31/07/2026",
           "surcharges": {
             "Ocean Freight": 1950.0,
@@ -840,7 +840,7 @@
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "CMA",
-          "transit_time": "55-65",
+          "transit_time": "15-25",
           "validity": "31/07/2026",
           "surcharges": {
             "Ocean Freight": 2250.0,
