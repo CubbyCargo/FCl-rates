@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T19:23:07Z",
+  "generated_at": "2026-07-28T19:32:39Z",
   "source_file": "Customer Rate Tariff Template_Week 31_2026.xlsx",
   "destinations": {
     "TT": {
@@ -549,7 +549,7 @@
           "commodity": "FAK",
           "carrier": "Maersk",
           "transit_time": "16-20",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
             "Ocean Freight": 1800.0,
             "THC": 370.0,
@@ -568,7 +568,7 @@
           "commodity": "FAK",
           "carrier": "Maersk",
           "transit_time": "16-20",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
             "Ocean Freight": 2200.0,
             "THC": 370.0,
@@ -587,18 +587,18 @@
           "commodity": "FAK",
           "carrier": "COSCO",
           "transit_time": "16-20",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
-            "Ocean Freight": 950.0,
+            "Ocean Freight": 1050.0,
             "THC": 289.0,
             "LAC": 84.38,
             "ISPS": 55.0,
             "Local Handling": 75.0,
             "Docs": 75.0
           },
-          "total_without_insurance": 1528.38,
+          "total_without_insurance": 1628.38,
           "insurance": 200,
-          "total_with_insurance": 1728.38
+          "total_with_insurance": 1828.38
         },
         {
           "pol": "Cartagena",
@@ -607,18 +607,18 @@
           "commodity": "FAK",
           "carrier": "COSCO",
           "transit_time": "16-20",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
-            "Ocean Freight": 1350.0,
+            "Ocean Freight": 1500.0,
             "THC": 289.0,
             "LAC": 84.38,
             "ISPS": 55.0,
             "Local Handling": 75.0,
             "Docs": 75.0
           },
-          "total_without_insurance": 1928.38,
+          "total_without_insurance": 2078.38,
           "insurance": 200,
-          "total_with_insurance": 2128.38
+          "total_with_insurance": 2278.38
         }
       ],
       "DOMINICAN REPUBLIC / TRINIDAD & TOBAGO": [
@@ -843,18 +843,18 @@
           "commodity": "FAK",
           "carrier": "CMA",
           "transit_time": "55-65",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
-            "Ocean Freight": 1950.0,
+            "Ocean Freight": 1550.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Docs": 75.0
           },
-          "total_without_insurance": 2538.0,
+          "total_without_insurance": 2138.0,
           "insurance": 200,
-          "total_with_insurance": 2738.0
+          "total_with_insurance": 2338.0
         },
         {
           "pol": "Altamira",
@@ -863,18 +863,18 @@
           "commodity": "FAK",
           "carrier": "CMA",
           "transit_time": "55-65",
-          "validity": "31/07/2026",
+          "validity": "31/08/2026",
           "surcharges": {
-            "Ocean Freight": 2250.0,
+            "Ocean Freight": 2700.0,
             "THC": 340.0,
             "LAC": 80.0,
             "ISPS": 18.0,
             "Local Handling": 75.0,
             "Docs": 75.0
           },
-          "total_without_insurance": 2838.0,
+          "total_without_insurance": 3288.0,
           "insurance": 200,
-          "total_with_insurance": 3038.0
+          "total_with_insurance": 3488.0
         }
       ],
       "PANAMA / TRINIDAD & TOBAGO": [
