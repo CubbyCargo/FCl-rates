@@ -113,7 +113,7 @@
         <label>Destination</label>
         <select id="sel-dest">
           <option value="">Select destination</option>
-          <option value="Barbados">Barbados</option><option value="Dominican Republic">Dominican Republic</option><option value="Guyana">Guyana</option><option value="Jamaica">Jamaica</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
+          <option value="Barbados">Barbados</option><option value="Colombia">Colombia</option><option value="Dominican Republic">Dominican Republic</option><option value="Guyana">Guyana</option><option value="Jamaica">Jamaica</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
         </select>
       </div>
       <div class="field">
@@ -893,6 +893,72 @@ const LANES = [
         },
         "total_no_ins": 1725.7399999999998,
         "total_with_ins": 1925.7399999999998
+      }
+    ]
+  },
+  {
+    "lane": "India \u2192 Trinidad & Tobago",
+    "origin": "India",
+    "dest": "Trinidad & Tobago",
+    "rates": [
+      {
+        "pol": "Mundra (TILES)",
+        "pod": "Port-of-Spain",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "MSC",
+        "transit": "65-70",
+        "validity": "7/7/2026",
+        "surcharges": {
+          "Ocean Freight": 5700.0,
+          "THC": 340.0,
+          "LAC": 80.0,
+          "ISPS": 18.0,
+          "Local Handling": 75.0,
+          "Admin": 75.0
+        },
+        "total_no_ins": 6288.0,
+        "total_with_ins": 6488.0
+      },
+      {
+        "pol": "Mundra/ Nhava Sheva",
+        "pod": "Point Lisas",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "CMA",
+        "transit": "65-70",
+        "validity": "7/7/2026",
+        "surcharges": {
+          "Ocean Freight": 7300.0,
+          "THC": 355.0,
+          "LAC": 76.5,
+          "ISPS": 14.0,
+          "Other Port Charges": 10.0,
+          "Local Handling": 75.0,
+          "Admin": 75.0
+        },
+        "total_no_ins": 7905.5,
+        "total_with_ins": 8105.5
+      },
+      {
+        "pol": "Mundra/ Nhava Sheva",
+        "pod": "Point Lisas",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "CMA",
+        "transit": "65-70",
+        "validity": "7/7/2026",
+        "surcharges": {
+          "Ocean Freight": 7800.0,
+          "THC": 355.0,
+          "LAC": 76.5,
+          "ISPS": 14.0,
+          "Other Port Charges": 10.0,
+          "Local Handling": 75.0,
+          "Admin": 75.0
+        },
+        "total_no_ins": 8405.5,
+        "total_with_ins": 8605.5
       }
     ]
   },
@@ -1862,6 +1928,49 @@ const LANES = [
     ]
   },
   {
+    "lane": "India \u2192 Guyana",
+    "origin": "India",
+    "dest": "Guyana",
+    "rates": [
+      {
+        "pol": "Mundra",
+        "pod": "Georgetown",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "MSK",
+        "transit": "65-75",
+        "validity": "14/07/2026",
+        "surcharges": {
+          "Ocean Freight": 6450.0,
+          "THC": 380.0,
+          "Port Charges": 215.0,
+          "Admin": 75.0,
+          "Handling Fee": 150.0
+        },
+        "total_no_ins": 7270.0,
+        "total_with_ins": 7470.0
+      },
+      {
+        "pol": "Mundra",
+        "pod": "Georgetown",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "MSK",
+        "transit": "65-75",
+        "validity": "14/07/2026",
+        "surcharges": {
+          "Ocean Freight": 7400.0,
+          "THC": 380.0,
+          "Port Charges": 215.0,
+          "Admin": 75.0,
+          "Handling Fee": 150.0
+        },
+        "total_no_ins": 8220.0,
+        "total_with_ins": 8420.0
+      }
+    ]
+  },
+  {
     "lane": "Japan \u2192 Guyana",
     "origin": "Japan",
     "dest": "Guyana",
@@ -2281,6 +2390,42 @@ const LANES = [
         "total_with_ins": 5345.0
       },
       {
+        "pol": "Navegantes",
+        "pod": "Paramaribo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "transit": "28",
+        "validity": "31/03/2026",
+        "surcharges": {
+          "Ocean Freight": 5450.0,
+          "DTHC": 100.0,
+          "LAC": 165.0,
+          "Dredging Fee": 175.0,
+          "Terminal Lease": 75.0
+        },
+        "total_no_ins": 5965.0,
+        "total_with_ins": 6165.0
+      },
+      {
+        "pol": "Navegantes",
+        "pod": "Paramaribo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "Hapag Lloyd",
+        "transit": "28",
+        "validity": "31/03/2026",
+        "surcharges": {
+          "Ocean Freight": 5850.0,
+          "DTHC": 100.0,
+          "LAC": 165.0,
+          "Dredging Fee": 175.0,
+          "Terminal Lease": 150.0
+        },
+        "total_no_ins": 6440.0,
+        "total_with_ins": 6640.0
+      },
+      {
         "pol": "Santos (Tiles)",
         "pod": "Paramaribo",
         "container": "20ft",
@@ -2428,6 +2573,51 @@ const LANES = [
     ]
   },
   {
+    "lane": "India \u2192 Suriname",
+    "origin": "India",
+    "dest": "Suriname",
+    "rates": [
+      {
+        "pol": "Mundra",
+        "pod": "Paramaribo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "MAERSK",
+        "transit": "75-85",
+        "validity": "30/6/2026",
+        "surcharges": {
+          "Ocean Freight": 6450.0,
+          "THC": 380.0,
+          "Dredging Fee": 175.0,
+          "Port Charges": 175.0,
+          "Terminal Lease": 75.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 7305.0,
+        "total_with_ins": 7505.0
+      },
+      {
+        "pol": "Mundra",
+        "pod": "Paramaribo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "MAERSK",
+        "transit": "75-85",
+        "validity": "30/6/2026",
+        "surcharges": {
+          "Ocean Freight": 7400.0,
+          "THC": 380.0,
+          "Dredging Fee": 175.0,
+          "Port Charges": 175.0,
+          "Terminal Lease": 150.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 8330.0,
+        "total_with_ins": 8530.0
+      }
+    ]
+  },
+  {
     "lane": "Japan \u2192 Suriname",
     "origin": "Japan",
     "dest": "Suriname",
@@ -2486,15 +2676,15 @@ const LANES = [
         "transit": "65-75",
         "validity": "21/08/2026",
         "surcharges": {
-          "Ocean Freight": 11300.0,
+          "Ocean Freight": 1200.0,
           "THC": 130.0,
           "Dredging Fee": 175.0,
           "Port Charges": 275.0,
           "Terminal Lease": 75.0,
           "Local Handling": 50.0
         },
-        "total_no_ins": 12005.0,
-        "total_with_ins": 12205.0
+        "total_no_ins": 1905.0,
+        "total_with_ins": 2105.0
       },
       {
         "pol": "Busan",
@@ -2700,6 +2890,49 @@ const LANES = [
     ]
   },
   {
+    "lane": "Turkey \u2192 Suriname",
+    "origin": "Turkey",
+    "dest": "Suriname",
+    "rates": [
+      {
+        "pol": "Gemlik/ Gebze",
+        "pod": "Paramaribo",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "MSC",
+        "transit": "75-85",
+        "validity": "7/7/2026",
+        "surcharges": {
+          "Ocean Freight": 3685.0,
+          "THC": 160.0,
+          "Dredging Fee": 175.0,
+          "Port Charges": 275.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 4420.0,
+        "total_with_ins": 4620.0
+      },
+      {
+        "pol": "Gemlik/ Gebze",
+        "pod": "Paramaribo",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "MSC",
+        "transit": "65-85",
+        "validity": "7/7/2026",
+        "surcharges": {
+          "Ocean Freight": 5200.0,
+          "THC": 230.0,
+          "Dredging Fee": 175.0,
+          "Port Charges": 275.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 6005.0,
+        "total_with_ins": 6205.0
+      }
+    ]
+  },
+  {
     "lane": "USA \u2192 Suriname",
     "origin": "USA",
     "dest": "Suriname",
@@ -2860,6 +3093,51 @@ const LANES = [
     ]
   },
   {
+    "lane": "China \u2192 Colombia",
+    "origin": "China",
+    "dest": "Colombia",
+    "rates": [
+      {
+        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
+        "pod": "Buenaventura",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "CMA",
+        "transit": "30-35",
+        "validity": "14/08/2026",
+        "surcharges": {
+          "Ocean Freight": 4825.0,
+          "THC": 125.0,
+          "DOC Fee": 75.0,
+          "EIR": 35.0,
+          "Other Port Charges": 65.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 5175.0,
+        "total_with_ins": 5375.0
+      },
+      {
+        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
+        "pod": "Buenaventura",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "CMA",
+        "transit": "30-35",
+        "validity": "14/08/2026",
+        "surcharges": {
+          "Ocean Freight": 5025.0,
+          "THC": 125.0,
+          "DOC Fee": 75.0,
+          "EIR": 35.0,
+          "Other Port Charges": 65.0,
+          "Local Handling": 50.0
+        },
+        "total_no_ins": 5375.0,
+        "total_with_ins": 5575.0
+      }
+    ]
+  },
+  {
     "lane": "Trinidad & Tobago \u2192 Barbados",
     "origin": "Trinidad & Tobago",
     "dest": "Barbados",
@@ -2940,6 +3218,22 @@ const LANES = [
         },
         "total_no_ins": 1881.5,
         "total_with_ins": 2081.5
+      },
+      {
+        "pol": "Port of Spain",
+        "pod": "Kingston",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "ZIM",
+        "transit": "7-9 days",
+        "validity": "31/07/2026",
+        "surcharges": {
+          "Ocean Freight": 650.0,
+          "OTHC": 150.0,
+          "LAC": 95.63
+        },
+        "total_no_ins": 895.63,
+        "total_with_ins": 1095.63
       }
     ]
   },

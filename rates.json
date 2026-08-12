@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T18:48:13Z",
+  "generated_at": "2026-08-12T15:38:08Z",
   "source_file": "Customer Rate Tariff Template_Week 33_2026.xlsx",
   "destinations": {
     "TT": {
@@ -701,6 +701,70 @@
           "total_without_insurance": 1725.7399999999998,
           "insurance": 200,
           "total_with_insurance": 1925.7399999999998
+        }
+      ],
+      "INDIA / TRINIDAD & TOBAGO": [
+        {
+          "pol": "Mundra (TILES)",
+          "pod": "Port-of-Spain",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "transit_time": "65-70",
+          "validity": "7/7/2026",
+          "surcharges": {
+            "Ocean Freight": 5700.0,
+            "THC": 340.0,
+            "LAC": 80.0,
+            "ISPS": 18.0,
+            "Local Handling": 75.0,
+            "Admin": 75.0
+          },
+          "total_without_insurance": 6288.0,
+          "insurance": 200,
+          "total_with_insurance": 6488.0
+        },
+        {
+          "pol": "Mundra/ Nhava Sheva",
+          "pod": "Point Lisas",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "CMA",
+          "transit_time": "65-70",
+          "validity": "7/7/2026",
+          "surcharges": {
+            "Ocean Freight": 7300.0,
+            "THC": 355.0,
+            "LAC": 76.5,
+            "ISPS": 14.0,
+            "Other Port Charges": 10.0,
+            "Local Handling": 75.0,
+            "Admin": 75.0
+          },
+          "total_without_insurance": 7905.5,
+          "insurance": 200,
+          "total_with_insurance": 8105.5
+        },
+        {
+          "pol": "Mundra/ Nhava Sheva",
+          "pod": "Point Lisas",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "CMA",
+          "transit_time": "65-70",
+          "validity": "7/7/2026",
+          "surcharges": {
+            "Ocean Freight": 7800.0,
+            "THC": 355.0,
+            "LAC": 76.5,
+            "ISPS": 14.0,
+            "Other Port Charges": 10.0,
+            "Local Handling": 75.0,
+            "Admin": 75.0
+          },
+          "total_without_insurance": 8405.5,
+          "insurance": 200,
+          "total_with_insurance": 8605.5
         }
       ],
       "JAPAN / TRINIDAD & TOBAGO": [
@@ -1652,6 +1716,46 @@
           "total_with_insurance": 2690.0
         }
       ],
+      "INDIA / GUYANA": [
+        {
+          "pol": "Mundra",
+          "pod": "Georgetown",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSK",
+          "transit_time": "65-75",
+          "validity": "14/07/2026",
+          "surcharges": {
+            "Ocean Freight": 6450.0,
+            "THC": 380.0,
+            "Port Charges": 215.0,
+            "Admin": 75.0,
+            "Handling Fee": 150.0
+          },
+          "total_without_insurance": 7270.0,
+          "insurance": 200,
+          "total_with_insurance": 7470.0
+        },
+        {
+          "pol": "Mundra",
+          "pod": "Georgetown",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "MSK",
+          "transit_time": "65-75",
+          "validity": "14/07/2026",
+          "surcharges": {
+            "Ocean Freight": 7400.0,
+            "THC": 380.0,
+            "Port Charges": 215.0,
+            "Admin": 75.0,
+            "Handling Fee": 150.0
+          },
+          "total_without_insurance": 8220.0,
+          "insurance": 200,
+          "total_with_insurance": 8420.0
+        }
+      ],
       "JAPAN / GUYANA": [
         {
           "pol": "Yokohama, Osaka, Nagoya, Tokyo",
@@ -2060,6 +2164,44 @@
           "total_with_insurance": 5345.0
         },
         {
+          "pol": "Navegantes",
+          "pod": "Paramaribo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "transit_time": "28",
+          "validity": "31/03/2026",
+          "surcharges": {
+            "Ocean Freight": 5450.0,
+            "DTHC": 100.0,
+            "LAC": 165.0,
+            "Dredging Fee": 175.0,
+            "Terminal Lease": 75.0
+          },
+          "total_without_insurance": 5965.0,
+          "insurance": 200,
+          "total_with_insurance": 6165.0
+        },
+        {
+          "pol": "Navegantes",
+          "pod": "Paramaribo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "Hapag Lloyd",
+          "transit_time": "28",
+          "validity": "31/03/2026",
+          "surcharges": {
+            "Ocean Freight": 5850.0,
+            "DTHC": 100.0,
+            "LAC": 165.0,
+            "Dredging Fee": 175.0,
+            "Terminal Lease": 150.0
+          },
+          "total_without_insurance": 6440.0,
+          "insurance": 200,
+          "total_with_insurance": 6640.0
+        },
+        {
           "pol": "Santos (Tiles)",
           "pod": "Paramaribo",
           "size": "20ft",
@@ -2202,6 +2344,48 @@
           "total_with_insurance": 2850.0
         }
       ],
+      "INDIA / SURINAME": [
+        {
+          "pol": "Mundra",
+          "pod": "Paramaribo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MAERSK",
+          "transit_time": "75-85",
+          "validity": "30/6/2026",
+          "surcharges": {
+            "Ocean Freight": 6450.0,
+            "THC": 380.0,
+            "Dredging Fee": 175.0,
+            "Port Charges": 175.0,
+            "Terminal Lease": 75.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 7305.0,
+          "insurance": 200,
+          "total_with_insurance": 7505.0
+        },
+        {
+          "pol": "Mundra",
+          "pod": "Paramaribo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "MAERSK",
+          "transit_time": "75-85",
+          "validity": "30/6/2026",
+          "surcharges": {
+            "Ocean Freight": 7400.0,
+            "THC": 380.0,
+            "Dredging Fee": 175.0,
+            "Port Charges": 175.0,
+            "Terminal Lease": 150.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 8330.0,
+          "insurance": 200,
+          "total_with_insurance": 8530.0
+        }
+      ],
       "JAPAN / SURINAME": [
         {
           "pol": "Yokohama",
@@ -2254,16 +2438,16 @@
           "transit_time": "65-75",
           "validity": "21/08/2026",
           "surcharges": {
-            "Ocean Freight": 11300.0,
+            "Ocean Freight": 1200.0,
             "THC": 130.0,
             "Dredging Fee": 175.0,
             "Port Charges": 275.0,
             "Terminal Lease": 75.0,
             "Local Handling": 50.0
           },
-          "total_without_insurance": 12005.0,
+          "total_without_insurance": 1905.0,
           "insurance": 200,
-          "total_with_insurance": 12205.0
+          "total_with_insurance": 2105.0
         },
         {
           "pol": "Busan",
@@ -2456,6 +2640,46 @@
           "total_with_insurance": 2083.87
         }
       ],
+      "TURKEY / SURINAME": [
+        {
+          "pol": "Gemlik/ Gebze",
+          "pod": "Paramaribo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "transit_time": "75-85",
+          "validity": "7/7/2026",
+          "surcharges": {
+            "Ocean Freight": 3685.0,
+            "THC": 160.0,
+            "Dredging Fee": 175.0,
+            "Port Charges": 275.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 4420.0,
+          "insurance": 200,
+          "total_with_insurance": 4620.0
+        },
+        {
+          "pol": "Gemlik/ Gebze",
+          "pod": "Paramaribo",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "transit_time": "65-85",
+          "validity": "7/7/2026",
+          "surcharges": {
+            "Ocean Freight": 5200.0,
+            "THC": 230.0,
+            "Dredging Fee": 175.0,
+            "Port Charges": 275.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 6005.0,
+          "insurance": 200,
+          "total_with_insurance": 6205.0
+        }
+      ],
       "USA / SURINAME": [
         {
           "pol": "Port Everglades",
@@ -2615,6 +2839,50 @@
         }
       ]
     },
+    "COL": {
+      "CHINA / COLOMBIA": [
+        {
+          "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
+          "pod": "Buenaventura",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "CMA",
+          "transit_time": "30-35",
+          "validity": "14/08/2026",
+          "surcharges": {
+            "Ocean Freight": 4825.0,
+            "THC": 125.0,
+            "DOC Fee": 75.0,
+            "EIR": 35.0,
+            "Other Port Charges": 65.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 5175.0,
+          "insurance": 200,
+          "total_with_insurance": 5375.0
+        },
+        {
+          "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
+          "pod": "Buenaventura",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "CMA",
+          "transit_time": "30-35",
+          "validity": "14/08/2026",
+          "surcharges": {
+            "Ocean Freight": 5025.0,
+            "THC": 125.0,
+            "DOC Fee": 75.0,
+            "EIR": 35.0,
+            "Other Port Charges": 65.0,
+            "Local Handling": 50.0
+          },
+          "total_without_insurance": 5375.0,
+          "insurance": 200,
+          "total_with_insurance": 5575.0
+        }
+      ]
+    },
     "BRB": {
       "TRINIDAD & TOBAGO / BARBADOS": [
         {
@@ -2694,6 +2962,23 @@
           "total_without_insurance": 1881.5,
           "insurance": 200,
           "total_with_insurance": 2081.5
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Kingston",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "ZIM",
+          "transit_time": "7-9 days",
+          "validity": "31/07/2026",
+          "surcharges": {
+            "Ocean Freight": 650.0,
+            "OTHC": 150.0,
+            "LAC": 95.63
+          },
+          "total_without_insurance": 895.63,
+          "insurance": 200,
+          "total_with_insurance": 1095.63
         }
       ]
     },
