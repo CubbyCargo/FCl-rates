@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T18:31:45Z",
+  "generated_at": "2026-08-14T16:51:37Z",
   "source_file": "Customer Rate Tariff Template_Week 33_2026.xlsx",
   "destinations": {
     "TT": {
@@ -1814,6 +1814,25 @@
           "total_without_insurance": 1610.57,
           "insurance": 200,
           "total_with_insurance": 1810.57
+        },
+        {
+          "pol": "Port of Spain",
+          "pod": "Georgetown",
+          "size": "40ft",
+          "commodity": "FAK",
+          "carrier": "King Ocean",
+          "transit_time": "1-2 days",
+          "validity": "31/08/2026",
+          "surcharges": {
+            "Ocean Freight": 1300.0,
+            "OTHC": 410.0,
+            "LAC": 54.2,
+            "Docs": 40.0,
+            "Agency Admin": 65.0
+          },
+          "total_without_insurance": 1869.2,
+          "insurance": 200,
+          "total_with_insurance": 2069.2
         }
       ],
       "TURKEY / GUYANA": [
