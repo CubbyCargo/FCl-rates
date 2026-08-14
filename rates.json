@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T16:51:37Z",
+  "generated_at": "2026-08-14T16:55:17Z",
   "source_file": "Customer Rate Tariff Template_Week 33_2026.xlsx",
   "destinations": {
     "TT": {
@@ -1816,7 +1816,7 @@
           "total_with_insurance": 1810.57
         },
         {
-          "pol": "Port of Spain",
+          "pol": "Point Lisas",
           "pod": "Georgetown",
           "size": "40ft",
           "commodity": "FAK",
