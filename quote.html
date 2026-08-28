@@ -113,7 +113,7 @@
         <label>Destination</label>
         <select id="sel-dest">
           <option value="">Select destination</option>
-          <option value="Barbados">Barbados</option><option value="Colombia">Colombia</option><option value="Dominican Republic">Dominican Republic</option><option value="Guyana">Guyana</option><option value="Jamaica">Jamaica</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
+          <option value="Barbados">Barbados</option><option value="Dominican Republic">Dominican Republic</option><option value="Guyana">Guyana</option><option value="Jamaica">Jamaica</option><option value="Suriname">Suriname</option><option value="Trinidad & Tobago">Trinidad & Tobago</option>
         </select>
       </div>
       <div class="field">
@@ -373,7 +373,7 @@ const LANES = [
         "transit": "45-55",
         "validity": "07/09/2026",
         "surcharges": {
-          "Ocean Freight": 10150.0,
+          "Ocean Freight": 9850.0,
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 15.0,
@@ -381,8 +381,8 @@ const LANES = [
           "Local Handling": 75.0,
           "Admin": 75.0
         },
-        "total_no_ins": 10728.38,
-        "total_with_ins": 10928.38
+        "total_no_ins": 10428.38,
+        "total_with_ins": 10628.38
       },
       {
         "pol": "Shanghai/Xiamen/Tianjin/Shenzhen/Ningbo/Qingdao/Hong Kong/Xingang/Yantian",
@@ -393,7 +393,7 @@ const LANES = [
         "transit": "45-55",
         "validity": "07/09/2026",
         "surcharges": {
-          "Ocean Freight": 10200.0,
+          "Ocean Freight": 10000.0,
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 15.0,
@@ -401,8 +401,8 @@ const LANES = [
           "Local Handling": 75.0,
           "Admin": 75.0
         },
-        "total_no_ins": 10778.38,
-        "total_with_ins": 10978.38
+        "total_no_ins": 10578.38,
+        "total_with_ins": 10778.38
       },
       {
         "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian",
@@ -453,7 +453,7 @@ const LANES = [
         "transit": "45-55",
         "validity": "07/09/2026",
         "surcharges": {
-          "Ocean Freight": 10200.0,
+          "Ocean Freight": 9900.0,
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 15.0,
@@ -461,8 +461,8 @@ const LANES = [
           "Local Handling": 75.0,
           "Admin": 75.0
         },
-        "total_no_ins": 10778.38,
-        "total_with_ins": 10978.38
+        "total_no_ins": 10478.38,
+        "total_with_ins": 10678.38
       },
       {
         "pol": "Dalian/Gaoming(Foshan)/Sanshui/Yunfu/Nansha/Huangpu/Guangzhou",
@@ -473,7 +473,7 @@ const LANES = [
         "transit": "45-55",
         "validity": "07/09/2026",
         "surcharges": {
-          "Ocean Freight": 10300.0,
+          "Ocean Freight": 10100.0,
           "THC": 289.0,
           "LAC": 84.38,
           "ISPS": 15.0,
@@ -481,8 +481,8 @@ const LANES = [
           "Local Handling": 75.0,
           "Admin": 75.0
         },
-        "total_no_ins": 10878.38,
-        "total_with_ins": 11078.38
+        "total_no_ins": 10678.38,
+        "total_with_ins": 10878.38
       },
       {
         "pol": "Nansha/Guangzhou/Huangpu",
@@ -986,6 +986,46 @@ const LANES = [
         },
         "total_no_ins": 12903.0,
         "total_with_ins": 13103.0
+      },
+      {
+        "pol": "Busan",
+        "pod": "Port of Spain",
+        "container": "20ft",
+        "commodity": "FAK",
+        "carrier": "COSCO",
+        "transit": "45-55",
+        "validity": "07/09/2026",
+        "surcharges": {
+          "Ocean Freight": 10950.0,
+          "THC": 289.0,
+          "LAC": 84.38,
+          "ISPS": 15.0,
+          "Other Port Charges": 40.0,
+          "Local Handling": 75.0,
+          "Admin": 75.0
+        },
+        "total_no_ins": 11528.38,
+        "total_with_ins": 11728.38
+      },
+      {
+        "pol": "Busan",
+        "pod": "Port of Spain",
+        "container": "40ft",
+        "commodity": "FAK",
+        "carrier": "COSCO",
+        "transit": "45-55",
+        "validity": "07/09/2026",
+        "surcharges": {
+          "Ocean Freight": 11050.0,
+          "THC": 289.0,
+          "LAC": 84.38,
+          "ISPS": 15.0,
+          "Other Port Charges": 40.0,
+          "Local Handling": 75.0,
+          "Admin": 75.0
+        },
+        "total_no_ins": 11628.38,
+        "total_with_ins": 11828.38
       }
     ]
   },
@@ -2870,203 +2910,6 @@ const LANES = [
         },
         "total_no_ins": 13110.0,
         "total_with_ins": 13310.0
-      }
-    ]
-  },
-  {
-    "lane": "China \u2192 Colombia",
-    "origin": "China",
-    "dest": "Colombia",
-    "rates": [
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Barranquilla",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "ONE",
-        "transit": "30-35",
-        "validity": "14/11/2025",
-        "surcharges": {
-          "Ocean Freight": 4200.0,
-          "THC": 120.0,
-          "DOC Fee": 75.0,
-          "EIR": 45.0,
-          "Other Port Charges": 45.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 4560.0,
-        "total_with_ins": 4760.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Barranquilla",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "ONE",
-        "transit": "30-35",
-        "validity": "14/11/2025",
-        "surcharges": {
-          "Ocean Freight": 4500.0,
-          "THC": 120.0,
-          "DOC Fee": 75.0,
-          "EIR": 45.0,
-          "Other Port Charges": 45.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 4860.0,
-        "total_with_ins": 5060.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "YML",
-        "transit": "30-35",
-        "validity": "30/11/2025",
-        "surcharges": {
-          "Ocean Freight": 1300.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 1675.0,
-        "total_with_ins": 1875.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "YML",
-        "transit": "30-35",
-        "validity": "30/11/2025",
-        "surcharges": {
-          "Ocean Freight": 1700.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 2075.0,
-        "total_with_ins": 2275.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "MSK",
-        "transit": "30-35",
-        "validity": "30/11/2025",
-        "surcharges": {
-          "Ocean Freight": 1500.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 1875.0,
-        "total_with_ins": 2075.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "MSK",
-        "transit": "30-35",
-        "validity": "30/11/2025",
-        "surcharges": {
-          "Ocean Freight": 1700.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 2075.0,
-        "total_with_ins": 2275.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Cartagena",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "YML",
-        "transit": "35-40",
-        "validity": "14/11/2025",
-        "surcharges": {
-          "Ocean Freight": 2800.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 3175.0,
-        "total_with_ins": 3375.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Cartagena",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "YML",
-        "transit": "35-40",
-        "validity": "14/11/2025",
-        "surcharges": {
-          "Ocean Freight": 2900.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 75.0
-        },
-        "total_no_ins": 3275.0,
-        "total_with_ins": 3475.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "20ft",
-        "commodity": "FAK",
-        "carrier": "CMA",
-        "transit": "30-35",
-        "validity": "14/08/2026",
-        "surcharges": {
-          "Ocean Freight": 4825.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 50.0
-        },
-        "total_no_ins": 5175.0,
-        "total_with_ins": 5375.0
-      },
-      {
-        "pol": "Shenzhen/ Shanghai/ Ningbo/ Xiamen/Shekou/ Yantian/Qingdao",
-        "pod": "Buenaventura",
-        "container": "40ft",
-        "commodity": "FAK",
-        "carrier": "CMA",
-        "transit": "30-35",
-        "validity": "14/08/2026",
-        "surcharges": {
-          "Ocean Freight": 5025.0,
-          "THC": 125.0,
-          "DOC Fee": 75.0,
-          "EIR": 35.0,
-          "Other Port Charges": 65.0,
-          "Local Handling": 50.0
-        },
-        "total_no_ins": 5375.0,
-        "total_with_ins": 5575.0
       }
     ]
   },
