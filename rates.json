@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-11T15:07:48Z",
-  "source_file": "Customer Rate Tariff Template_Week 37_2026.xlsx",
+  "generated_at": "2026-09-17T18:44:43Z",
+  "source_file": "Customer Rate Tariff Template_Week 38_2026.xlsx",
   "destinations": {
     "TT": {
       "BRAZIL / TRINIDAD & TOBAGO": [
@@ -78,15 +78,15 @@
       ],
       "CHINA / TRINIDAD & TOBAGO": [
         {
-          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao)",
+          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10600.0,
+            "Ocean Freight": 10050.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -94,20 +94,20 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11203.0,
+          "total_without_insurance": 10653.0,
           "insurance": 200,
-          "total_with_insurance": 11403.0
+          "total_with_insurance": 10853.0
         },
         {
-          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao)",
+          "pol": "Shenzhen/Shanghai/Ningbo/Xiamen/Shekou/Yantian/Qingdao",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10900.0,
+            "Ocean Freight": 10050.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -115,20 +115,20 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11503.0,
+          "total_without_insurance": 10653.0,
           "insurance": 200,
-          "total_with_insurance": 11703.0
+          "total_with_insurance": 10853.0
         },
         {
-          "pol": "Gaoming",
+          "pol": "Foshan/Gaoming",
           "pod": "Port of Spain/Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10800.0,
+            "Ocean Freight": 10250.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -136,20 +136,20 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11403.0,
+          "total_without_insurance": 10853.0,
           "insurance": 200,
-          "total_with_insurance": 11603.0
+          "total_with_insurance": 11053.0
         },
         {
-          "pol": "Gaoming",
+          "pol": "Foshan/Gaoming",
           "pod": "Port of Spain/Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11150.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -157,9 +157,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11753.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11953.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Shanghai/Xiamen/Tianjin/Shenzhen/Ningbo/Qingdao/Hong Kong/Xingang/Yantian",
@@ -210,9 +210,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10750.0,
+            "Ocean Freight": 10150.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -220,9 +220,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11353.0,
+          "total_without_insurance": 10753.0,
           "insurance": 200,
-          "total_with_insurance": 11553.0
+          "total_with_insurance": 10953.0
         },
         {
           "pol": "Tianjin/Jiujiang (Shunde)/Hong Kong/Dalian",
@@ -231,9 +231,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11000.0,
+            "Ocean Freight": 10150.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -241,9 +241,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11603.0,
+          "total_without_insurance": 10753.0,
           "insurance": 200,
-          "total_with_insurance": 11803.0
+          "total_with_insurance": 10953.0
         },
         {
           "pol": "Dalian/Gaoming(Foshan)/Sanshui/Yunfu/Nansha/Huangpu/Guangzhou",
@@ -294,9 +294,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10750.0,
+            "Ocean Freight": 10200.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -304,9 +304,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11353.0,
+          "total_without_insurance": 10803.0,
           "insurance": 200,
-          "total_with_insurance": 11553.0
+          "total_with_insurance": 11003.0
         },
         {
           "pol": "Nansha/Guangzhou/Huangpu",
@@ -315,9 +315,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11200.0,
+            "Ocean Freight": 10350.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -325,9 +325,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11803.0,
+          "total_without_insurance": 10953.0,
           "insurance": 200,
-          "total_with_insurance": 12003.0
+          "total_with_insurance": 11153.0
         },
         {
           "pol": "Nanjing/Jiujiang (Jiangxi)",
@@ -338,7 +338,7 @@
           "transit_time": "45-55",
           "validity": "21/09/2026",
           "surcharges": {
-            "Ocean Freight": 10850.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -346,9 +346,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11453.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11653.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Nanjing/Jiujiang (Jiangxi)",
@@ -359,7 +359,7 @@
           "transit_time": "45-55",
           "validity": "21/09/2026",
           "surcharges": {
-            "Ocean Freight": 11250.0,
+            "Ocean Freight": 10500.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -367,9 +367,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11853.0,
+          "total_without_insurance": 11103.0,
           "insurance": 200,
-          "total_with_insurance": 12053.0
+          "total_with_insurance": 11303.0
         },
         {
           "pol": "Shekou/Shanghai/Ningbo/Qingdao/Xiamen/Hong Kong/Yantian",
@@ -420,9 +420,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10850.0,
+            "Ocean Freight": 10250.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -430,9 +430,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11453.0,
+          "total_without_insurance": 10853.0,
           "insurance": 200,
-          "total_with_insurance": 11653.0
+          "total_with_insurance": 11053.0
         },
         {
           "pol": "Shantou",
@@ -441,9 +441,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11350.0,
+            "Ocean Freight": 10550.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -451,9 +451,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11953.0,
+          "total_without_insurance": 11153.0,
           "insurance": 200,
-          "total_with_insurance": 12153.0
+          "total_with_insurance": 11353.0
         },
         {
           "pol": "Liangyungang",
@@ -462,9 +462,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10650.0,
+            "Ocean Freight": 10100.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -472,9 +472,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11253.0,
+          "total_without_insurance": 10703.0,
           "insurance": 200,
-          "total_with_insurance": 11453.0
+          "total_with_insurance": 10903.0
         },
         {
           "pol": "Liangyungang",
@@ -483,9 +483,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11000.0,
+            "Ocean Freight": 10150.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -493,9 +493,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11603.0,
+          "total_without_insurance": 10753.0,
           "insurance": 200,
-          "total_with_insurance": 11803.0
+          "total_with_insurance": 10953.0
         },
         {
           "pol": "Yichang",
@@ -504,9 +504,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10900.0,
+            "Ocean Freight": 10350.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -514,9 +514,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11503.0,
+          "total_without_insurance": 10953.0,
           "insurance": 200,
-          "total_with_insurance": 11703.0
+          "total_with_insurance": 11153.0
         },
         {
           "pol": "Yichang",
@@ -525,9 +525,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11400.0,
+            "Ocean Freight": 10600.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -535,9 +535,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 12003.0,
+          "total_without_insurance": 11203.0,
           "insurance": 200,
-          "total_with_insurance": 12203.0
+          "total_with_insurance": 11403.0
         }
       ],
       "COLOMBIA / TRINIDAD & TOBAGO": [
@@ -710,9 +710,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10950.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -720,9 +720,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11553.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11753.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Yokohama, Osaka, Nagoya",
@@ -731,9 +731,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11300.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -741,9 +741,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11903.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 12103.0
+          "total_with_insurance": 11103.0
         }
       ],
       "KOREA / TRINIDAD & TOBAGO": [
@@ -754,9 +754,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10950.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -764,9 +764,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11553.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11753.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Busan",
@@ -775,9 +775,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "45-55",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11300.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -785,9 +785,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11903.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 12103.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Busan",
@@ -840,9 +840,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10950.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -850,9 +850,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11553.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11753.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Port Klang, Pasir Gudang",
@@ -861,9 +861,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11300.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -871,9 +871,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11903.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 12103.0
+          "total_with_insurance": 11103.0
         }
       ],
       "MEXICO / TRINIDAD & TOBAGO": [
@@ -964,9 +964,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 10850.0,
+            "Ocean Freight": 10200.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -974,9 +974,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11453.0,
+          "total_without_insurance": 10803.0,
           "insurance": 200,
-          "total_with_insurance": 11653.0
+          "total_with_insurance": 11003.0
         },
         {
           "pol": "Keelung/ Kaoisung",
@@ -985,9 +985,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11400.0,
+            "Ocean Freight": 10350.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -995,9 +995,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 12003.0,
+          "total_without_insurance": 10953.0,
           "insurance": 200,
-          "total_with_insurance": 12203.0
+          "total_with_insurance": 11153.0
         }
       ],
       "THAILAND / TRINIDAD & TOBAGO": [
@@ -1008,9 +1008,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11150.0,
+            "Ocean Freight": 10450.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -1018,9 +1018,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11753.0,
+          "total_without_insurance": 11053.0,
           "insurance": 200,
-          "total_with_insurance": 11953.0
+          "total_with_insurance": 11253.0
         },
         {
           "pol": "Bangkok",
@@ -1029,9 +1029,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11600.0,
+            "Ocean Freight": 10550.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -1039,9 +1039,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 12203.0,
+          "total_without_insurance": 11153.0,
           "insurance": 200,
-          "total_with_insurance": 12403.0
+          "total_with_insurance": 11353.0
         }
       ],
       "TURKEY / TRINIDAD & TOBAGO": [
@@ -1347,9 +1347,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11000.0,
+            "Ocean Freight": 10300.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -1357,9 +1357,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 11603.0,
+          "total_without_insurance": 10903.0,
           "insurance": 200,
-          "total_with_insurance": 11803.0
+          "total_with_insurance": 11103.0
         },
         {
           "pol": "Ho Chi Minh",
@@ -1368,9 +1368,9 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-60",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
-            "Ocean Freight": 11450.0,
+            "Ocean Freight": 10450.0,
             "THC": 340.0,
             "LAC": 85.0,
             "ISPS": 18.0,
@@ -1378,9 +1378,9 @@
             "Local Handling": 75.0,
             "Admin": 75.0
           },
-          "total_without_insurance": 12053.0,
+          "total_without_insurance": 11053.0,
           "insurance": 200,
-          "total_with_insurance": 12253.0
+          "total_with_insurance": 11253.0
         }
       ]
     },
@@ -1466,7 +1466,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12250.0,
             "THC": 85.0,
@@ -1485,7 +1485,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12250.0,
             "THC": 85.0,
@@ -1504,7 +1504,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12350.0,
             "THC": 85.0,
@@ -1523,7 +1523,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12450.0,
             "THC": 85.0,
@@ -1698,7 +1698,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12500.0,
             "THC": 85.0,
@@ -1717,7 +1717,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12500.0,
             "THC": 85.0,
@@ -1738,7 +1738,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12500.0,
             "THC": 85.0,
@@ -1757,7 +1757,7 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "55-65",
-          "validity": "21/09/2026",
+          "validity": "11/10/2026",
           "surcharges": {
             "Ocean Freight": 12500.0,
             "THC": 85.0,
@@ -2115,24 +2115,6 @@
           "total_without_insurance": 5145.0,
           "insurance": 200,
           "total_with_insurance": 5345.0
-        },
-        {
-          "pol": "Santos (Tiles)",
-          "pod": "Paramaribo",
-          "size": "20ft",
-          "commodity": "FAK",
-          "carrier": "CMA CGM",
-          "transit_time": "35",
-          "validity": "31/08/2026",
-          "surcharges": {
-            "Ocean Freight": 4100.0,
-            "LAC": 175.0,
-            "Dredging Fee": 175.0,
-            "Terminal Lease": 75.0
-          },
-          "total_without_insurance": 4525.0,
-          "insurance": 200,
-          "total_with_insurance": 4725.0
         }
       ],
       "CHINA / SURINAME": [
