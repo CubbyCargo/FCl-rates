@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T19:24:45Z",
+  "generated_at": "2026-09-23T19:58:35Z",
   "source_file": "Customer Rate Tariff Template_Week 39_2026.xlsx",
   "destinations": {
     "TT": {
@@ -39,22 +39,40 @@
           "total_with_insurance": 5700.0
         },
         {
-          "pol": "Santos/Imbituba (TILES)",
+          "pol": "Santos/Imbituba/Salvador (TILES)",
           "pod": "Port of Spain",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
           "transit_time": "23-28",
-          "validity": "30/09/2026",
+          "validity": "31/10/2026",
           "surcharges": {
-            "Ocean Freight": 3395.0,
+            "Ocean Freight": 4425.0,
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 30.0
           },
-          "total_without_insurance": 3856.5,
+          "total_without_insurance": 4886.5,
           "insurance": 200,
-          "total_with_insurance": 4056.5
+          "total_with_insurance": 5086.5
+        },
+        {
+          "pol": "Santos/Salvador/Itaja\u00ed (TILES)",
+          "pod": "Port of Spain",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "transit_time": "23-28",
+          "validity": "31/10/2026",
+          "surcharges": {
+            "Ocean Freight": 3975.0,
+            "THC": 340.0,
+            "LAC": 85.0,
+            "ISPS": 10.0
+          },
+          "total_without_insurance": 4410.0,
+          "insurance": 200,
+          "total_with_insurance": 4610.0
         },
         {
           "pol": "Santos/Itajai/Paranagua/Rio Grande(Lumber)",
@@ -1068,11 +1086,12 @@
           "surcharges": {
             "Ocean Freight": 1700.0,
             "THC": 410.0,
-            "LAC": 76.5
+            "LAC": 76.5,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2186.5,
+          "total_without_insurance": 2436.5,
           "insurance": 200,
-          "total_with_insurance": 2386.5
+          "total_with_insurance": 2636.5
         },
         {
           "pol": "Port Everglades",
@@ -1085,11 +1104,12 @@
           "surcharges": {
             "Ocean Freight": 2700.0,
             "THC": 410.0,
-            "LAC": 76.5
+            "LAC": 76.5,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 3186.5,
+          "total_without_insurance": 3686.5,
           "insurance": 200,
-          "total_with_insurance": 3386.5
+          "total_with_insurance": 3886.5
         },
         {
           "pol": "Port Everglades",
@@ -1104,11 +1124,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 15.0
+            "Container Inspection": 15.0,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2260.5,
+          "total_without_insurance": 2510.5,
           "insurance": 200,
-          "total_with_insurance": 2460.5
+          "total_with_insurance": 2710.5
         },
         {
           "pol": "Port Everglades",
@@ -1123,11 +1144,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 25.0
+            "Container Inspection": 25.0,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 2920.5,
+          "total_without_insurance": 3420.5,
           "insurance": 200,
-          "total_with_insurance": 3120.5
+          "total_with_insurance": 3620.5
         },
         {
           "pol": "Savannah",
@@ -1142,11 +1164,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 15.0
+            "Container Inspection": 15.0,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2450.5,
+          "total_without_insurance": 2700.5,
           "insurance": 200,
-          "total_with_insurance": 2650.5
+          "total_with_insurance": 2900.5
         },
         {
           "pol": "Savannah",
@@ -1161,11 +1184,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 25.0
+            "Container Inspection": 25.0,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 3450.5,
+          "total_without_insurance": 3950.5,
           "insurance": 200,
-          "total_with_insurance": 3650.5
+          "total_with_insurance": 4150.5
         },
         {
           "pol": "Houston",
@@ -1180,11 +1204,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 15.0
+            "Container Inspection": 15.0,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2650.5,
+          "total_without_insurance": 2900.5,
           "insurance": 200,
-          "total_with_insurance": 2850.5
+          "total_with_insurance": 3100.5
         },
         {
           "pol": "Houston",
@@ -1199,11 +1224,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 25.0
+            "Container Inspection": 25.0,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 3850.5,
+          "total_without_insurance": 4350.5,
           "insurance": 200,
-          "total_with_insurance": 4050.5
+          "total_with_insurance": 4550.5
         },
         {
           "pol": "New York",
@@ -1218,11 +1244,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 15.0
+            "Container Inspection": 15.0,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2450.5,
+          "total_without_insurance": 2700.5,
           "insurance": 200,
-          "total_with_insurance": 2650.5
+          "total_with_insurance": 2900.5
         },
         {
           "pol": "New York",
@@ -1237,11 +1264,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 25.0
+            "Container Inspection": 25.0,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 3450.5,
+          "total_without_insurance": 3950.5,
           "insurance": 200,
-          "total_with_insurance": 3650.5
+          "total_with_insurance": 4150.5
         },
         {
           "pol": "New York",
@@ -1256,11 +1284,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 15.0
+            "Container Inspection": 15.0,
+            "Peak Season Surcharge": 250.0
           },
-          "total_without_insurance": 2450.5,
+          "total_without_insurance": 2700.5,
           "insurance": 200,
-          "total_with_insurance": 2650.5
+          "total_with_insurance": 2900.5
         },
         {
           "pol": "New York",
@@ -1275,11 +1304,12 @@
             "THC": 355.0,
             "LAC": 76.5,
             "ISPS": 14.0,
-            "Container Inspection": 25.0
+            "Container Inspection": 25.0,
+            "Peak Season Surcharge": 500.0
           },
-          "total_without_insurance": 3450.5,
+          "total_without_insurance": 3950.5,
           "insurance": 200,
-          "total_with_insurance": 3650.5
+          "total_with_insurance": 4150.5
         }
       ],
       "VIETNAM / TRINIDAD & TOBAGO": [
@@ -1366,13 +1396,30 @@
           "total_with_insurance": 8645.0
         },
         {
-          "pol": "Santos (TILES)",
+          "pol": "Santos/Imbituba/Salvador (TILES)",
           "pod": "Georgetown",
           "size": "20ft",
           "commodity": "FAK",
           "carrier": "CMA CGM",
           "transit_time": "35",
-          "validity": "30/09/2026",
+          "validity": "31/10/2026",
+          "surcharges": {
+            "Ocean Freight": 5100.0,
+            "LAC": 100.0,
+            "ISPS": 18.0
+          },
+          "total_without_insurance": 5218.0,
+          "insurance": 200,
+          "total_with_insurance": 5418.0
+        },
+        {
+          "pol": "Santos/Itaja\u00ed (TILES)",
+          "pod": "Georgetown",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "ZIM",
+          "transit_time": "35",
+          "validity": "31/10/2026",
           "surcharges": {
             "Ocean Freight": 4150.0,
             "LAC": 100.0,
@@ -1381,6 +1428,23 @@
           "total_without_insurance": 4268.0,
           "insurance": 200,
           "total_with_insurance": 4468.0
+        },
+        {
+          "pol": "Santos / Itapo\u00e1 (TILES)",
+          "pod": "Georgetown",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "MSC",
+          "transit_time": "35",
+          "validity": "31/10/2026",
+          "surcharges": {
+            "Ocean Freight": 4720.0,
+            "LAC": 100.0,
+            "ISPS": 18.0
+          },
+          "total_without_insurance": 4838.0,
+          "insurance": 200,
+          "total_with_insurance": 5038.0
         },
         {
           "pol": "Paranagua (Lumber)",
@@ -2058,6 +2122,24 @@
           "total_without_insurance": 5145.0,
           "insurance": 200,
           "total_with_insurance": 5345.0
+        },
+        {
+          "pol": "Santos (Tiles)",
+          "pod": "Paramaribo",
+          "size": "20ft",
+          "commodity": "FAK",
+          "carrier": "CMA CGM",
+          "transit_time": "35",
+          "validity": "31/08/2026",
+          "surcharges": {
+            "Ocean Freight": 4100.0,
+            "LAC": 175.0,
+            "Dredging Fee": 175.0,
+            "Terminal Lease": 75.0
+          },
+          "total_without_insurance": 4525.0,
+          "insurance": 200,
+          "total_with_insurance": 4725.0
         }
       ],
       "CHINA / SURINAME": [
