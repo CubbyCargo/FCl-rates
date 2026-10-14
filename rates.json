@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T12:46:02Z",
+  "generated_at": "2026-10-14T14:29:46Z",
   "source_file": "Customer Rate Tariff Template_Week 42_2026.xlsx",
   "destinations": {
     "TT": {
@@ -1036,7 +1036,7 @@
           "total_with_insurance": 2299.0
         },
         {
-          "pol": "Gebze/ Gemilk / Aliaga/ Istanbul",
+          "pol": "Gebze/ Gemlik / Aliaga/ Istanbul",
           "pod": "Port of Spain",
           "size": "20ft",
           "commodity": "FAK",
@@ -1055,7 +1055,7 @@
           "total_with_insurance": 3099.0
         },
         {
-          "pol": "Gebze/ Gemilk / Aliaga/ Istanbul",
+          "pol": "Gebze/ Gemlik / Aliaga/ Istanbul",
           "pod": "Port of Spain",
           "size": "40ft",
           "commodity": "FAK",
