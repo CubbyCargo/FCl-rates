@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T15:24:10Z",
+  "generated_at": "2026-10-28T14:25:04Z",
   "source_file": "Customer Rate Tariff Template_Week 44_2026.xlsx",
   "destinations": {
     "TT": {
@@ -9,34 +9,36 @@
           "pod": "Point Lisas",
           "size": "20ft",
           "commodity": "FAK",
-          "carrier": "Maersk",
+          "carrier": "MSC",
           "transit_time": "35-37",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 4900.0,
-            "THC": 335.0,
-            "LAC": 65.0
+            "Ocean Freight": 6200.0,
+            "THC": 340.0,
+            "LAC": 85.0,
+            "ISPS": 10.0
           },
-          "total_without_insurance": 5300.0,
+          "total_without_insurance": 6635.0,
           "insurance": 200,
-          "total_with_insurance": 5500.0
+          "total_with_insurance": 6835.0
         },
         {
           "pol": "Santos/Itajai/Paranagua/Rio De Janiero/Rio Grande",
           "pod": "Point Lisas",
           "size": "40ft",
           "commodity": "FAK",
-          "carrier": "Maersk",
+          "carrier": "MSC",
           "transit_time": "35-37",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 5100.0,
-            "THC": 335.0,
-            "LAC": 65.0
+            "Ocean Freight": 7950.0,
+            "THC": 340.0,
+            "LAC": 85.0,
+            "ISPS": 18.0
           },
-          "total_without_insurance": 5500.0,
+          "total_without_insurance": 8393.0,
           "insurance": 200,
-          "total_with_insurance": 5700.0
+          "total_with_insurance": 8593.0
         },
         {
           "pol": "Santos/Imbituba/Salvador (TILES)",
@@ -81,16 +83,16 @@
           "commodity": "FAK",
           "carrier": "MSC",
           "transit_time": "35-37",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 4400.0,
+            "Ocean Freight": 7100.0,
             "THC": 340.0,
             "LAC": 85.0,
-            "ISPS": 18.0
+            "ISPS": 10.0
           },
-          "total_without_insurance": 4843.0,
+          "total_without_insurance": 7535.0,
           "insurance": 200,
-          "total_with_insurance": 5043.0
+          "total_with_insurance": 7735.0
         }
       ],
       "CHINA / TRINIDAD & TOBAGO": [
@@ -1364,36 +1366,36 @@
           "pod": "Georgetown",
           "size": "20ft",
           "commodity": "FAK",
-          "carrier": "ZIM",
+          "carrier": "Maersk",
           "transit_time": "39-43",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 5500.0,
-            "DTHC": 300.0,
+            "Ocean Freight": 7500.0,
+            "DTHC": 370.0,
             "LAC": 100.0,
             "ISPS": 18.0
           },
-          "total_without_insurance": 5918.0,
+          "total_without_insurance": 7988.0,
           "insurance": 200,
-          "total_with_insurance": 6118.0
+          "total_with_insurance": 8188.0
         },
         {
           "pol": "Santos/Rio de Janiero/Salvador/Parangua",
           "pod": "Georgetown",
           "size": "40ft",
           "commodity": "FAK",
-          "carrier": "ZIM",
+          "carrier": "Maersk",
           "transit_time": "39-43",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 6300.0,
-            "DTHC": 300.0,
+            "Ocean Freight": 8450.0,
+            "DTHC": 370.0,
             "LAC": 100.0,
             "ISPS": 18.0
           },
-          "total_without_insurance": 6718.0,
+          "total_without_insurance": 8938.0,
           "insurance": 200,
-          "total_with_insurance": 6918.0
+          "total_with_insurance": 9138.0
         },
         {
           "pol": "Santos/Imbituba/Salvador (TILES)",
@@ -2038,56 +2040,56 @@
           "pod": "Paramaribo",
           "size": "20ft",
           "commodity": "FAK",
-          "carrier": "CMA CGM",
+          "carrier": "MSC",
           "transit_time": "35",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 4600.0,
+            "Ocean Freight": 6300.0,
             "DTHC": 175.0,
             "LAC": 85.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 75.0
           },
-          "total_without_insurance": 5110.0,
+          "total_without_insurance": 6810.0,
           "insurance": 200,
-          "total_with_insurance": 5310.0
+          "total_with_insurance": 7010.0
         },
         {
           "pol": "Santos/Rio Grande/Rio De Janiero/Paranagua/Itapoa",
           "pod": "Paramaribo",
           "size": "40ft",
           "commodity": "FAK",
-          "carrier": "CMA CGM",
+          "carrier": "MSC",
           "transit_time": "35",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 4950.0,
+            "Ocean Freight": 7000.0,
             "DTHC": 235.0,
             "LAC": 85.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 150.0
           },
-          "total_without_insurance": 5595.0,
+          "total_without_insurance": 7645.0,
           "insurance": 200,
-          "total_with_insurance": 5795.0
+          "total_with_insurance": 7845.0
         },
         {
           "pol": "Santos (Tiles)",
           "pod": "Paramaribo",
           "size": "20ft",
           "commodity": "FAK",
-          "carrier": "CMA CGM",
+          "carrier": "MSC",
           "transit_time": "35",
-          "validity": "31/10/2026",
+          "validity": "30/11/2026",
           "surcharges": {
-            "Ocean Freight": 4400.0,
+            "Ocean Freight": 6200.0,
             "LAC": 175.0,
             "Dredging Fee": 175.0,
             "Terminal Lease": 75.0
           },
-          "total_without_insurance": 4825.0,
+          "total_without_insurance": 6625.0,
           "insurance": 200,
-          "total_with_insurance": 5025.0
+          "total_with_insurance": 6825.0
         }
       ],
       "CHINA / SURINAME": [
